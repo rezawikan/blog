@@ -19,7 +19,7 @@ class PostPolicy
      */
     public function view()
     {
-      //
+        //
     }
 
     /**
@@ -76,8 +76,8 @@ class PostPolicy
      * @param  \App\Post  $post
      * @return mixed
      */
-    public function forceDelete(User $user, Post $post)
+    public function forceDelete(User $user, $post)
     {
-        //
+        return $user->hasPermissionTo('force delete post');
     }
 }

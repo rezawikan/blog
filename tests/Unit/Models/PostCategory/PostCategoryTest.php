@@ -6,6 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Models\PostCategory;
+use App\Models\Post;
 
 class PostCategoryTest extends TestCase
 {
@@ -78,5 +79,23 @@ class PostCategoryTest extends TestCase
         );
 
         $this->assertInstanceOf(PostCategory::class, $category->childrenRecursive()->first());
+    }
+
+    /**
+     * A basic unit test example.
+     *
+     * @return void
+     */
+    public function test_a_post_category_has_many_post()
+    {
+        $category = factory(PostCategory::class)->create();
+        factory(Post::class)->create([
+          'post_category_id' => $category->id
+        ]);
+        factory(Post::class)->create([
+          'post_category_id' => $category->id
+        ]);
+
+        $this->assertCount(2, $category->posts);
     }
 }

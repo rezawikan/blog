@@ -93,13 +93,15 @@ class PostController extends Controller
      */
     public function destroy(Request $request, Post $post)
     {
-        $this->authorize('delete', $post, $request->user());
 
         if ($post->trashed()) {
+            $this->authorize('forceDelete', $post, $request->user());
             $post->forceDelete();
 
             return new PostIndexResource($post);
         }
+
+        $this->authorize('delete', $post, $request->user());
 
         $post->delete();
 

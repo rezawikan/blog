@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Post;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Traits\HasChildren;
 use App\Models\Traits\IsOrderable;
@@ -39,5 +40,16 @@ class PostCategory extends Model
     public function childrenRecursive()
     {
         return $this->children()->with('childrenRecursive');
+    }
+
+    /**
+     * Block comment
+     *
+     * @param type
+     * @return void
+     */
+    public function posts()
+    {
+        return $this->hasMany(Post::class, 'post_category_id', 'id');
     }
 }
