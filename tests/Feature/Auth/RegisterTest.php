@@ -19,7 +19,7 @@ class RegisterTest extends TestCase
      *
      * @return void
      */
-    public function test_register_someone()
+    public function test_register_user()
     {
         $res = $this->withHeaders([
             'Accept' => 'application/json',
@@ -29,5 +29,22 @@ class RegisterTest extends TestCase
           'password' => 'password',
           'password_confirmation' => 'password'
         ])->assertStatus(201);
+    }
+
+    /**
+     * A basic test example.
+     *
+     * @return void
+     */
+    public function test_register_with_wrong_email()
+    {
+        $res = $this->withHeaders([
+            'Accept' => 'application/json',
+        ])->json('POST', 'api/auth/register', [
+          'name' => 'Mochammad',
+          'email' => 'reza.wikan',
+          'password' => 'password',
+          'password_confirmation' => 'password'
+        ])->assertStatus(422);
     }
 }

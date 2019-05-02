@@ -58,8 +58,10 @@ class Post extends Model
     public function scopes()
     {
         return [
+          'none'      => 'Testing Unit',
           'tag'       => new TagScope(),
-          'category'  => new CategoryScope()
+          // 'category'  => new CategoryScope(),
+
         ];
     }
 }

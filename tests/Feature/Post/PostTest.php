@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Role;
 use App\Models\Permission;
 use App\Models\Post;
+use App\Models\Tag;
 use App\Models\PostCategory;
 use Laravel\Passport\Passport;
 use Illuminate\Support\Str;
@@ -34,7 +35,7 @@ class PostTest extends TestCase
           'body'              => 'Lorem ipsum',
           'post_category_id'  => $postCategory->id,
           'user_id'           => $user->id,
-          'slug'              => Str::slug('Lorem ipsum'),
+          'slug'              => str_slug('Lorem ipsum'),
           'image'             => 'default.png',
           'summary'           => 'Lorem ipsum',
           'live'              => true
@@ -56,6 +57,50 @@ class PostTest extends TestCase
         Passport::actingAs($user);
 
         $response = $this->get('/api/posts');
+
+        $response->assertStatus(200);
+    }
+
+    /**
+     * A basic unit test example.
+     *
+     * @return void
+     */
+    public function test_user_skip_access_posts_with_anonymous_scope()
+    {
+        $tags  = factory(Tag::class, 5)->create();
+        $posts = factory(Post::class, 5)->create();
+        $user  = factory(User::class)->create();
+
+        foreach ($posts as $index => $post) {
+            $post->tags()->save($tags[$index]);
+        }
+
+        Passport::actingAs($user);
+
+        $response = $this->get('/api/posts?tag=testing&none=testing');
+
+        $response->assertStatus(200);
+    }
+
+    /**
+     * A basic unit test example.
+     *
+     * @return void
+     */
+    public function test_user_skip_access_posts_with_null_scope_value()
+    {
+        $tags  = factory(Tag::class, 5)->create();
+        $posts = factory(Post::class, 5)->create();
+        $user  = factory(User::class)->create();
+
+        foreach ($posts as $index => $post) {
+            $post->tags()->save($tags[$index]);
+        }
+
+        Passport::actingAs($user);
+
+        $response = $this->get('/api/posts?tag=');
 
         $response->assertStatus(200);
     }
