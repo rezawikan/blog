@@ -1,12 +1,12 @@
 
 
 Code Coverage Report:      
-  2019-05-02 16:52:18      
+  2019-05-03 14:46:36      
                            
  Summary:                  
   Classes: 52.00% (26/50)  
-  Methods: 53.91% (62/115) 
-  Lines:   62.70% (158/252)
+  Methods: 57.39% (66/115) 
+  Lines:   64.68% (163/252)
 
 \App\Console::App\Console\Kernel
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  4/  4)
@@ -31,7 +31,7 @@ Code Coverage Report:
 \App\Listeners::App\Listeners\RevokeOldTokens
   Methods:  50.00% ( 1/ 2)   Lines:  83.33% (  5/  6)
 \App\Model\Traits::RolePermission
-  Methods:  61.54% ( 8/13)   Lines:  82.86% ( 29/ 35)
+  Methods:  92.31% (12/13)   Lines:  97.14% ( 34/ 35)
 \App\Models::App\Models\Permission
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
 \App\Models::App\Models\Post

@@ -15,8 +15,10 @@ trait RolePermission
      */
     public function givePermissionTo(...$permissions)
     {
+
         $permissions = $this->getAllPermissions(array_flatten($permissions));
-        if ($permissions == null) {
+        // is empty on object permission
+        if ($permissions instanceof Collection && $permissions->isEmpty()) {
             return $this;
         }
 
@@ -73,7 +75,8 @@ trait RolePermission
     public function giveRoleTo(...$roles)
     {
         $roles = $this->getAllRoles(array_flatten($roles));
-        if ($roles == null) {
+        // is empty on object roles
+        if ($roles->isEmpty()) {
             return $this;
         }
 
@@ -101,7 +104,7 @@ trait RolePermission
      */
     protected function hasPermissionThroughRole($permission)
     {
-        if (!isset($permission->roles)) {
+        if ($permission->roles->isEmpty()) {
             return false;
         }
 

@@ -51,7 +51,7 @@ class PostTest extends TestCase
      */
     public function test_user_can_access_posts()
     {
-        $posts = factory(Post::class, 100)->create();
+        $posts = factory(Post::class, 20)->create();
         $user  = factory(User::class)->create();
 
         Passport::actingAs($user);
