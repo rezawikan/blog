@@ -66,6 +66,23 @@ class PostTest extends TestCase
      *
      * @return void
      */
+    public function test_user_can_access_post_detail()
+    {
+        $post  = factory(Post::class)->create();
+        $user  = factory(User::class)->create();
+        
+        Passport::actingAs($user);
+
+        $response = $this->get("/api/posts/{$post->id}");
+
+        $response->assertStatus(200);
+    }
+
+    /**
+     * A basic unit test example.
+     *
+     * @return void
+     */
     public function test_user_skip_access_posts_with_anonymous_scope()
     {
         $tags  = factory(Tag::class, 5)->create();
@@ -192,28 +209,33 @@ class PostTest extends TestCase
     {
         $permission   = factory(Permission::class)->create(['name' => 'create post']);
         $permission2  = factory(Permission::class)->create(['name' => 'restore post']);
+        $permission3  = factory(Permission::class)->create(['name' => 'delete post']);
         $postCategory = factory(PostCategory::class)->create();
         $user         = factory(User::class)->create();
 
-        $user->givePermissionTo('create post');
-        $user->givePermissionTo('restore post');
+        $user->givePermissionTo([$permission->name,$permission2->name, $permission3->name]);
 
         Passport::actingAs($user);
 
-        $response = $this->post('/api/posts', [
+        $store = $this->post('/api/posts', [
           'title'            => 'Test',
           'body'             => 'Lorem ipsum',
           'user_id'          => $user->id,
           'post_category_id' => $postCategory->id,
-          'slug'             => Str::slug('Lorem ipsum'),
+          'slug'             => str_slug('Lorem ipsum'),
           'image'            => 'default.png',
           'summary'          => 'Lorem ipsum',
           'live'             => true
         ]);
 
         $post = Post::first();
-        $response = $this->json('PUT', "/api/posts-restore/{$post->id}");
 
-        $response->assertStatus(200);
+        $delete  = $this->json('DELETE', "/api/posts/{$post->id}");
+
+        $restore = $this->json('PUT', "/api/posts-restore/{$post->id}");
+
+        $store->assertStatus(201);
+        $delete->assertStatus(200);
+        $restore->assertStatus(200);
     }
 }

@@ -106,13 +106,15 @@ class UserTest extends TestCase
     public function test_user_has_permission_with_wrong_roles()
     {
         $user        = factory(User::class)->create();
-        $permission1 = factory(Permission::class)->create();
-        $permission2 = factory(Permission::class)->create();
-        $role        = factory(Role::class)->create();
+        $permission1 = factory(Permission::class)->create(['name' => 'create post']);
+        $permission2 = factory(Permission::class)->create(['name' => 'view post']);
+        $role1        = factory(Role::class)->create();
+        $role2        = factory(Role::class)->create();
 
-        $role->permissions()->save($permission1);
+        $role1->permissions()->save($permission1);
+        $role2->permissions()->save($permission2);
 
-        $user->giveRoleTo($role);
+        $user->giveRoleTo($role1->name);
 
         $false = $user->hasPermissionTo($permission2);
 

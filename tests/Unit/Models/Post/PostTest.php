@@ -2,6 +2,7 @@
 
 namespace Tests\Unit\Models\Post;
 
+use App\Models\User;
 use App\Models\Tag;
 use App\Models\Post;
 use App\Models\PostCategory;
@@ -51,5 +52,17 @@ class PostTest extends TestCase
         $post->tags()->saveMany([$tag1, $tag2]);
 
         $this->assertCount(2,$post->tags);
+    }
+
+    /**
+     * A basic unit test example.
+     *
+     * @return void
+     */
+    public function test_a_post_has_one_user()
+    {
+        $post = factory(Post::class)->create();
+        // dd($post->user);
+        $this->assertInstanceOf(User::class, $post->user);
     }
 }
