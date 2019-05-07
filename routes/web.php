@@ -1,5 +1,9 @@
 <?php
 use Illuminate\Http\Request;
+use App\Notifications\Comments\CommentCreated;
+use App\Models\User;
+use App\Models\Comment;
+use App\App\Notifications\Models\DatabaseNotification;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,6 +14,17 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/notification', function() {
+
+  // $notification = DatabaseNotification::find('97a41cf4-d218-4de0-ad7c-d00c33f546e4');
+
+  // dd($notification);
+  $user = User::find(1);
+  $comment = Comment::find(1);
+  // dd($comment);
+
+  $user->notify(new CommentCreated($comment));
+});
 
 Route::get('/', function () {
     // $user = \App\Models\User::first();

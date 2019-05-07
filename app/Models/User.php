@@ -8,6 +8,7 @@ use App\Model\Traits\RolePermission;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Notifications\API\Auth\ResetPasswordNotification;
+use App\App\Notifications\Models\DatabaseNotification;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -51,6 +52,15 @@ class User extends Authenticatable
     }
 
     /**
+     * [posts description]
+     * @return [type] [description]
+     */
+    public function notifications()
+    {
+        return $this->morphMany(DatabaseNotification::class, 'notifiable')->orderBy('created_at','desc');
+    }
+
+    /**
    * Send the password reset notification.
    *
    * @param  string  $token
@@ -62,4 +72,15 @@ class User extends Authenticatable
 
         $this->notify((new ResetPasswordNotification($token))->delay($when));
     }
+
+    /**
+    * Route notifications for the mail channel.
+    *
+    * @param  \Illuminate\Notifications\Notification  $notification
+    * @return string
+    */
+   public function routeNotificationForMail($notification)
+   {
+       return $this->email;
+   }
 }

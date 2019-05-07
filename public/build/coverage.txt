@@ -1,12 +1,12 @@
 
 
 Code Coverage Report:      
-  2019-05-03 16:42:07      
+  2019-05-07 12:04:55      
                            
  Summary:                  
-  Classes: 56.00% (28/50)  
-  Methods: 60.00% (69/115) 
-  Lines:   66.27% (167/252)
+  Classes: 50.91% (28/55)  
+  Methods: 53.91% (69/128) 
+  Lines:   56.42% (167/296)
 
 \App\Console::App\Console\Kernel
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  4/  4)

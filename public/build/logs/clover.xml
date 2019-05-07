@@ -1,6 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1556872927">
-  <project timestamp="1556872927">
+<coverage generated="1557201895">
+  <project timestamp="1557201895">
+    <package name="App\App\Notifications\Channels">
+      <file name="C:\laragon\www\blog\app\App\Notifications\Channels\DatabaseChannels.php">
+        <class name="App\App\Notifications\Channels\DatabaseChannel" namespace="App\App\Notifications\Channels">
+          <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="9" coveredelements="0"/>
+        </class>
+        <line num="16" type="method" name="send" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <line num="20" type="stmt" count="0"/>
+        <line num="21" type="stmt" count="0"/>
+        <line num="22" type="stmt" count="0"/>
+        <line num="23" type="stmt" count="0"/>
+        <line num="28" type="method" name="getType" visibility="protected" complexity="1" crap="2.00" count="0"/>
+        <line num="30" type="stmt" count="0"/>
+        <metrics loc="32" ncloc="25" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="9" coveredelements="0"/>
+      </file>
+    </package>
+    <package name="App\App\Notifications\Models">
+      <file name="C:\laragon\www\blog\app\App\Notifications\Models\DatabaseNotification.php">
+        <class name="App\App\Notifications\Models\DatabaseNotification" namespace="App\App\Notifications\Models">
+          <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="4" coveredelements="0"/>
+        </class>
+        <line num="11" type="method" name="getModelsAttribute" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="13" type="stmt" count="0"/>
+        <line num="16" type="method" name="getDataAttribute" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <metrics loc="20" ncloc="20" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="4" coveredelements="0"/>
+      </file>
+    </package>
+    <package name="App\App\Notifications">
+      <file name="C:\laragon\www\blog\app\App\Notifications\Notification.php">
+        <class name="App\App\Notifications\Notification" namespace="App\App\Notifications">
+          <metrics complexity="2" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="9" coveredelements="0"/>
+        </class>
+        <line num="11" type="method" name="models" visibility="public" complexity="2" crap="6.00" count="0"/>
+        <line num="13" type="stmt" count="0"/>
+        <line num="15" type="stmt" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <line num="21" type="stmt" count="0"/>
+        <line num="22" type="stmt" count="0"/>
+        <line num="26" type="stmt" count="0"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="30" type="stmt" count="0"/>
+        <metrics loc="33" ncloc="33" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="9" coveredelements="0"/>
+      </file>
+    </package>
+    <package name="App\Console\Commands\Notifications">
+      <file name="C:\laragon\www\blog\app\Console\Commands\Notifications\RestructureNotifications.php">
+        <class name="App\Console\Commands\Notifications\RestructureNotifications" namespace="App\Console\Commands\Notifications">
+          <metrics complexity="4" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="0" elements="20" coveredelements="0"/>
+        </class>
+        <line num="31" type="method" name="handle" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="33" type="stmt" count="0"/>
+        <line num="35" type="stmt" count="0"/>
+        <line num="39" type="stmt" count="0"/>
+        <line num="40" type="stmt" count="0"/>
+        <line num="41" type="stmt" count="0"/>
+        <line num="44" type="stmt" count="0"/>
+        <line num="45" type="stmt" count="0"/>
+        <line num="48" type="stmt" count="0"/>
+        <line num="49" type="stmt" count="0"/>
+        <line num="50" type="stmt" count="0"/>
+        <line num="52" type="stmt" count="0"/>
+        <line num="53" type="stmt" count="0"/>
+        <line num="55" type="method" name="resolveModels" visibility="protected" complexity="2" crap="6.00" count="0"/>
+        <line num="58" type="stmt" count="0"/>
+        <line num="59" type="stmt" count="0"/>
+        <line num="61" type="stmt" count="0"/>
+        <line num="62" type="stmt" count="0"/>
+        <line num="65" type="method" name="recreateNotification" visibility="protected" complexity="1" crap="2.00" count="0"/>
+        <line num="67" type="stmt" count="0"/>
+        <metrics loc="69" ncloc="54" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="0" elements="20" coveredelements="0"/>
+      </file>
+    </package>
     <package name="App\Console">
       <file name="C:\laragon\www\blog\app\Console\Kernel.php">
         <class name="App\Console\Kernel" namespace="App\Console">
@@ -421,6 +495,12 @@
       </file>
     </package>
     <package name="App\Models">
+      <file name="C:\laragon\www\blog\app\Models\Comment.php">
+        <class name="App\Models\Comment" namespace="App\Models">
+          <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <metrics loc="10" ncloc="8" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </file>
       <file name="C:\laragon\www\blog\app\Models\Permission.php">
         <class name="App\Models\Permission" namespace="App\Models">
           <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
@@ -474,15 +554,17 @@
       </file>
       <file name="C:\laragon\www\blog\app\Models\User.php">
         <class name="App\Models\User" namespace="App\Models">
-          <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="6" coveredelements="0"/>
+          <metrics complexity="3" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="8" coveredelements="0"/>
         </class>
-        <line num="48" type="method" name="posts" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="50" type="stmt" count="0"/>
-        <line num="59" type="method" name="sendPasswordResetNotification" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="61" type="stmt" count="0"/>
-        <line num="63" type="stmt" count="0"/>
-        <line num="64" type="stmt" count="0"/>
-        <metrics loc="65" ncloc="38" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="6" coveredelements="0"/>
+        <line num="49" type="method" name="posts" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="51" type="stmt" count="0"/>
+        <line num="58" type="method" name="notifications" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="60" type="stmt" count="0"/>
+        <line num="69" type="method" name="sendPasswordResetNotification" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="71" type="stmt" count="0"/>
+        <line num="73" type="stmt" count="0"/>
+        <line num="74" type="stmt" count="0"/>
+        <metrics loc="75" ncloc="44" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="8" coveredelements="0"/>
       </file>
     </package>
     <package name="App\Models\Scopes">
@@ -626,6 +708,27 @@
         <metrics loc="68" ncloc="43" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="0" elements="14" coveredelements="0"/>
       </file>
     </package>
+    <package name="App\Notifications\Comments">
+      <file name="C:\laragon\www\blog\app\Notifications\Comments\CommentCreated.php">
+        <class name="App\Notifications\Comments\CommentCreated" namespace="App\Notifications\Comments">
+          <metrics complexity="4" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="0" elements="13" coveredelements="0"/>
+        </class>
+        <line num="24" type="method" name="__construct" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="26" type="stmt" count="0"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="35" type="method" name="via" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="40" type="stmt" count="0"/>
+        <line num="51" type="method" name="toMail" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="53" type="stmt" count="0"/>
+        <line num="54" type="stmt" count="0"/>
+        <line num="55" type="stmt" count="0"/>
+        <line num="56" type="stmt" count="0"/>
+        <line num="65" type="method" name="toArray" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="69" type="stmt" count="0"/>
+        <line num="70" type="stmt" count="0"/>
+        <metrics loc="74" ncloc="43" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="0" elements="13" coveredelements="0"/>
+      </file>
+    </package>
     <package name="App\Policies">
       <file name="C:\laragon\www\blog\app\Policies\PostPolicy.php">
         <class name="App\Policies\PostPolicy" namespace="App\Policies">
@@ -757,6 +860,6 @@
         <metrics loc="22" ncloc="19" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
       </file>
     </package>
-    <metrics files="58" loc="2389" ncloc="1481" classes="50" methods="115" coveredmethods="69" conditionals="0" coveredconditionals="0" statements="252" coveredstatements="167" elements="367" coveredelements="236"/>
+    <metrics files="64" loc="2637" ncloc="1670" classes="55" methods="128" coveredmethods="69" conditionals="0" coveredconditionals="0" statements="296" coveredstatements="167" elements="424" coveredelements="236"/>
   </project>
 </coverage>
