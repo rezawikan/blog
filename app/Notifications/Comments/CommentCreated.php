@@ -37,7 +37,7 @@ class CommentCreated extends Notification
         // dd($this->models());
         // return ['database'];
         return [
-          DatabaseChannel::class, 'mail'
+          DatabaseChannel::class
         ];
 
     }

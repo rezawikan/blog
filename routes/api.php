@@ -26,6 +26,8 @@ Route::resource('users','API\User\UserController')->middleware('auth:api');
 Route::resource('posts','API\Post\PostController')->middleware('auth:api');
 Route::put('posts-restore/{post}', 'API\Post\PostController@restore')->name('posts.restore')->middleware('auth:api');
 
+Route::get('notifications','API\Notifications\NotificationController')->middleware('auth:api');
+
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
