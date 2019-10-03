@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
-// use App\Models\Post;
+use App\Models\Post;
 use Laravel\Passport\HasApiTokens;
 use App\Model\Traits\RolePermission;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Notifications\API\Auth\ResetPasswordNotification;
 use App\App\Notifications\Models\DatabaseNotification;
+use App\Models\Traits\SoftDeletesWithDeleted;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable

@@ -34,7 +34,6 @@ class LoginController extends Controller
      */
     public function login(LoginRequest $request)
     {
-        // dd($request->only('email', 'password'));
         if (!Auth::once($request->only('email', 'password'))) {
             return response()->json([
               'errors' => [

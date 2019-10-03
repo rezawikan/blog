@@ -15,9 +15,15 @@ class PostResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'title'      => $this->title,
-            'body'       => $this->body,
-            'created_at' => $this->created_at->diffForHumans(),
+            'title' => $this->title,
+            'image' => $this->image,
+            'slug' => $this->slug,
+            'summary' => $this->summary,
+            'body' => $this->body,
+            'live' => (bool) $this->live,
+            'post_category' => new PostCategoryResource($this->whenLoaded('post_category')),
+            'user' => new PrivateUserResource($this->whenLoaded('post_category')),
+            'created_at' => $this->created_at
         ];
     }
 }

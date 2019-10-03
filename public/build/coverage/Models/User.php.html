@@ -59,7 +59,7 @@
        </div>
 </td>
        <td class="danger small"><div align="right">0.00%</div></td>
-       <td class="danger small"><div align="right">0&nbsp;/&nbsp;3</div></td>
+       <td class="danger small"><div align="right">0&nbsp;/&nbsp;4</div></td>
        <td class="danger small"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></td>
        <td class="danger big">       <div class="progress">
          <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="0.00" aria-valuemin="0" aria-valuemax="100" style="width: 0.00%">
@@ -68,7 +68,7 @@
        </div>
 </td>
        <td class="danger small"><div align="right">0.00%</div></td>
-       <td class="danger small"><div align="right">0&nbsp;/&nbsp;5</div></td>
+       <td class="danger small"><div align="right">0&nbsp;/&nbsp;6</div></td>
       </tr>
 
       <tr>
@@ -88,8 +88,8 @@
        </div>
 </td>
        <td class="danger small"><div align="right">0.00%</div></td>
-       <td class="danger small"><div align="right">0&nbsp;/&nbsp;3</div></td>
-       <td class="danger small">12.00</td>
+       <td class="danger small"><div align="right">0&nbsp;/&nbsp;4</div></td>
+       <td class="danger small">20.00</td>
        <td class="danger big">       <div class="progress">
          <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="0.00" aria-valuemin="0" aria-valuemax="100" style="width: 0.00%">
            <span class="sr-only">0.00% covered (danger)</span>
@@ -97,7 +97,7 @@
        </div>
 </td>
        <td class="danger small"><div align="right">0.00%</div></td>
-       <td class="danger small"><div align="right">0&nbsp;/&nbsp;5</div></td>
+       <td class="danger small"><div align="right">0&nbsp;/&nbsp;6</div></td>
       </tr>
 
       <tr>
@@ -161,6 +161,27 @@
 </td>
        <td class="danger small"><div align="right">0.00%</div></td>
        <td class="danger small"><div align="right">0&nbsp;/&nbsp;3</div></td>
+      </tr>
+
+      <tr>
+       <td class="danger" colspan="4">&nbsp;<a href="#82"><abbr title="routeNotificationForMail($notification)">routeNotificationForMail</abbr></a></td>
+       <td class="danger big">       <div class="progress">
+         <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="0.00" aria-valuemin="0" aria-valuemax="100" style="width: 0.00%">
+           <span class="sr-only">0.00% covered (danger)</span>
+         </div>
+       </div>
+</td>
+       <td class="danger small"><div align="right">0.00%</div></td>
+       <td class="danger small"><div align="right">0&nbsp;/&nbsp;1</div></td>
+       <td class="danger small">2.00</td>
+       <td class="danger big">       <div class="progress">
+         <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="0.00" aria-valuemin="0" aria-valuemax="100" style="width: 0.00%">
+           <span class="sr-only">0.00% covered (danger)</span>
+         </div>
+       </div>
+</td>
+       <td class="danger small"><div align="right">0.00%</div></td>
+       <td class="danger small"><div align="right">0&nbsp;/&nbsp;1</div></td>
       </tr>
 
 
@@ -243,7 +264,18 @@
      <tr><td><div align="right"><a name="72"></a><a href="#72">72</a></div></td><td class="codeLine"></td></tr>
      <tr class="danger"><td><div align="right"><a name="73"></a><a href="#73">73</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="default">$this</span><span class="default">-&gt;</span><span class="default">notify</span><span class="keyword">(</span><span class="keyword">(</span><span class="keyword">new</span><span class="default">&nbsp;</span><span class="default">ResetPasswordNotification</span><span class="keyword">(</span><span class="default">$token</span><span class="keyword">)</span><span class="keyword">)</span><span class="default">-&gt;</span><span class="default">delay</span><span class="keyword">(</span><span class="default">$when</span><span class="keyword">)</span><span class="keyword">)</span><span class="keyword">;</span></td></tr>
      <tr class="danger"><td><div align="right"><a name="74"></a><a href="#74">74</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">}</span></td></tr>
-     <tr><td><div align="right"><a name="75"></a><a href="#75">75</a></div></td><td class="codeLine"><span class="keyword">}</span></td></tr>
+     <tr><td><div align="right"><a name="75"></a><a href="#75">75</a></div></td><td class="codeLine"></td></tr>
+     <tr><td><div align="right"><a name="76"></a><a href="#76">76</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">/**</span></td></tr>
+     <tr><td><div align="right"><a name="77"></a><a href="#77">77</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Route&nbsp;notifications&nbsp;for&nbsp;the&nbsp;mail&nbsp;channel.</span></td></tr>
+     <tr><td><div align="right"><a name="78"></a><a href="#78">78</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;*</span></td></tr>
+     <tr><td><div align="right"><a name="79"></a><a href="#79">79</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;&nbsp;\Illuminate\Notifications\Notification&nbsp;&nbsp;$notification</span></td></tr>
+     <tr><td><div align="right"><a name="80"></a><a href="#80">80</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;string</span></td></tr>
+     <tr><td><div align="right"><a name="81"></a><a href="#81">81</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;*/</span></td></tr>
+     <tr><td><div align="right"><a name="82"></a><a href="#82">82</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;</span><span class="keyword">public</span><span class="default">&nbsp;</span><span class="keyword">function</span><span class="default">&nbsp;</span><span class="default">routeNotificationForMail</span><span class="keyword">(</span><span class="default">$notification</span><span class="keyword">)</span></td></tr>
+     <tr><td><div align="right"><a name="83"></a><a href="#83">83</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;</span><span class="keyword">{</span></td></tr>
+     <tr class="danger"><td><div align="right"><a name="84"></a><a href="#84">84</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">return</span><span class="default">&nbsp;</span><span class="default">$this</span><span class="default">-&gt;</span><span class="default">email</span><span class="keyword">;</span></td></tr>
+     <tr class="warning"><td><div align="right"><a name="85"></a><a href="#85">85</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;</span><span class="keyword">}</span></td></tr>
+     <tr><td><div align="right"><a name="86"></a><a href="#86">86</a></div></td><td class="codeLine"><span class="keyword">}</span></td></tr>
 
     </tbody>
    </table>
@@ -256,7 +288,7 @@
      <span class="warning"><strong>Dead Code</strong></span>
     </p>
     <p>
-     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 6.1.4</a> using <a href="https://secure.php.net/" target="_top">PHP 7.3.5</a> with <a href="https://xdebug.org/">Xdebug 2.7.1</a> and <a href="https://phpunit.de/">PHPUnit 7.5.9</a> at Tue May 7 12:04:55 WITA 2019.</small>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 6.1.4</a> using <a href="https://secure.php.net/" target="_top">PHP 7.2.8</a> with <a href="https://xdebug.org/">Xdebug 2.7.2</a> and <a href="https://phpunit.de/">PHPUnit 7.5.16</a> at Thu Oct 3 13:08:21 WITA 2019.</small>
     </p>
     <a title="Back to the top" id="toplink" href="#">
         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M12 11L6 5l-6 6h12z"/></svg>

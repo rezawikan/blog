@@ -1,31 +1,31 @@
 
 
 Code Coverage Report:      
-  2019-05-07 12:04:55      
+  2019-10-03 13:08:21      
                            
  Summary:                  
-  Classes: 50.91% (28/55)  
-  Methods: 53.91% (69/128) 
-  Lines:   56.42% (167/296)
+  Classes: 48.28% (28/58)  
+  Methods: 49.63% (67/135) 
+  Lines:   56.83% (183/322)
 
 \App\Console::App\Console\Kernel
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  4/  4)
 \App\Exceptions::App\Exceptions\Handler
-  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  3/  3)
+  Methods:  50.00% ( 1/ 2)   Lines:  57.14% (  4/  7)
 \App\Http\Controllers\API\Auth::App\Http\Controllers\API\Auth\LoginController
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% ( 11/ 11)
 \App\Http\Controllers\API\Auth::App\Http\Controllers\API\Auth\RegisterController
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% ( 13/ 13)
 \App\Http\Controllers\API\Post::App\Http\Controllers\API\Post\PostController
-  Methods:  62.50% ( 5/ 8)   Lines:  86.96% ( 20/ 23)
-\App\Http\Requests::App\Http\Requests\PostRequest
-  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  2/  2)
+  Methods:  62.50% ( 5/ 8)   Lines:  90.62% ( 29/ 32)
 \App\Http\Requests\Auth::App\Http\Requests\Auth\LoginRequest
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  2/  2)
+\App\Http\Resources::App\Http\Resources\PostCategoryResource
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
 \App\Http\Resources::App\Http\Resources\PostIndexResource
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  5/  5)
 \App\Http\Resources::App\Http\Resources\PostResource
-  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  3/  3)
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  9/  9)
 \App\Http\Resources::App\Http\Resources\PrivateUserResource
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  4/  4)
 \App\Listeners::App\Listeners\RevokeOldTokens
@@ -57,7 +57,7 @@ Code Coverage Report:
 \App\Models\Traits::SoftDeletesWithDeleted
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  2/  2)
 \App\Policies::App\Policies\PostPolicy
-  Methods:  83.33% ( 5/ 6)   Lines:  83.33% (  5/  6)
+  Methods: 100.00% ( 5/ 5)   Lines: 100.00% (  5/  5)
 \App\Providers::App\Providers\AppServiceProvider
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  2/  2)
 \App\Providers::App\Providers\AuthServiceProvider

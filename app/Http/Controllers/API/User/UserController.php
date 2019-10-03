@@ -4,23 +4,24 @@ namespace App\Http\Controllers\API\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\UserResource;
 use App\Models\User;
 
 class UserController extends Controller
 {
-    public function __construct()
-    {
-        $this->authorizeResource(User::class);
-    }
 
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(User $users)
     {
-        //
+        $users = $users->paginate(12);
+
+        return (UserResource::collection($users))
+        ->response()
+        ->setStatusCode(200);
     }
 
     /**
@@ -41,10 +42,13 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        dd('asdasd');
+        $this->authorize('create', User::class);
+
         $user = User::create($request->all());
 
-        return $user;
+        return (new UserResource($users))
+        ->response()
+        ->setStatusCode(201);
     }
 
     /**
@@ -53,9 +57,13 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        $this->authorize('view', User::class);
+
+        return (new UserResource($user))
+        ->response()
+        ->setStatusCode(200);
     }
 
     /**
@@ -76,9 +84,15 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $this->authorize('update', User::class);
+
+        $user->update($request->all());
+
+        return (new UserResource($user)
+        ->response()
+        ->setStatusCode(200);
     }
 
     /**
@@ -87,8 +101,25 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, User $user)
     {
-        //
+        $this->authorize('delete', User::class);
+
+        if ($user->trashed()) {
+            $this->authorize('forceDelete', User::class));
+            $user->forceDelete();
+
+            return (new UserResource($user))
+            ->response()
+            ->setStatusCode(200);
+        }
+
+        $this->authorize('delete', User::class);
+
+        $user->delete();
+
+        return (new UserResource($user))
+        ->response()
+        ->setStatusCode(200);
     }
 }

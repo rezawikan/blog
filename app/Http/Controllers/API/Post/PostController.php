@@ -4,7 +4,7 @@ namespace App\Http\Controllers\API\Post;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
-use App\Http\Requests\PostRequest;
+use App\Http\Requests\Post\PostRequest;
 use App\Http\Resources\PostResource;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -22,7 +22,9 @@ class PostController extends Controller
     {
         $posts = $post->withScopes($post->scopes())->latestOrder()->isLive()->paginate(10);
 
-        return PostIndexResource::collection($posts);
+        return (PostIndexResource::collection($posts))
+        ->response()
+        ->setStatusCode(200);
     }
 
     /**
@@ -43,11 +45,13 @@ class PostController extends Controller
      */
     public function store(PostRequest $request)
     {
-        $this->authorize('create', Post::class, $request->user());
+        $this->authorize('create', Post::class);
 
         $post = Post::create($request->all());
 
-        return new PostResource($post);
+        return (new PostResource($post))
+        ->response()
+        ->setStatusCode(201);
     }
 
     /**
@@ -58,7 +62,9 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return new PostResource($post);
+        return (new PostResource($post))
+        ->response()
+        ->setStatusCode(200);
     }
 
     /**
@@ -81,8 +87,17 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        $this->authorize('update', $post, $request->user());
+        $this->authorize('update', $post);
+
         $post->update($request->all());
+
+        return (new PostResource(
+          $post->load([
+          'post_category','user'
+          ])
+        ))
+        ->response()
+        ->setStatusCode(200);
     }
 
     /**
@@ -95,17 +110,21 @@ class PostController extends Controller
     {
 
         if ($post->trashed()) {
-            $this->authorize('forceDelete', $post, $request->user());
+            $this->authorize('forceDelete', $post);
             $post->forceDelete();
 
-            return new PostIndexResource($post);
+            return (new PostIndexResource($post))
+            ->response()
+            ->setStatusCode(200);
         }
 
-        $this->authorize('delete', $post, $request->user());
+        $this->authorize('delete', $post);
 
         $post->delete();
 
-        return new PostIndexResource($post);
+        return (new PostIndexResource($post))
+        ->response()
+        ->setStatusCode(200);
     }
 
     /**
@@ -116,11 +135,13 @@ class PostController extends Controller
      */
     public function restore(Request $request, Post $post)
     {
-        $this->authorize('restore', $post, $request->user());
+        $this->authorize('restore', $post);
 
         if ($post->trashed()) {
             $post->restore();
-            return new PostIndexResource($post);
+            return (new PostIndexResource($post))
+            ->response()
+            ->setStatusCode(200);
         }
     }
 }

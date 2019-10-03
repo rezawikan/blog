@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Post;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -30,7 +30,8 @@ class PostRequest extends FormRequest
           'image'   => 'required',
           'summary' => 'required',
           'live'    => 'required',
-          'user_id' => 'required|exists:users,id'
+          'user_id' => 'required|exists:users,id',
+          'post_category_id' => 'required|exists:post_categories,id',
         ];
     }
 }
