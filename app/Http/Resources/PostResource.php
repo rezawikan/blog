@@ -22,8 +22,10 @@ class PostResource extends JsonResource
             'body' => $this->body,
             'live' => (bool) $this->live,
             'post_category' => new PostCategoryResource($this->whenLoaded('post_category')),
-            'user' => new PrivateUserResource($this->whenLoaded('post_category')),
-            'created_at' => $this->created_at
+            'user' => new PrivateUserResource($this->whenLoaded('user')),
+            'created_at' => $this->created_at,
+            'tags' => new TagResource($this->whenLoaded('tags')),
+            'comments' => new CommentResource($this->whenLoaded('comments'))
         ];
     }
 }

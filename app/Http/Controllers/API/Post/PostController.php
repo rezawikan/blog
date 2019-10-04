@@ -18,9 +18,11 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Post $post)
+    public function index(Post $post, Request $request)
     {
-        $posts = $post->withScopes($post->scopes())->latestOrder()->isLive()->paginate(10);
+        $page = $request->page ? $request->page : 12;
+        $live = $request->live ? $request->live : true;
+        $posts = $post->withScopes($post->scopes())->latestOrder()->isLive($live)->paginate($page);
 
         return (PostIndexResource::collection($posts))
         ->response()
@@ -62,6 +64,12 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
+        $post->load([
+          'comments.user',
+          'comments.children.children',
+          'tags'
+        ]);
+
         return (new PostResource($post))
         ->response()
         ->setStatusCode(200);

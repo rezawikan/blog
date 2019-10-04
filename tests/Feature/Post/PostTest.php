@@ -49,6 +49,34 @@ class PostTest extends TestCase
      *
      * @return void
      */
+    public function test_user_can_not_create_a_post()
+    {
+        $permission   = factory(Permission::class)->create(['name' => 'create post']);
+        $postCategory = factory(PostCategory::class)->create();
+        $user         = factory(User::class)->create();
+
+        $user->givePermissionTo('create');
+        Passport::actingAs($user);
+
+        $response = $this->post('/api/posts', [
+          'title'             => 'Test',
+          'body'              => 'Lorem ipsum',
+          'post_category_id'  => $postCategory->id,
+          'user_id'           => $user->id,
+          'slug'              => str_slug('Lorem ipsum'),
+          'image'             => 'default.png',
+          'summary'           => 'Lorem ipsum',
+          'live'              => true
+        ]);
+
+        $response->assertStatus(403);
+    }
+
+    /**
+     * A basic unit test example.
+     *
+     * @return void
+     */
     public function test_user_can_access_posts()
     {
         $posts = factory(Post::class, 20)->create();
@@ -70,7 +98,7 @@ class PostTest extends TestCase
     {
         $post  = factory(Post::class)->create();
         $user  = factory(User::class)->create();
-        
+
         Passport::actingAs($user);
 
         $response = $this->get("/api/posts/{$post->id}");
@@ -95,7 +123,7 @@ class PostTest extends TestCase
 
         Passport::actingAs($user);
 
-        $response = $this->get('/api/posts?tag=testing&none=testing');
+        $response = $this->get('/api/posts?tag[]=testing&none=testing');
 
         $response->assertStatus(200);
     }

@@ -1,33 +1,41 @@
 
 
 Code Coverage Report:      
-  2019-10-03 13:08:21      
+  2019-10-04 14:05:44      
                            
  Summary:                  
-  Classes: 48.28% (28/58)  
-  Methods: 49.63% (67/135) 
-  Lines:   56.83% (183/322)
+  Classes: 46.15% (30/65)  
+  Methods: 46.41% (71/153) 
+  Lines:   53.57% (210/392)
 
 \App\Console::App\Console\Kernel
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  4/  4)
 \App\Exceptions::App\Exceptions\Handler
-  Methods:  50.00% ( 1/ 2)   Lines:  57.14% (  4/  7)
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  7/  7)
 \App\Http\Controllers\API\Auth::App\Http\Controllers\API\Auth\LoginController
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% ( 11/ 11)
 \App\Http\Controllers\API\Auth::App\Http\Controllers\API\Auth\RegisterController
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% ( 13/ 13)
 \App\Http\Controllers\API\Post::App\Http\Controllers\API\Post\PostController
-  Methods:  62.50% ( 5/ 8)   Lines:  90.62% ( 29/ 32)
+  Methods:  62.50% ( 5/ 8)   Lines:  93.02% ( 40/ 43)
+\App\Http\Middleware::App\Http\Middleware\ProfileJsonResponse
+  Methods:   0.00% ( 0/ 1)   Lines:  60.00% (  3/  5)
 \App\Http\Requests\Auth::App\Http\Requests\Auth\LoginRequest
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  2/  2)
+\App\Http\Requests\Post::App\Http\Requests\Post\PostRequest
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  2/  2)
+\App\Http\Resources::App\Http\Resources\CommentResource
+  Methods:   0.00% ( 0/ 1)   Lines:  33.33% (  2/  6)
 \App\Http\Resources::App\Http\Resources\PostCategoryResource
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
 \App\Http\Resources::App\Http\Resources\PostIndexResource
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  5/  5)
 \App\Http\Resources::App\Http\Resources\PostResource
-  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  9/  9)
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% ( 11/ 11)
 \App\Http\Resources::App\Http\Resources\PrivateUserResource
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  4/  4)
+\App\Http\Resources::App\Http\Resources\TagResource
+  Methods:   0.00% ( 0/ 1)   Lines:  50.00% (  2/  4)
 \App\Listeners::App\Listeners\RevokeOldTokens
   Methods:  50.00% ( 1/ 2)   Lines:  83.33% (  5/  6)
 \App\Model\Traits::RolePermission
@@ -35,7 +43,7 @@ Code Coverage Report:
 \App\Models::App\Models\Permission
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
 \App\Models::App\Models\Post
-  Methods: 100.00% ( 4/ 4)   Lines: 100.00% (  5/  5)
+  Methods: 100.00% ( 5/ 5)   Lines: 100.00% (  7/  7)
 \App\Models::App\Models\PostCategory
   Methods: 100.00% ( 3/ 3)   Lines: 100.00% (  3/  3)
 \App\Models::App\Models\Role
@@ -65,7 +73,7 @@ Code Coverage Report:
 \App\Providers::App\Providers\EventServiceProvider
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  3/  3)
 \App\Providers::App\Providers\RouteServiceProvider
-  Methods: 100.00% ( 4/ 4)   Lines: 100.00% ( 14/ 14)
+  Methods: 100.00% ( 4/ 4)   Lines: 100.00% ( 15/ 15)
 \App\Scoping::App\Scoping\Scoper
   Methods: 100.00% ( 3/ 3)   Lines: 100.00% (  8/  8)
 \App\Scoping\Scopes::App\Scoping\Scopes\TagScope

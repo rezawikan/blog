@@ -12,8 +12,8 @@ trait IsLive
        * @param \Illuminate\Database\Eloquent\Builder $query
        * @return \Illuminate\Database\Eloquent\Builder
        */
-    public function scopeIsLive(Builder $builder)
+    public function scopeIsLive(Builder $builder, $value = true)
     {
-        return $builder->where('live',true);
+        return $builder->where('live', $value);
     }
 }

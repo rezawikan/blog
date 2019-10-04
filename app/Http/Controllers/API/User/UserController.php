@@ -15,9 +15,11 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(User $users)
+    public function index(User $users, Request $request)
     {
-        $users = $users->paginate(12);
+        //default page
+        $page = $request->page ? $request->page : 12;
+        $users = $users->paginate($page);
 
         return (UserResource::collection($users))
         ->response()
@@ -90,7 +92,7 @@ class UserController extends Controller
 
         $user->update($request->all());
 
-        return (new UserResource($user)
+        return (new UserResource($user))
         ->response()
         ->setStatusCode(200);
     }
@@ -106,7 +108,7 @@ class UserController extends Controller
         $this->authorize('delete', User::class);
 
         if ($user->trashed()) {
-            $this->authorize('forceDelete', User::class));
+            $this->authorize('forceDelete', User::class);
             $user->forceDelete();
 
             return (new UserResource($user))

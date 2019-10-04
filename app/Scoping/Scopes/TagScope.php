@@ -16,7 +16,7 @@ class TagScope implements Scope
             return $builder;
         }
         return $builder->whereHas('tags', function ($builder) use ($value) {
-            $builder->where('slug', $value);
+            $builder->whereIn('slug', $value);
         });
     }
 }
