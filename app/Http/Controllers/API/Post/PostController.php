@@ -4,7 +4,7 @@ namespace App\Http\Controllers\API\Post;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
-use App\Http\Requests\Post\PostRequest;
+use App\Http\Requests\Post\PostCreate;
 use App\Http\Resources\PostResource;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -21,8 +21,10 @@ class PostController extends Controller
     public function index(Post $post, Request $request)
     {
         $page = $request->page ? $request->page : 12;
-        $live = $request->live ? $request->live : true;
-        $posts = $post->withScopes($post->scopes())->latestOrder()->isLive($live)->paginate($page);
+        $posts = $post->withScopes($post->scopes())
+        ->latestOrder()
+        ->isLive($request->live)
+        ->paginate($page);
 
         return (PostIndexResource::collection($posts))
         ->response()
@@ -45,7 +47,7 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PostRequest $request)
+    public function store(PostCreate $request)
     {
         $this->authorize('create', Post::class);
 

@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\User;
 use App\Models\Post;
+use App\Models\Comment;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -29,6 +31,8 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot();
 
         Route::model('post', Post::class);
+        Route::model('user', User::class);
+        Route::model('comment', Comment::class);
     }
 
     /**

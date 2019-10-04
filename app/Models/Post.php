@@ -15,7 +15,7 @@ use App\Models\Traits\SoftDeletesWithDeleted;
 
 class Post extends Model
 {
-    use CanBeScoped,LatestOrder,IsLive, SoftDeletesWithDeleted;
+    use CanBeScoped, LatestOrder, IsLive, SoftDeletesWithDeleted;
     /**
      * The attributes that are mass assignable.
      *
@@ -24,6 +24,35 @@ class Post extends Model
     protected $fillable = [
         'user_id', 'post_category_id', 'title', 'body', 'slug', 'image', 'summary', 'live'
     ];
+
+    /**
+     * Set the post's slug.
+     *
+     * @param  string  $value
+     * @return void
+     */
+    public function setSlugAttribute($value)
+    {
+        if (static::whereSlug($slug = str_slug($value))->exists()) {
+          $slug = $this->incrementSlug($slug);
+        }
+
+        $this->attributes['slug'] = $slug;
+    }
+
+    /**
+     * [user description]
+     * @return [type] [description]
+     */
+    protected function incrementSlug($slug) {
+      $original = $slug;
+      $count = 2;
+      while (static::whereSlug($slug)->exists()) {
+          $slug = "{$original}-" . $count++;
+      }
+
+      return $slug;
+  }
 
     /**
      * [user description]

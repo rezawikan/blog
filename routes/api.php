@@ -22,6 +22,7 @@ Route::prefix('auth')->group(function () {
     Route::post('reset/password/send', 'API\Auth\ResetPasswordController@reset');
 });
 
+Route::resource('comments','API\Comment\CommentController')->middleware('auth:api');
 Route::resource('users','API\User\UserController')->middleware('auth:api');
 Route::resource('posts','API\Post\PostController')->middleware('auth:api');
 Route::put('posts-restore/{post}', 'API\Post\PostController@restore')->name('posts.restore')->middleware('auth:api');

@@ -22,6 +22,7 @@ class CommentResource extends JsonResource
         return [
           'id' => $this->id,
           'body' => $this->body,
+          'approved' => (bool)$this->approved,
           'user' => new PrivateUserResource($this->whenLoaded('user')),
           'children' => new CommentResource($this->whenLoaded('children'))
         ];

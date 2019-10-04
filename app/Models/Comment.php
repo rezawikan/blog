@@ -12,7 +12,7 @@ class Comment extends Model
      *
      * @var array
      */
-      protected $fillable = ['user_id', 'parent_id', 'body'];
+      protected $fillable = ['user_id', 'parent_id', 'body', 'approved'];
 
 
         /**
@@ -23,10 +23,26 @@ class Comment extends Model
           return $this->morphTo();
       }
 
+      /**
+       * Scope a query to only include approved comment.
+       *
+       * @param  \Illuminate\Database\Eloquent\Builder  $builder
+       * @return \Illuminate\Database\Eloquent\Builder
+       */
+      public function scopeIsApproved($builder, $approved = true)
+      {
+          if ($approved == null) {
+              return $builder;
+          }
+          return $builder->where('approved', $approved);
+      }
+
 
       /**
-       * [roles description]
-       * @return Object permission [description]
+       * Scope a query to only include parent.
+       *
+       * @param  \Illuminate\Database\Eloquent\Builder  $builder
+       * @return \Illuminate\Database\Eloquent\Builder
        */
       public function scopeIsParent($builder)
       {
