@@ -4,9 +4,11 @@ namespace App\Models;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Traits\SoftDeletesWithDeleted;
 
 class Comment extends Model
 {
+    use SoftDeletesWithDeleted;
     /**
      * The attributes that are mass assignable.
      *

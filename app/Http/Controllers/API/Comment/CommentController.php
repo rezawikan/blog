@@ -103,7 +103,7 @@ class CommentController extends Controller
     {
         $this->authorize('update', $comment);
 
-        $comment = $comment->update($request->all());
+        $comment->update($request->all());
 
         return (new CommentResource($comment))
         ->response()

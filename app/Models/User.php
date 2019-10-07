@@ -52,6 +52,29 @@ class User extends Authenticatable
         return $this->hasMany(Post::class);
     }
 
+
+    /**
+     * [posts description]
+     * @return [type] [description]
+     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    /**
+     * Scope a query to only include approved comment.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $builder
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeHasComment($builder, $id)
+    {
+      $comment = $this->comments()->count();
+
+      return $comment > 0 ? true : false;
+    }
+
     /**
      * [posts description]
      * @return [type] [description]
