@@ -1,17 +1,17 @@
 
 
 Code Coverage Report:      
-  2019-10-08 15:16:05      
+  2019-10-08 16:30:57      
                            
  Summary:                  
-  Classes: 42.86% (30/70)  
-  Methods: 48.04% (86/179) 
-  Lines:   58.42% (281/481)
+  Classes: 39.47% (30/76)  
+  Methods: 43.88% (86/196) 
+  Lines:   54.72% (278/508)
 
 \App\Console::App\Console\Kernel
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  4/  4)
 \App\Exceptions::App\Exceptions\Handler
-  Methods:  50.00% ( 1/ 2)   Lines:  60.00% (  9/ 15)
+  Methods:  50.00% ( 1/ 2)   Lines:  40.00% (  6/ 15)
 \App\Http\Controllers\API\Auth::App\Http\Controllers\API\Auth\LoginController
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% ( 11/ 11)
 \App\Http\Controllers\API\Auth::App\Http\Controllers\API\Auth\RegisterController

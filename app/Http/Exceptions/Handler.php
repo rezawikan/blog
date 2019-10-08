@@ -49,19 +49,19 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        if ($exception instanceof AuthorizationException) {
+        if ($exception instanceof AuthorizationException && $request->isJson()) {
             return response()->json([
                 'message' => $exception->getMessage()
             ], 403);
         }
 
-        if ($exception instanceof AuthenticationException) {
+        if ($exception instanceof AuthenticationException && $request->isJson()) {
             return response()->json([
                 'message' => $exception->getMessage()
             ], 403);
         }
 
-        if ($exception instanceof ModelNotFoundException) {
+        if ($exception instanceof ModelNotFoundException && $request->isJson()) {
             return response()->json([
                 'message' => $exception->getMessage()
             ], 404);
