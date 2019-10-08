@@ -77,7 +77,7 @@ class CommentPolicy
      */
     public function restore(User $user, Comment $comment)
     {
-        //
+        return $user->hasPermissionTo('restore comment');
     }
 
     /**
@@ -89,6 +89,6 @@ class CommentPolicy
      */
     public function forceDelete(User $user, Comment $comment)
     {
-        //
+        return $user->hasPermissionTo('force delete comment');
     }
 }

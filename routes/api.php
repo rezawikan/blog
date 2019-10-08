@@ -23,6 +23,7 @@ Route::prefix('auth')->group(function () {
 });
 
 Route::resource('comments','API\Comment\CommentController')->middleware('auth:api');
+Route::put('comments-restore/{comment}', 'API\Comment\CommentController@restore')->name('comments.restore')->middleware('auth:api');
 Route::resource('users','API\User\UserController')->middleware('auth:api');
 Route::resource('posts','API\Post\PostController')->middleware('auth:api');
 Route::put('posts-restore/{post}', 'API\Post\PostController@restore')->name('posts.restore')->middleware('auth:api');
