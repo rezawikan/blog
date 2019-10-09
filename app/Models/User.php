@@ -11,10 +11,11 @@ use App\Notifications\API\Auth\ResetPasswordNotification;
 use App\App\Notifications\Models\DatabaseNotification;
 use App\Models\Traits\SoftDeletesWithDeleted;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Scout\Searchable;
 
 class User extends Authenticatable
 {
-    use Notifiable, HasApiTokens, RolePermission;
+    use Notifiable, HasApiTokens, RolePermission, Searchable;
 
     /**
      * The attributes that are mass assignable.
@@ -42,6 +43,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get the index name for the model.
+     *
+     * @return string
+     */
+    public function searchableAs()
+    {
+        return 'users_index';
+    }
 
     /**
      * [posts description]

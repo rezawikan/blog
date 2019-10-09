@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Pagination\LengthAwarePaginator;
 use App\Models\User;
+use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\Hash;
 
@@ -11,12 +13,12 @@ class UserController extends Controller
     /**
      * Display a listing of the users
      *
-     * @param  \App\User  $model
+     * @param  \App\User  $user
      * @return \Illuminate\View\View
      */
-    public function index(User $model)
+    public function index(User $user, Request $request)
     {
-        return view('users.index', ['users' => $model->paginate(15)]);
+        return view('users.index', ['users' => $user->search($request->q)->paginate(15)]);
     }
 
     /**
@@ -33,12 +35,12 @@ class UserController extends Controller
      * Store a newly created user in storage
      *
      * @param  \App\Http\Requests\UserRequest  $request
-     * @param  \App\User  $model
+     * @param  \App\User  $user
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(UserRequest $request, User $model)
+    public function store(UserRequest $request, User $user)
     {
-        $model->create($request->merge(['password' => Hash::make($request->get('password'))])->all());
+        $user->create($request->merge(['password' => Hash::make($request->get('password'))])->all());
 
         return redirect()->route('user.index')->withStatus(__('User successfully created.'));
     }
