@@ -13,7 +13,11 @@
                                 <h3 class="mb-0">{{ __('Users') }}</h3>
                             </div>
                             <div class="col-6">
-                              <form class="" action="{{ route('user.index', ['q' => request()->q ]) }}" method="get">
+                              {{-- {{dd(url('/') )}} --}}
+                              <user-search-component
+                              {{-- :href="{{ config('app.url')  }}" --}}
+                              ></user-search-component>
+                              {{-- <form class="" action="{{ route('user.index', ['q' => request()->q ]) }}" method="get">
                                 <div class="form-group">
                                   <div class="input-group input-group-alternative mb-4">
                                     <div class="input-group-prepend">
@@ -22,7 +26,7 @@
                                     <input class="form-control form-control-alternative" placeholder="Search" type="text" name="q" value="{{ request()->q }}">
                                   </div>
                                 </div>
-                              </form>
+                              </form> --}}
                             </div>
                             <div class="col-3 text-right">
                                 <a href="{{ route('user.create') }}" class="btn btn-sm btn-primary">{{ __('Add user') }}</a>

@@ -17,9 +17,8 @@ class UserController extends Controller
      */
     public function index(User $users, Request $request)
     {
-        //default page
         $page = $request->page ? $request->page : 12;
-        $users = $users->paginate($page);
+        $users = $users->search($request->q)->paginate($page);
 
         return (UserResource::collection($users))
         ->response()
