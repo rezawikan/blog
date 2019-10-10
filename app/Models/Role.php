@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 class Role extends Model
 {
+
+  use Searchable;
 
   /**
    * The attributes that are mass assignable.
@@ -13,6 +16,16 @@ class Role extends Model
    * @var array
    */
     protected $fillable = ['name'];
+
+    /**
+     * Get the index name for the model.
+     *
+     * @return string
+     */
+    public function searchableAs()
+    {
+        return 'roles';
+    }
 
     /**
      * [permissions description]

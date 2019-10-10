@@ -1,7 +1,7 @@
 <template>
   <ais-instant-search
     :search-client="searchClient"
-    index-name="users"
+    index-name="permissions"
     :class-names="{
       'ais-InstantSearch': 'position-relative',
     }"
@@ -10,7 +10,7 @@
      <div slot-scope="{ currentRefinement, isSearchStalled, refine }">
       <input
         @keyup="changes"
-        placeholder="Search User"
+        placeholder="Search Permission"
         class="form-control form-control-alternative"
         type="search"
         v-model="currentRefinement"
@@ -31,7 +31,7 @@
         slot="item"
         slot-scope="{ item }"
       >
-        <a class="name-link" :href="'/user/'+item.id+'/edit'">{{ item.name }}</a>
+        <a class="name-link" :href="'/permission/'+item.id+'/edit'">{{ item.name }}</a>
       </template>
     </ais-hits>
   </ais-instant-search>

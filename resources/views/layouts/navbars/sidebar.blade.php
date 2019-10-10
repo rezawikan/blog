@@ -113,7 +113,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('user.index') }}">
+                                <a class="nav-link" href="{{ route('role.index') }}">
                                     {{ __('Roles') }}
                                 </a>
                             </li>

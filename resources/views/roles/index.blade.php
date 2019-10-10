@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => __('Permissions')])
+@extends('layouts.app', ['title' => __('Role')])
 
 @section('content')
     @include('layouts.headers.cards')
@@ -10,13 +10,13 @@
                     <div class="card-header border-0">
                         <div class="row align-items-center">
                             <div class="col-3">
-                                <h3 class="mb-0">{{ __('Permissions') }}</h3>
+                                <h3 class="mb-0">{{ __('Roles') }}</h3>
                             </div>
                             <div class="col-6">
-                              <permission-search-component />
+                              {{-- <role-search-component /> --}}
                             </div>
                             <div class="col-3 text-right">
-                                <a href="{{ route('permission.create') }}" class="btn btn-sm btn-primary">{{ __('Add Permission') }}</a>
+                                <a href="{{ route('role.create') }}" class="btn btn-sm btn-primary">{{ __('Add Role') }}</a>
                             </div>
                         </div>
                     </div>
@@ -42,28 +42,28 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($permissions as $permission)
+                                @foreach ($roles as $role)
                                     <tr>
-                                        <td>{{ $permission->name }}</td>
-                                        <td>{{ $permission->created_at->format('d/m/Y H:i') }}</td>
+                                        <td>{{ $role->name }}</td>
+                                        <td>{{ $role->created_at->format('d/m/Y H:i') }}</td>
                                         <td class="text-right">
                                             <div class="dropdown">
                                                 <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <i class="fas fa-ellipsis-v"></i>
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                    @if ($permission->id != auth()->id())
-                                                        <form action="{{ route('permission.destroy', $permission) }}" method="post">
+                                                    @if ($role->id != auth()->id())
+                                                        <form action="{{ route('role.destroy', $role) }}" method="post">
                                                             @csrf
                                                             @method('delete')
 
-                                                            <a class="dropdown-item" href="{{ route('permission.edit', $permission) }}">{{ __('Edit') }}</a>
-                                                            <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this permission?") }}') ? this.parentElement.submit() : ''">
+                                                            <a class="dropdown-item" href="{{ route('role.edit', $role) }}">{{ __('Edit') }}</a>
+                                                            <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this role?") }}') ? this.parentElement.submit() : ''">
                                                                 {{ __('Delete') }}
                                                             </button>
                                                         </form>
                                                     @else
-                                                        <a class="dropdown-item" href="{{ route('permission.edit') }}">{{ __('Edit') }}</a>
+                                                        <a class="dropdown-item" href="{{ route('role.edit') }}">{{ __('Edit') }}</a>
                                                     @endif
                                                 </div>
                                             </div>
@@ -75,7 +75,7 @@
                     </div>
                     <div class="card-footer py-4">
                         <nav class="d-flex justify-content-end" aria-label="...">
-                            {{ $permissions->links() }}
+                            {{ $roles->links() }}
                         </nav>
                     </div>
                 </div>

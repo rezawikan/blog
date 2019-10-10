@@ -1,7 +1,7 @@
-@extends('layouts.app', ['title' => __('Permission')])
+@extends('layouts.app', ['title' => __('Permissionss')])
 
 @section('content')
-    @include('permissions.partials.header', ['title' => __('Add Permission')])
+    @include('permissions.partials.header', ['title' => __('Edit Permission')])
 
     <div class="container-fluid mt--7">
         <div class="row">
@@ -10,7 +10,7 @@
                     <div class="card-header bg-white border-0">
                         <div class="row align-items-center">
                             <div class="col-8">
-                                <h3 class="mb-0">{{ __('Permissions') }}</h3>
+                                <h3 class="mb-0">{{ __('User Management') }}</h3>
                             </div>
                             <div class="col-4 text-right">
                                 <a href="{{ route('permission.index') }}" class="btn btn-sm btn-primary">{{ __('Back to list') }}</a>
@@ -18,14 +18,15 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('permission.store') }}" autocomplete="off">
+                        <form method="post" action="{{ route('permission.update', $permission) }}" autocomplete="off">
                             @csrf
+                            @method('put')
 
                             <h6 class="heading-small text-muted mb-4">{{ __('Permission information') }}</h6>
                             <div class="pl-lg-4">
                                 <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-name">{{ __('Name') }}</label>
-                                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" value="{{ old('name') }}" required autofocus>
+                                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" value="{{ old('name', $permission->name) }}" required autofocus>
 
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
@@ -33,6 +34,7 @@
                                         </span>
                                     @endif
                                 </div>
+
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
                                 </div>
