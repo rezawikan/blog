@@ -13,7 +13,7 @@
                                 <h3 class="mb-0">{{ __('Roles') }}</h3>
                             </div>
                             <div class="col-6">
-                              {{-- <role-search-component /> --}}
+                              <role-search-component />
                             </div>
                             <div class="col-3 text-right">
                                 <a href="{{ route('role.create') }}" class="btn btn-sm btn-primary">{{ __('Add Role') }}</a>
