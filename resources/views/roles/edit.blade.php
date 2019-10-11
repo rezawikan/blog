@@ -1,7 +1,7 @@
-@extends('layouts.app', ['title' => __('Permissionss')])
+@extends('layouts.app', ['title' => __('Roles')])
 
 @section('content')
-    @include('permissions.partials.header', ['title' => __('Edit Permission')])
+    @include('permissions.partials.header', ['title' => __('Edit Role')])
 
     <div class="container-fluid mt--7">
         <div class="row">
@@ -13,26 +13,40 @@
                                 <h3 class="mb-0">{{ __('User Management') }}</h3>
                             </div>
                             <div class="col-4 text-right">
-                                <a href="{{ route('permission.index') }}" class="btn btn-sm btn-primary">{{ __('Back to list') }}</a>
+                                <a href="{{ route('role.index') }}" class="btn btn-sm btn-primary">{{ __('Back to list') }}</a>
                             </div>
                         </div>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('permission.update', $permission) }}" autocomplete="off">
+                        <form method="post" action="{{ route('role.update', $role) }}" autocomplete="off">
                             @csrf
                             @method('put')
 
-                            <h6 class="heading-small text-muted mb-4">{{ __('Permission information') }}</h6>
+                            <h6 class="heading-small text-muted mb-4">{{ __('Role information') }}</h6>
                             <div class="pl-lg-4">
                                 <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-name">{{ __('Name') }}</label>
-                                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" value="{{ old('name', $permission->name) }}" required autofocus>
+                                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" value="{{ old('name', $role->name) }}" required autofocus>
 
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('name') }}</strong>
                                         </span>
                                     @endif
+                                </div>
+                                <div class="row">
+                                  @foreach ($permissions as $key => $value)
+                                    <div class="col-md-6">
+                                      <div class="custom-control custom-control-alternative custom-checkbox mb-3">
+                                        @if (in_array($value->name, $role->permissions->pluck('name')->toArray()))
+                                          <input class="custom-control-input" id="{{ $value->name }}" type="checkbox" name="permissions[]" value="{{ $value->id}}" checked>
+                                        @else
+                                            <input class="custom-control-input" id="{{ $value->name }}" type="checkbox" name="permissions[]" value="{{ $value->id}}">
+                                        @endif
+                                        <label class="custom-control-label" for="{{ $value->name }}">{{ $value->name }}</label>
+                                      </div>
+                                    </div>
+                                  @endforeach
                                 </div>
 
                                 <div class="text-center">

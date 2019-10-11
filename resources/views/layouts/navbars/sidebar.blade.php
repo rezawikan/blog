@@ -95,30 +95,25 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
-                        <i class="fas fa-users" style="color: #f4645f;"></i>
-                        <span class="nav-link-text" style="color: #f4645f;">{{ __('User Management') }}</span>
+                    <a class="nav-link {{ (request()->is('user-management*')) ? 'active' : '' }}" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
+                        <i class="fas fa-users"></i>
+                        <span class="nav-link-text">{{ __('User Management') }}</span>
                     </a>
 
-                    <div class="collapse" id="navbar-examples">
+                    <div class="collapse {{ (request()->is('user-management*')) ? 'show' : '' }}" id="navbar-examples">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('profile.edit') }}">
-                                    {{ __('User profile') }}
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('user.index') }}">
+                                <a class="nav-link  {{ (request()->is('user-management/user')) ? 'active' : '' }}" href="{{ route('user.index') }}">
                                     {{ __('Users') }}
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('role.index') }}">
+                                <a class="nav-link {{ (request()->is('user-management/role')) ? 'active' : '' }}" href="{{ route('role.index') }}">
                                     {{ __('Roles') }}
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('permission.index') }}">
+                                <a class="nav-link {{ (request()->is('user-management/permission')) ? 'active' : '' }}" href="{{ route('permission.index') }}">
                                     {{ __('Permissions') }}
                                 </a>
                             </li>
@@ -126,6 +121,11 @@
                     </div>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('profile.edit') }}">
+                        <i class="fas fa-user text-blue"></i> {{ __('User profile') }}
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
                         <i class="ni ni-planet text-blue"></i> {{ __('Icons') }}

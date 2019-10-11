@@ -34,7 +34,20 @@
                                         </span>
                                     @endif
                                 </div>
-
+                                <div class="row">
+                                  @foreach ($roles as $key => $value)
+                                    <div class="col-md-6">
+                                      <div class="custom-control custom-control-alternative custom-checkbox mb-3">
+                                        @if (in_array($value->name, $permission->roles->pluck('name')->toArray()))
+                                          <input class="custom-control-input" id="{{ $value->name }}" type="checkbox" name="roles[]" value="{{ $value->id}}" checked>
+                                        @else
+                                            <input class="custom-control-input" id="{{ $value->name }}" type="checkbox" name="roles[]" value="{{ $value->id}}">
+                                        @endif
+                                        <label class="custom-control-label" for="{{ $value->name }}">{{ $value->name }}</label>
+                                      </div>
+                                    </div>
+                                  @endforeach
+                                </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
                                 </div>

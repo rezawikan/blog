@@ -35,7 +35,11 @@ class PermissionController extends Controller
      */
     public function store(Request $request)
     {
-        Permission::create($request->all());
+        $permission = Permission::create($request->only('name'));
+
+        if ($request->has('roles')) {
+            $permission->roles()->attach($request->roles);
+        }
 
         return redirect()->route('permission.index')->withStatus(__('Permission successfully created.'));
     }
@@ -71,7 +75,9 @@ class PermissionController extends Controller
      */
     public function update(Request $request, Permission $permission)
     {
-        $permission->update($request->all());
+        $permission->update($request->except('roles'));
+
+        $permission->roles()->sync($request->roles);
 
         return redirect()->route('permission.index')->withStatus(__('Permission successfully updated.'));
     }
@@ -84,6 +90,7 @@ class PermissionController extends Controller
      */
     public function destroy(Permission $permission)
     {
+        $permission->roles()->detach();
         $permission->delete();
 
         return redirect()->route('permission.index')->withStatus(__('Permission successfully deleted.'));

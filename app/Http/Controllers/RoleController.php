@@ -60,9 +60,9 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Role $role)
     {
-        //
+        return view('roles.edit', compact('role'));
     }
 
     /**
@@ -72,9 +72,13 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Role $role)
     {
-        //
+        $role->update($request->except('permissions'));
+
+        $role->permissions()->sync($request->permissions);
+
+        return redirect()->route('role.index')->withStatus(__('Role successfully updated.'));
     }
 
     /**
@@ -83,8 +87,11 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Role $role)
     {
-        //
+        $role->permissions()->detach();
+        $role->delete();
+
+        return redirect()->route('role.index')->withStatus(__('Role successfully deleted.'));
     }
 }

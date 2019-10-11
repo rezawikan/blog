@@ -31,7 +31,7 @@
         slot="item"
         slot-scope="{ item }"
       >
-        <a class="name-link" :href="'/user/'+item.id+'/edit'">{{ item.name }}</a>
+        <a class="name-link" :href="'/user-management/user/'+item.id+'/edit'">{{ item.name }}</a>
       </template>
     </ais-hits>
   </ais-instant-search>
