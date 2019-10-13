@@ -1,7 +1,7 @@
 @extends('layouts.app', ['title' => __('User Management')])
 
 @section('content')
-    @include('users.partials.header', ['title' => __('Add User')])   
+    @include('users.partials.header', ['title' => __('Add User')])
 
     <div class="container-fluid mt--7">
         <div class="row">
@@ -20,7 +20,7 @@
                     <div class="card-body">
                         <form method="post" action="{{ route('user.store') }}" autocomplete="off">
                             @csrf
-                            
+
                             <h6 class="heading-small text-muted mb-4">{{ __('User information') }}</h6>
                             <div class="pl-lg-4">
                                 <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
@@ -46,7 +46,7 @@
                                 <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-password">{{ __('Password') }}</label>
                                     <input type="password" name="password" id="input-password" class="form-control form-control-alternative{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('Password') }}" value="" required>
-                                    
+
                                     @if ($errors->has('password'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('password') }}</strong>
@@ -58,6 +58,34 @@
                                     <input type="password" name="password_confirmation" id="input-password-confirmation" class="form-control form-control-alternative" placeholder="{{ __('Confirm Password') }}" value="" required>
                                 </div>
 
+                                <div class="form-group">
+                                  <h6 class="heading-small mb-4">Role information</h6>
+                                  <div class="row">
+                                    @foreach ($roles as $key => $value)
+                                      <div class="col-md-6">
+                                        <div class="custom-control custom-control-alternative custom-checkbox mb-3">
+                                          <input class="custom-control-input" id="{{ $value->name }}" type="checkbox" name="roles[]" value="{{ $value->id}}">
+                                          <label class="custom-control-label" for="{{ $value->name }}">{{ $value->name }}</label>
+                                        </div>
+                                      </div>
+                                    @endforeach
+                                  </div>
+                                </div>
+
+                                <div class="form-group">
+                                  <h6 class="heading-small mb-4">Permission information</h6>
+                                  <div class="row">
+                                    @foreach ($permissions as $key => $value)
+                                      <div class="col-md-6">
+                                        <div class="custom-control custom-control-alternative custom-checkbox mb-3">
+                                          <input class="custom-control-input" id="{{ $value->name }}" type="checkbox" name="permissions[]" value="{{ $value->id}}">
+                                          <label class="custom-control-label" for="{{ $value->name }}">{{ $value->name }}</label>
+                                        </div>
+                                      </div>
+                                    @endforeach
+                                  </div>
+                                </div>
+
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
                                 </div>
@@ -67,7 +95,7 @@
                 </div>
             </div>
         </div>
-        
+
         @include('layouts.footers.auth')
     </div>
 @endsection

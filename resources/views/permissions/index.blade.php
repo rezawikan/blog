@@ -52,7 +52,7 @@
                                                     <i class="fas fa-ellipsis-v"></i>
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                    @if ($permission->id != auth()->id())
+                                                    @if (!auth()->user()->hasPermissionTo($permission))
                                                         <form action="{{ route('permission.destroy', $permission) }}" method="post">
                                                             @csrf
                                                             @method('delete')
@@ -62,8 +62,6 @@
                                                                 {{ __('Delete') }}
                                                             </button>
                                                         </form>
-                                                    @else
-                                                        <a class="dropdown-item" href="{{ route('permission.edit') }}">{{ __('Edit') }}</a>
                                                     @endif
                                                 </div>
                                             </div>

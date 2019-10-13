@@ -27,7 +27,7 @@ class ViewServiceProvider extends ServiceProvider
     public function boot()
     {
         // Using class based composers...
-        View::composer(['roles.create', 'roles.edit'], PermissionComposer::class);
-        View::composer(['permissions.create', 'permissions.edit'], RoleComposer::class);
+        View::composer(['roles.create', 'roles.edit', 'users.create', 'users.edit'], PermissionComposer::class);
+        View::composer(['permissions.create', 'permissions.edit', 'users.create', 'users.edit'], RoleComposer::class);
     }
 }

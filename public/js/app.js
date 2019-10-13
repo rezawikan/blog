@@ -10668,7 +10668,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      searchClient: algoliasearch_lite__WEBPACK_IMPORTED_MODULE_0___default()("D35KFIM5M2", "9319fa7ec95a6fb6c68634a1af61a811"),
+      searchClient: algoliasearch_lite__WEBPACK_IMPORTED_MODULE_0___default()("D35KFIM5M2", "d81666977b116aa5652b033bad10619b"),
       query: false
     };
   },
@@ -10738,7 +10738,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      searchClient: algoliasearch_lite__WEBPACK_IMPORTED_MODULE_0___default()("D35KFIM5M2", "9319fa7ec95a6fb6c68634a1af61a811"),
+      searchClient: algoliasearch_lite__WEBPACK_IMPORTED_MODULE_0___default()("D35KFIM5M2", "d81666977b116aa5652b033bad10619b"),
       query: false
     };
   },
@@ -10808,7 +10808,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      searchClient: algoliasearch_lite__WEBPACK_IMPORTED_MODULE_0___default()("D35KFIM5M2", "9319fa7ec95a6fb6c68634a1af61a811"),
+      searchClient: algoliasearch_lite__WEBPACK_IMPORTED_MODULE_0___default()("D35KFIM5M2", "d81666977b116aa5652b033bad10619b"),
       query: false
     };
   },

@@ -1,7 +1,7 @@
 @extends('layouts.app', ['title' => __('User Management')])
 
 @section('content')
-    @include('users.partials.header', ['title' => __('Edit User')])   
+    @include('users.partials.header', ['title' => __('Edit User')])
 
     <div class="container-fluid mt--7">
         <div class="row">
@@ -47,7 +47,7 @@
                                 <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-password">{{ __('Password') }}</label>
                                     <input type="password" name="password" id="input-password" class="form-control form-control-alternative{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('Password') }}" value="">
-                                    
+
                                     @if ($errors->has('password'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('password') }}</strong>
@@ -59,6 +59,42 @@
                                     <input type="password" name="password_confirmation" id="input-password-confirmation" class="form-control form-control-alternative" placeholder="{{ __('Confirm Password') }}" value="">
                                 </div>
 
+                                <div class="form-group">
+                                  <h6 class="heading-small mb-4">Role information</h6>
+                                  <div class="row">
+                                    @foreach ($roles as $key => $value)
+                                      <div class="col-md-6">
+                                        <div class="custom-control custom-control-alternative custom-checkbox mb-3">
+                                          @if (in_array($value->name, $user->roles->pluck('name')->toArray()))
+                                            <input class="custom-control-input" id="{{ $value->name }}" type="checkbox" name="roles[]" value="{{ $value->id}}" checked>
+                                          @else
+                                              <input class="custom-control-input" id="{{ $value->name }}" type="checkbox" name="roles[]" value="{{ $value->id}}">
+                                          @endif
+                                          <label class="custom-control-label" for="{{ $value->name }}">{{ $value->name }}</label>
+                                        </div>
+                                      </div>
+                                    @endforeach
+                                  </div>
+                                </div>
+
+                                <div class="form-group">
+                                  <h6 class="heading-small mb-4">Permission information</h6>
+                                  <div class="row">
+                                    @foreach ($permissions as $key => $value)
+                                      <div class="col-md-6">
+                                        <div class="custom-control custom-control-alternative custom-checkbox mb-3">
+                                          @if (in_array($value->name, $user->permissions->pluck('name')->toArray()))
+                                            <input class="custom-control-input" id="{{ $value->name }}" type="checkbox" name="permissions[]" value="{{ $value->id}}" checked>
+                                          @else
+                                              <input class="custom-control-input" id="{{ $value->name }}" type="checkbox" name="permissions[]" value="{{ $value->id}}">
+                                          @endif
+                                          <label class="custom-control-label" for="{{ $value->name }}">{{ $value->name }}</label>
+                                        </div>
+                                      </div>
+                                    @endforeach
+                                  </div>
+                                </div>
+
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
                                 </div>
@@ -68,7 +104,7 @@
                 </div>
             </div>
         </div>
-        
+
         @include('layouts.footers.auth')
     </div>
 @endsection

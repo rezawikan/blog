@@ -67,7 +67,7 @@
                                                             </button>
                                                         </form>
                                                     @else
-                                                        <a class="dropdown-item" href="{{ route('profile.edit') }}">{{ __('Edit') }}</a>
+                                                        <a class="dropdown-item" href="#">{{ __('Not Available') }}</a>
                                                     @endif
                                                 </div>
                                             </div>

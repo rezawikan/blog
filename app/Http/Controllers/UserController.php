@@ -38,9 +38,21 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(UserRequest $request, User $user)
+    public function store(Request $request, User $user)
     {
-        $user->create($request->merge(['password' => Hash::make($request->get('password'))])->all());
+        $user = $user->create(
+          $request->merge([
+            'password' => Hash::make($request->password)
+            ])->all()
+        );
+
+        if ($request->has('roles')) {
+            $user->roles()->attach($request->roles);
+        }
+
+        if ($request->has('permissions')) {
+            $user->permissions()->attach($request->permissions);
+        }
 
         return redirect()->route('user.index')->withStatus(__('User successfully created.'));
     }
@@ -63,12 +75,21 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(UserRequest $request, User  $user)
+    public function update(UserRequest $request, User $user)
     {
         $user->update(
-            $request->merge(['password' => Hash::make($request->get('password'))])
-                ->except([$request->get('password') ? '' : 'password']
-        ));
+            $request->merge([
+              'password' => Hash::make($request->password)
+            ])->except([$request->password ? '' : 'password'])
+      );
+
+        if ($request->has('roles')) {
+            $user->roles()->sync($request->roles);
+        }
+
+        if ($request->has('permissions')) {
+            $user->permissions()->sync($request->permissions);
+        }
 
         return redirect()->route('user.index')->withStatus(__('User successfully updated.'));
     }
@@ -79,8 +100,10 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(User  $user)
+    public function destroy(User $user)
     {
+        $user->roles()->detach();
+        $user->permissions()->detach();
         $user->delete();
 
         return redirect()->route('user.index')->withStatus(__('User successfully deleted.'));
