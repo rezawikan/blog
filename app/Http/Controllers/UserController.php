@@ -28,6 +28,8 @@ class UserController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', User::class);
+
         return view('users.create');
     }
 
@@ -40,6 +42,8 @@ class UserController extends Controller
      */
     public function store(Request $request, User $user)
     {
+        $this->authorize('create', User::class);
+
         $user = $user->create(
           $request->merge([
             'password' => Hash::make($request->password)
@@ -65,6 +69,8 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
+        $this->authorize('update', User::class);
+
         return view('users.edit', compact('user'));
     }
 
@@ -77,6 +83,8 @@ class UserController extends Controller
      */
     public function update(UserRequest $request, User $user)
     {
+        $this->authorize('update', User::class);
+
         $user->update(
             $request->merge([
               'password' => Hash::make($request->password)
@@ -102,6 +110,8 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
+        $this->authorize('delete', User::class);
+
         $user->roles()->detach();
         $user->permissions()->detach();
         $user->delete();

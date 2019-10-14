@@ -8,6 +8,43 @@ use Illuminate\Support\Collection;
 
 trait RolePermission
 {
+
+    /**
+     * Cheking has role
+     * @param  array  $roles include string and number in array
+     * @return boolean        [description]
+     */
+    public function hasPermissionWithRole($permission)
+    {
+        $roles = $this->roles()->get();
+
+        foreach ($roles as $key => $value) {
+          $result = $value->permissions->pluck('name')->contains($permission);
+          if ($result) {
+              return true;
+          }
+        }
+        return false;
+    }
+
+    /**
+     * Action to give roles to user
+     * @param  array $roles (pluck name)
+     * @return $this
+     */
+    public function givePermissionsToRole($role, ...$permissions)
+    {
+        $permissions = $this->getAllPermissions(array_flatten($permissions));
+        // is empty on object permission
+        if ($permissions instanceof Collection && $permissions->isEmpty()) {
+            return $this;
+        }
+
+        $role->permissions()->saveMany($permissions);
+
+        return $this;
+    }
+
     /**
      * Action to give perimissions to user
      * @param  array $permissions (pluck name)

@@ -133,28 +133,6 @@ class PostTest extends TestCase
      *
      * @return void
      */
-    public function test_user_skip_access_posts_with_null_scope_value()
-    {
-        $tags  = factory(Tag::class, 5)->create();
-        $posts = factory(Post::class, 5)->create();
-        $user  = factory(User::class)->create();
-
-        foreach ($posts as $index => $post) {
-            $post->tags()->save($tags[$index]);
-        }
-
-        Passport::actingAs($user);
-
-        $response = $this->get('/api/posts?tag=');
-
-        $response->assertStatus(200);
-    }
-
-    /**
-     * A basic unit test example.
-     *
-     * @return void
-     */
     public function test_user_can_update_a_post()
     {
         $permission   = factory(Permission::class)->create(['name' => 'update post']);

@@ -1,12 +1,12 @@
 
 
 Code Coverage Report:      
-  2019-10-08 16:30:57      
+  2019-10-14 16:13:07      
                            
  Summary:                  
-  Classes: 39.47% (30/76)  
-  Methods: 43.88% (86/196) 
-  Lines:   54.72% (278/508)
+  Classes: 35.37% (29/82)  
+  Methods: 40.36% (90/223) 
+  Lines:   49.49% (294/594)
 
 \App\Console::App\Console\Kernel
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  4/  4)
@@ -20,6 +20,8 @@ Code Coverage Report:
   Methods:  62.50% ( 5/ 8)   Lines:  93.48% ( 43/ 46)
 \App\Http\Controllers\API\Post::App\Http\Controllers\API\Post\PostController
   Methods:  62.50% ( 5/ 8)   Lines:  93.33% ( 42/ 45)
+\App\Http\Middleware::App\Http\Middleware\CheckEmptyParams
+  Methods:   0.00% ( 0/ 1)   Lines:  77.78% (  7/  9)
 \App\Http\Middleware::App\Http\Middleware\ProfileJsonResponse
   Methods:   0.00% ( 0/ 1)   Lines:  60.00% (  3/  5)
 \App\Http\Requests\Auth::App\Http\Requests\Auth\LoginRequest
@@ -45,19 +47,21 @@ Code Coverage Report:
 \App\Listeners::App\Listeners\RevokeOldTokens
   Methods:  50.00% ( 1/ 2)   Lines:  83.33% (  5/  6)
 \App\Model\Traits::RolePermission
-  Methods: 100.00% (13/13)   Lines: 100.00% ( 35/ 35)
+  Methods:  86.67% (13/15)   Lines:  82.61% ( 38/ 46)
 \App\Models::App\Models\Comment
   Methods:  40.00% ( 2/ 5)   Lines:  57.14% (  4/  7)
 \App\Models::App\Models\Permission
-  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  2/  2)
 \App\Models::App\Models\Post
-  Methods:  71.43% ( 5/ 7)   Lines:  62.50% ( 10/ 16)
+  Methods:  62.50% ( 5/ 8)   Lines:  52.63% ( 10/ 19)
 \App\Models::App\Models\PostCategory
   Methods: 100.00% ( 3/ 3)   Lines: 100.00% (  3/  3)
 \App\Models::App\Models\Role
-  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  2/  2)
 \App\Models::App\Models\Tag
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
+\App\Models::App\Models\User
+  Methods:  14.29% ( 1/ 7)   Lines:   9.09% (  1/ 11)
 \App\Models\Scopes::App\Models\Scopes\SoftDeletingWithDeletesScope
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
 \App\Models\Traits::CanBeScoped
@@ -84,7 +88,9 @@ Code Coverage Report:
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  3/  3)
 \App\Providers::App\Providers\RouteServiceProvider
   Methods: 100.00% ( 4/ 4)   Lines: 100.00% ( 17/ 17)
+\App\Providers::App\Providers\ViewServiceProvider
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  4/  4)
 \App\Scoping::App\Scoping\Scoper
   Methods: 100.00% ( 3/ 3)   Lines: 100.00% (  8/  8)
 \App\Scoping\Scopes::App\Scoping\Scopes\TagScope
-  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  4/  4)
+  Methods:   0.00% ( 0/ 1)   Lines:  75.00% (  3/  4)

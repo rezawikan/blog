@@ -26,6 +26,21 @@ class Post extends Model
     ];
 
     /**
+     * Scope a query to only include approved comment.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $builder
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeHasUser($builder, $id)
+    {
+      $user = $this->whereHas('user', function ($builder) use ($id) {
+        $builder->where('id', $id);
+      })->count();
+
+      return $user > 0 ? true : false;
+    }
+
+    /**
      * Set the post's slug.
      *
      * @param  string  $value
@@ -52,7 +67,7 @@ class Post extends Model
       }
 
       return $slug;
-  }
+    }
 
     /**
      * [user description]

@@ -39,7 +39,7 @@ class UserPolicy
      */
     public function create(User $user)
     {
-        return true;
+        return $user->hasPermissionTo('create user') || $user->hasPermissionWithRole('create user');
     }
 
     /**
@@ -50,7 +50,7 @@ class UserPolicy
      */
     public function update(User $user)
     {
-        return true;
+        return $user->hasPermissionTo('update user') || $user->hasPermissionWithRole('update user');
     }
 
     /**
@@ -62,7 +62,7 @@ class UserPolicy
      */
     public function delete(User $user)
     {
-        return true;
+        return $user->hasPermissionTo('delete user') || $user->hasPermissionWithRole('delete user');
     }
 
     /**
@@ -73,7 +73,7 @@ class UserPolicy
      */
     public function restore(User $user)
     {
-        return true;
+        return $user->hasPermissionTo('restore user') || $user->hasPermissionWithRole('restore user');
     }
 
     /**
@@ -84,6 +84,6 @@ class UserPolicy
      */
     public function forceDelete(User $user)
     {
-        return true;
+        return $user->hasPermissionTo('force delete user') || $user->hasPermissionWithRole('force delete user');
     }
 }

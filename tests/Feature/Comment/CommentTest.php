@@ -34,7 +34,6 @@ class CommentTest extends TestCase
         $response = $this->post('/api/comments', [
           'body' => 'Testing',
           'approved' => true,
-          'parent_id' => null,
           'user_id' => $user->id,
           'post_id' => $post->id
         ]);
@@ -59,7 +58,6 @@ class CommentTest extends TestCase
         $response = $this->post('/api/comments', [
           'body' => 'Testing',
           'approved' => true,
-          'parent_id' => null,
           'user_id' => $user->id,
           'post_id' => $post->id
         ]);

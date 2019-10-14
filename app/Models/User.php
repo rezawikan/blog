@@ -15,7 +15,7 @@ use Laravel\Scout\Searchable;
 
 class User extends Authenticatable
 {
-    use Notifiable, HasApiTokens, RolePermission, Searchable;
+    use Notifiable, HasApiTokens, RolePermission, SoftDeletesWithDeleted, Searchable;
 
     /**
      * The attributes that are mass assignable.
@@ -81,7 +81,9 @@ class User extends Authenticatable
      */
     public function scopeHasComment($builder, $id)
     {
-      $comment = $this->comments()->count();
+      $comment = $this->whereHas('comments', function ($builder) use ($id) {
+        $builder->where('id', $id);
+      })->count();
 
       return $comment > 0 ? true : false;
     }

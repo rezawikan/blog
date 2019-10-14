@@ -3,7 +3,6 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\Comment;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class CommentPolicy
@@ -41,7 +40,7 @@ class CommentPolicy
      */
     public function create(User $user)
     {
-        return $user->hasPermissionTo('create comment');
+        return $user->hasPermissionTo('create comment') || $user->hasPermissionWithRole('create comment');
     }
 
     /**
@@ -51,9 +50,9 @@ class CommentPolicy
      * @param  \App\Comment  $comment
      * @return mixed
      */
-    public function update(User $user, Comment $comment)
+    public function update(User $user, $comment)
     {
-        return $user->hasPermissionTo('update comment') || $user->hasComment($comment->id);
+        return $user->hasPermissionTo('update comment') || $user->hasComment($comment->id) || $user->hasPermissionWithRole('update comment');
     }
 
     /**
@@ -63,9 +62,9 @@ class CommentPolicy
      * @param  \App\Comment  $comment
      * @return mixed
      */
-    public function delete(User $user, Comment $comment)
+    public function delete(User $user, $comment)
     {
-        return $user->hasPermissionTo('delete comment') || $user->hasComment($comment->id);
+        return $user->hasPermissionTo('delete comment') || $user->hasComment($comment->id) || $user->hasPermissionWithRole('update comment');
     }
 
     /**
@@ -75,9 +74,9 @@ class CommentPolicy
      * @param  \App\Comment  $comment
      * @return mixed
      */
-    public function restore(User $user, Comment $comment)
+    public function restore(User $user, $comment)
     {
-        return $user->hasPermissionTo('restore comment');
+        return $user->hasPermissionTo('restore comment') || $user->hasPermissionWithRole('restore comment');
     }
 
     /**
@@ -87,8 +86,8 @@ class CommentPolicy
      * @param  \App\Comment  $comment
      * @return mixed
      */
-    public function forceDelete(User $user, Comment $comment)
+    public function forceDelete(User $user, $comment)
     {
-        return $user->hasPermissionTo('force delete comment');
+        return $user->hasPermissionTo('force delete comment') || $user->hasPermissionWithRole('force delete comment');
     }
 }

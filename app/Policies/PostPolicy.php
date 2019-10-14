@@ -3,7 +3,6 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Post;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class PostPolicy
@@ -18,7 +17,7 @@ class PostPolicy
      */
     public function create(User $user)
     {
-        return $user->hasPermissionTo('create post');
+        return $user->hasPermissionTo('create post') || $user->hasPermissionWithRole('create post');
     }
 
     /**
@@ -30,7 +29,7 @@ class PostPolicy
      */
     public function update(User $user, $post)
     {
-        return $user->hasPermissionTo('update post');
+        return $user->hasPermissionTo('update post') || $post->hasUser($user->id) || $user->hasPermissionWithRole('update post');
     }
 
     /**
@@ -42,7 +41,7 @@ class PostPolicy
      */
     public function delete(User $user, $post)
     {
-        return $user->hasPermissionTo('delete post');
+        return $user->hasPermissionTo('delete post') || $post->hasUser($user->id) || $user->hasPermissionWithRole('delete post');
     }
 
     /**
@@ -54,7 +53,7 @@ class PostPolicy
      */
     public function restore(User $user, $post)
     {
-        return $user->hasPermissionTo('restore post');
+        return $user->hasPermissionTo('restore post') || $post->hasUser($user->id) || $user->hasPermissionWithRole('restore post');
     }
 
     /**
@@ -66,6 +65,6 @@ class PostPolicy
      */
     public function forceDelete(User $user, $post)
     {
-        return $user->hasPermissionTo('force delete post');
+        return $user->hasPermissionTo('force delete post') || $user->hasPermissionWithRole('force delete post');
     }
 }

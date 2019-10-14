@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1570523457">
-  <project timestamp="1570523457">
+<coverage generated="1571040787">
+  <project timestamp="1571040787">
     <package name="App\App\Notifications\Channels">
       <file name="C:\laragon\www\blog\app\App\Notifications\Channels\DatabaseChannels.php">
         <class name="App\App\Notifications\Channels\DatabaseChannel" namespace="App\App\Notifications\Channels">
@@ -80,12 +80,12 @@
         <class name="App\Console\Kernel" namespace="App\Console">
           <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
         </class>
-        <line num="25" type="method" name="schedule" visibility="protected" complexity="1" crap="1" count="48"/>
-        <line num="29" type="stmt" count="48"/>
-        <line num="36" type="method" name="commands" visibility="protected" complexity="1" crap="1" count="48"/>
-        <line num="38" type="stmt" count="48"/>
-        <line num="40" type="stmt" count="48"/>
-        <line num="41" type="stmt" count="48"/>
+        <line num="25" type="method" name="schedule" visibility="protected" complexity="1" crap="1" count="47"/>
+        <line num="29" type="stmt" count="47"/>
+        <line num="36" type="method" name="commands" visibility="protected" complexity="1" crap="1" count="47"/>
+        <line num="38" type="stmt" count="47"/>
+        <line num="40" type="stmt" count="47"/>
+        <line num="41" type="stmt" count="47"/>
         <metrics loc="42" ncloc="20" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
       </file>
     </package>
@@ -239,15 +239,15 @@
         <class name="App\Http\Controllers\API\Post\PostController" namespace="App\Http\Controllers\API\Post">
           <metrics complexity="11" methods="8" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="45" coveredstatements="42" elements="53" coveredelements="47"/>
         </class>
-        <line num="21" type="method" name="index" visibility="public" complexity="2" crap="2" count="3"/>
-        <line num="23" type="stmt" count="3"/>
-        <line num="24" type="stmt" count="3"/>
-        <line num="25" type="stmt" count="3"/>
-        <line num="26" type="stmt" count="3"/>
-        <line num="27" type="stmt" count="3"/>
-        <line num="29" type="stmt" count="3"/>
-        <line num="30" type="stmt" count="3"/>
-        <line num="31" type="stmt" count="3"/>
+        <line num="21" type="method" name="index" visibility="public" complexity="2" crap="2" count="2"/>
+        <line num="23" type="stmt" count="2"/>
+        <line num="24" type="stmt" count="2"/>
+        <line num="25" type="stmt" count="2"/>
+        <line num="26" type="stmt" count="2"/>
+        <line num="27" type="stmt" count="2"/>
+        <line num="29" type="stmt" count="2"/>
+        <line num="30" type="stmt" count="2"/>
+        <line num="31" type="stmt" count="2"/>
         <line num="39" type="method" name="create" visibility="public" complexity="1" crap="2.00" count="0"/>
         <line num="42" type="stmt" count="0"/>
         <line num="50" type="method" name="store" visibility="public" complexity="1" crap="1" count="3"/>
@@ -301,44 +301,44 @@
           <metrics complexity="8" methods="6" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="32" coveredstatements="0" elements="38" coveredelements="0"/>
         </class>
         <line num="18" type="method" name="index" visibility="public" complexity="2" crap="6.00" count="0"/>
+        <line num="20" type="stmt" count="0"/>
         <line num="21" type="stmt" count="0"/>
-        <line num="22" type="stmt" count="0"/>
+        <line num="23" type="stmt" count="0"/>
         <line num="24" type="stmt" count="0"/>
         <line num="25" type="stmt" count="0"/>
-        <line num="26" type="stmt" count="0"/>
-        <line num="45" type="method" name="store" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="47" type="stmt" count="0"/>
-        <line num="49" type="stmt" count="0"/>
+        <line num="44" type="method" name="store" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="46" type="stmt" count="0"/>
+        <line num="48" type="stmt" count="0"/>
+        <line num="50" type="stmt" count="0"/>
         <line num="51" type="stmt" count="0"/>
         <line num="52" type="stmt" count="0"/>
-        <line num="53" type="stmt" count="0"/>
-        <line num="62" type="method" name="show" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="64" type="stmt" count="0"/>
+        <line num="61" type="method" name="show" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="63" type="stmt" count="0"/>
+        <line num="65" type="stmt" count="0"/>
         <line num="66" type="stmt" count="0"/>
         <line num="67" type="stmt" count="0"/>
-        <line num="68" type="stmt" count="0"/>
-        <line num="77" type="method" name="edit" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="80" type="stmt" count="0"/>
-        <line num="89" type="method" name="update" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="91" type="stmt" count="0"/>
-        <line num="93" type="stmt" count="0"/>
+        <line num="76" type="method" name="edit" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="79" type="stmt" count="0"/>
+        <line num="88" type="method" name="update" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="90" type="stmt" count="0"/>
+        <line num="92" type="stmt" count="0"/>
+        <line num="94" type="stmt" count="0"/>
         <line num="95" type="stmt" count="0"/>
         <line num="96" type="stmt" count="0"/>
-        <line num="97" type="stmt" count="0"/>
-        <line num="106" type="method" name="destroy" visibility="public" complexity="2" crap="6.00" count="0"/>
-        <line num="108" type="stmt" count="0"/>
+        <line num="105" type="method" name="destroy" visibility="public" complexity="2" crap="6.00" count="0"/>
+        <line num="107" type="stmt" count="0"/>
+        <line num="109" type="stmt" count="0"/>
         <line num="110" type="stmt" count="0"/>
         <line num="111" type="stmt" count="0"/>
-        <line num="112" type="stmt" count="0"/>
+        <line num="113" type="stmt" count="0"/>
         <line num="114" type="stmt" count="0"/>
         <line num="115" type="stmt" count="0"/>
-        <line num="116" type="stmt" count="0"/>
-        <line num="119" type="stmt" count="0"/>
-        <line num="121" type="stmt" count="0"/>
+        <line num="118" type="stmt" count="0"/>
+        <line num="120" type="stmt" count="0"/>
+        <line num="122" type="stmt" count="0"/>
         <line num="123" type="stmt" count="0"/>
         <line num="124" type="stmt" count="0"/>
-        <line num="125" type="stmt" count="0"/>
-        <metrics loc="127" ncloc="74" classes="1" methods="6" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="32" coveredstatements="0" elements="38" coveredelements="0"/>
+        <metrics loc="126" ncloc="75" classes="1" methods="6" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="32" coveredstatements="0" elements="38" coveredelements="0"/>
       </file>
     </package>
     <package name="App\Http\Controllers\Auth">
@@ -416,6 +416,33 @@
         <line num="24" type="stmt" count="0"/>
         <metrics loc="26" ncloc="16" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="5" coveredelements="0"/>
       </file>
+      <file name="C:\laragon\www\blog\app\Http\Controllers\PermissionController.php">
+        <class name="App\Http\Controllers\PermissionController" namespace="App\Http\Controllers">
+          <metrics complexity="8" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="0" elements="21" coveredelements="0"/>
+        </class>
+        <line num="15" type="method" name="index" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="17" type="stmt" count="0"/>
+        <line num="25" type="method" name="create" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="36" type="method" name="store" visibility="public" complexity="2" crap="6.00" count="0"/>
+        <line num="38" type="stmt" count="0"/>
+        <line num="40" type="stmt" count="0"/>
+        <line num="41" type="stmt" count="0"/>
+        <line num="44" type="stmt" count="0"/>
+        <line num="53" type="method" name="show" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="56" type="stmt" count="0"/>
+        <line num="64" type="method" name="edit" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="66" type="stmt" count="0"/>
+        <line num="76" type="method" name="update" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="78" type="stmt" count="0"/>
+        <line num="80" type="stmt" count="0"/>
+        <line num="82" type="stmt" count="0"/>
+        <line num="91" type="method" name="destroy" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="93" type="stmt" count="0"/>
+        <line num="94" type="stmt" count="0"/>
+        <line num="96" type="stmt" count="0"/>
+        <metrics loc="98" ncloc="55" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="0" elements="21" coveredelements="0"/>
+      </file>
       <file name="C:\laragon\www\blog\app\Http\Controllers\ProfileController.php">
         <class name="App\Http\Controllers\ProfileController" namespace="App\Http\Controllers">
           <metrics complexity="3" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="8" coveredelements="0"/>
@@ -430,28 +457,74 @@
         <line num="44" type="stmt" count="0"/>
         <metrics loc="46" ncloc="29" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="8" coveredelements="0"/>
       </file>
+      <file name="C:\laragon\www\blog\app\Http\Controllers\RoleController.php">
+        <class name="App\Http\Controllers\RoleController" namespace="App\Http\Controllers">
+          <metrics complexity="8" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="0" elements="21" coveredelements="0"/>
+        </class>
+        <line num="15" type="method" name="index" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="17" type="stmt" count="0"/>
+        <line num="25" type="method" name="create" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="36" type="method" name="store" visibility="public" complexity="2" crap="6.00" count="0"/>
+        <line num="38" type="stmt" count="0"/>
+        <line num="39" type="stmt" count="0"/>
+        <line num="40" type="stmt" count="0"/>
+        <line num="43" type="stmt" count="0"/>
+        <line num="52" type="method" name="show" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="55" type="stmt" count="0"/>
+        <line num="63" type="method" name="edit" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="65" type="stmt" count="0"/>
+        <line num="75" type="method" name="update" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="77" type="stmt" count="0"/>
+        <line num="79" type="stmt" count="0"/>
+        <line num="81" type="stmt" count="0"/>
+        <line num="90" type="method" name="destroy" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="92" type="stmt" count="0"/>
+        <line num="93" type="stmt" count="0"/>
+        <line num="95" type="stmt" count="0"/>
+        <metrics loc="97" ncloc="54" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="0" elements="21" coveredelements="0"/>
+      </file>
       <file name="C:\laragon\www\blog\app\Http\Controllers\UserController.php">
         <class name="App\Http\Controllers\UserController" namespace="App\Http\Controllers">
-          <metrics complexity="7" methods="6" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="0" elements="17" coveredelements="0"/>
+          <metrics complexity="11" methods="6" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="30" coveredstatements="0" elements="36" coveredelements="0"/>
         </class>
-        <line num="17" type="method" name="index" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="19" type="stmt" count="0"/>
-        <line num="27" type="method" name="create" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="29" type="stmt" count="0"/>
-        <line num="39" type="method" name="store" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="41" type="stmt" count="0"/>
-        <line num="43" type="stmt" count="0"/>
-        <line num="52" type="method" name="edit" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="19" type="method" name="index" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="21" type="stmt" count="0"/>
+        <line num="29" type="method" name="create" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="31" type="stmt" count="0"/>
+        <line num="33" type="stmt" count="0"/>
+        <line num="43" type="method" name="store" visibility="public" complexity="3" crap="12.00" count="0"/>
+        <line num="45" type="stmt" count="0"/>
+        <line num="47" type="stmt" count="0"/>
+        <line num="48" type="stmt" count="0"/>
+        <line num="49" type="stmt" count="0"/>
+        <line num="50" type="stmt" count="0"/>
+        <line num="53" type="stmt" count="0"/>
         <line num="54" type="stmt" count="0"/>
-        <line num="64" type="method" name="update" visibility="public" complexity="2" crap="6.00" count="0"/>
-        <line num="66" type="stmt" count="0"/>
-        <line num="67" type="stmt" count="0"/>
-        <line num="68" type="stmt" count="0"/>
-        <line num="71" type="stmt" count="0"/>
-        <line num="80" type="method" name="destroy" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="82" type="stmt" count="0"/>
-        <line num="84" type="stmt" count="0"/>
-        <metrics loc="86" ncloc="49" classes="1" methods="6" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="0" elements="17" coveredelements="0"/>
+        <line num="57" type="stmt" count="0"/>
+        <line num="58" type="stmt" count="0"/>
+        <line num="61" type="stmt" count="0"/>
+        <line num="70" type="method" name="edit" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="72" type="stmt" count="0"/>
+        <line num="74" type="stmt" count="0"/>
+        <line num="84" type="method" name="update" visibility="public" complexity="4" crap="20.00" count="0"/>
+        <line num="86" type="stmt" count="0"/>
+        <line num="88" type="stmt" count="0"/>
+        <line num="89" type="stmt" count="0"/>
+        <line num="90" type="stmt" count="0"/>
+        <line num="91" type="stmt" count="0"/>
+        <line num="94" type="stmt" count="0"/>
+        <line num="95" type="stmt" count="0"/>
+        <line num="98" type="stmt" count="0"/>
+        <line num="99" type="stmt" count="0"/>
+        <line num="102" type="stmt" count="0"/>
+        <line num="111" type="method" name="destroy" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="113" type="stmt" count="0"/>
+        <line num="115" type="stmt" count="0"/>
+        <line num="116" type="stmt" count="0"/>
+        <line num="117" type="stmt" count="0"/>
+        <line num="119" type="stmt" count="0"/>
+        <metrics loc="121" ncloc="84" classes="1" methods="6" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="30" coveredstatements="0" elements="36" coveredelements="0"/>
       </file>
     </package>
     <package name="App\Exceptions">
@@ -484,7 +557,7 @@
         <class name="App\Http\Kernel" namespace="App\Http">
           <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
         </class>
-        <metrics loc="82" ncloc="54" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        <metrics loc="83" ncloc="55" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
       </file>
     </package>
     <package name="App\Http\Middleware">
@@ -506,6 +579,22 @@
         <line num="20" type="stmt" count="0"/>
         <metrics loc="21" ncloc="15" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="4" coveredelements="0"/>
       </file>
+      <file name="C:\laragon\www\blog\app\Http\Middleware\CheckEmptyParams.php">
+        <class name="App\Http\Middleware\CheckEmptyParams" namespace="App\Http\Middleware">
+          <metrics complexity="5" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="7" elements="10" coveredelements="7"/>
+        </class>
+        <line num="17" type="method" name="handle" visibility="public" complexity="5" crap="5.27" count="26"/>
+        <line num="19" type="stmt" count="26"/>
+        <line num="20" type="stmt" count="26"/>
+        <line num="21" type="stmt" count="26"/>
+        <line num="22" type="stmt" count="15"/>
+        <line num="23" type="stmt" count="15"/>
+        <line num="27" type="stmt" count="26"/>
+        <line num="28" type="stmt" count="0"/>
+        <line num="29" type="stmt" count="0"/>
+        <line num="33" type="stmt" count="26"/>
+        <metrics loc="35" ncloc="28" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="7" elements="10" coveredelements="7"/>
+      </file>
       <file name="C:\laragon\www\blog\app\Http\Middleware\CheckForMaintenanceMode.php">
         <class name="App\Http\Middleware\CheckForMaintenanceMode" namespace="App\Http\Middleware">
           <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
@@ -522,12 +611,12 @@
         <class name="App\Http\Middleware\ProfileJsonResponse" namespace="App\Http\Middleware">
           <metrics complexity="4" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="3" elements="6" coveredelements="3"/>
         </class>
-        <line num="17" type="method" name="handle" visibility="public" complexity="4" crap="5.02" count="27"/>
-        <line num="19" type="stmt" count="27"/>
-        <line num="21" type="stmt" count="27"/>
+        <line num="17" type="method" name="handle" visibility="public" complexity="4" crap="5.02" count="26"/>
+        <line num="19" type="stmt" count="26"/>
+        <line num="21" type="stmt" count="26"/>
         <line num="22" type="stmt" count="0"/>
         <line num="23" type="stmt" count="0"/>
-        <line num="27" type="stmt" count="27"/>
+        <line num="27" type="stmt" count="26"/>
         <metrics loc="29" ncloc="22" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="3" elements="6" coveredelements="3"/>
       </file>
       <file name="C:\laragon\www\blog\app\Http\Middleware\RedirectIfAuthenticated.php">
@@ -707,12 +796,12 @@
         <class name="App\Http\Resources\PostIndexResource" namespace="App\Http\Resources">
           <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
         </class>
-        <line num="15" type="method" name="toArray" visibility="public" complexity="1" crap="1" count="5"/>
-        <line num="18" type="stmt" count="5"/>
-        <line num="19" type="stmt" count="5"/>
-        <line num="20" type="stmt" count="5"/>
-        <line num="21" type="stmt" count="5"/>
-        <line num="22" type="stmt" count="5"/>
+        <line num="15" type="method" name="toArray" visibility="public" complexity="1" crap="1" count="4"/>
+        <line num="18" type="stmt" count="4"/>
+        <line num="19" type="stmt" count="4"/>
+        <line num="20" type="stmt" count="4"/>
+        <line num="21" type="stmt" count="4"/>
+        <line num="22" type="stmt" count="4"/>
         <metrics loc="25" ncloc="19" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
       </file>
       <file name="C:\laragon\www\blog\app\Http\Resources\PostResource.php">
@@ -766,6 +855,32 @@
         <metrics loc="23" ncloc="17" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="4" coveredelements="0"/>
       </file>
     </package>
+    <package name="App\Http\View\Composers">
+      <file name="C:\laragon\www\blog\app\Http\View\Composers\PermissionComposer.php">
+        <class name="App\Http\View\Composers\PermissionComposer" namespace="App\Http\View\Composers">
+          <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="6" coveredelements="0"/>
+        </class>
+        <line num="23" type="method" name="__construct" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="26" type="stmt" count="0"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="35" type="method" name="compose" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="37" type="stmt" count="0"/>
+        <line num="38" type="stmt" count="0"/>
+        <metrics loc="39" ncloc="20" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="6" coveredelements="0"/>
+      </file>
+      <file name="C:\laragon\www\blog\app\Http\View\Composers\RoleComposer.php">
+        <class name="App\Http\View\Composers\RoleComposer" namespace="App\Http\View\Composers">
+          <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="6" coveredelements="0"/>
+        </class>
+        <line num="23" type="method" name="__construct" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="26" type="stmt" count="0"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="35" type="method" name="compose" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="37" type="stmt" count="0"/>
+        <line num="38" type="stmt" count="0"/>
+        <metrics loc="39" ncloc="20" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="6" coveredelements="0"/>
+      </file>
+    </package>
     <package name="App\Listeners">
       <file name="C:\laragon\www\blog\app\Listeners\PruneOldTokens.php">
         <class name="App\Listeners\PruneOldTokens" namespace="App\Listeners">
@@ -817,40 +932,46 @@
       </file>
       <file name="C:\laragon\www\blog\app\Models\Permission.php">
         <class name="App\Models\Permission" namespace="App\Models">
-          <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+          <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
         </class>
-        <line num="22" type="method" name="roles" visibility="public" complexity="1" crap="1" count="4"/>
-        <line num="24" type="stmt" count="4"/>
-        <metrics loc="26" ncloc="17" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+        <line num="25" type="method" name="searchableAs" visibility="public" complexity="1" crap="1" count="20"/>
+        <line num="27" type="stmt" count="20"/>
+        <line num="34" type="method" name="roles" visibility="public" complexity="1" crap="1" count="4"/>
+        <line num="36" type="stmt" count="4"/>
+        <metrics loc="38" ncloc="24" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
       </file>
       <file name="C:\laragon\www\blog\app\Models\Post.php">
         <class name="App\Models\Post" namespace="App\Models">
-          <metrics complexity="9" methods="7" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="10" elements="23" coveredelements="15"/>
+          <metrics complexity="11" methods="8" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="10" elements="27" coveredelements="15"/>
         </class>
-        <line num="34" type="method" name="setSlugAttribute" visibility="public" complexity="2" crap="2.06" count="23"/>
-        <line num="36" type="stmt" count="23"/>
+        <line num="34" type="method" name="scopeHasUser" visibility="public" complexity="2" crap="6.00" count="0"/>
         <line num="37" type="stmt" count="0"/>
-        <line num="40" type="stmt" count="23"/>
-        <line num="41" type="stmt" count="23"/>
-        <line num="47" type="method" name="incrementSlug" visibility="protected" complexity="2" crap="6.00" count="0"/>
-        <line num="48" type="stmt" count="0"/>
-        <line num="49" type="stmt" count="0"/>
-        <line num="50" type="stmt" count="0"/>
-        <line num="51" type="stmt" count="0"/>
-        <line num="54" type="stmt" count="0"/>
-        <line num="61" type="method" name="user" visibility="public" complexity="1" crap="1" count="2"/>
-        <line num="63" type="stmt" count="2"/>
-        <line num="70" type="method" name="post_category" visibility="public" complexity="1" crap="1" count="3"/>
-        <line num="72" type="stmt" count="3"/>
-        <line num="78" type="method" name="comments" visibility="public" complexity="1" crap="1" count="8"/>
-        <line num="80" type="stmt" count="8"/>
-        <line num="86" type="method" name="tags" visibility="public" complexity="1" crap="1" count="4"/>
-        <line num="88" type="stmt" count="4"/>
-        <line num="96" type="method" name="scopes" visibility="public" complexity="1" crap="1" count="3"/>
-        <line num="99" type="stmt" count="3"/>
-        <line num="100" type="stmt" count="3"/>
-        <line num="101" type="stmt" count="3"/>
-        <metrics loc="105" ncloc="69" classes="1" methods="7" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="10" elements="23" coveredelements="15"/>
+        <line num="38" type="stmt" count="0"/>
+        <line num="40" type="stmt" count="0"/>
+        <line num="49" type="method" name="setSlugAttribute" visibility="public" complexity="2" crap="2.06" count="22"/>
+        <line num="51" type="stmt" count="22"/>
+        <line num="52" type="stmt" count="0"/>
+        <line num="55" type="stmt" count="22"/>
+        <line num="56" type="stmt" count="22"/>
+        <line num="62" type="method" name="incrementSlug" visibility="protected" complexity="2" crap="6.00" count="0"/>
+        <line num="63" type="stmt" count="0"/>
+        <line num="64" type="stmt" count="0"/>
+        <line num="65" type="stmt" count="0"/>
+        <line num="66" type="stmt" count="0"/>
+        <line num="69" type="stmt" count="0"/>
+        <line num="76" type="method" name="user" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="78" type="stmt" count="2"/>
+        <line num="85" type="method" name="post_category" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="87" type="stmt" count="3"/>
+        <line num="93" type="method" name="comments" visibility="public" complexity="1" crap="1" count="8"/>
+        <line num="95" type="stmt" count="8"/>
+        <line num="101" type="method" name="tags" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="103" type="stmt" count="3"/>
+        <line num="111" type="method" name="scopes" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="114" type="stmt" count="2"/>
+        <line num="115" type="stmt" count="2"/>
+        <line num="116" type="stmt" count="2"/>
+        <metrics loc="120" ncloc="78" classes="1" methods="8" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="10" elements="27" coveredelements="15"/>
       </file>
       <file name="C:\laragon\www\blog\app\Models\PostCategory.php">
         <class name="App\Models\PostCategory" namespace="App\Models">
@@ -866,11 +987,13 @@
       </file>
       <file name="C:\laragon\www\blog\app\Models\Role.php">
         <class name="App\Models\Role" namespace="App\Models">
-          <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+          <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
         </class>
-        <line num="21" type="method" name="permissions" visibility="public" complexity="1" crap="1" count="2"/>
-        <line num="23" type="stmt" count="2"/>
-        <metrics loc="25" ncloc="16" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+        <line num="25" type="method" name="searchableAs" visibility="public" complexity="1" crap="1" count="6"/>
+        <line num="27" type="stmt" count="6"/>
+        <line num="34" type="method" name="permissions" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="36" type="stmt" count="2"/>
+        <metrics loc="38" ncloc="24" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
       </file>
       <file name="C:\laragon\www\blog\app\Models\Tag.php">
         <class name="App\Models\Tag" namespace="App\Models">
@@ -882,24 +1005,27 @@
       </file>
       <file name="C:\laragon\www\blog\app\Models\User.php">
         <class name="App\Models\User" namespace="App\Models">
-          <metrics complexity="7" methods="6" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="0" elements="15" coveredelements="0"/>
+          <metrics complexity="8" methods="7" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="1" elements="18" coveredelements="2"/>
         </class>
-        <line num="50" type="method" name="posts" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="52" type="stmt" count="0"/>
-        <line num="60" type="method" name="comments" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="62" type="stmt" count="0"/>
-        <line num="71" type="method" name="scopeHasComment" visibility="public" complexity="2" crap="6.00" count="0"/>
+        <line num="52" type="method" name="searchableAs" visibility="public" complexity="1" crap="1" count="40"/>
+        <line num="54" type="stmt" count="40"/>
+        <line num="61" type="method" name="posts" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="63" type="stmt" count="0"/>
+        <line num="71" type="method" name="comments" visibility="public" complexity="1" crap="2.00" count="0"/>
         <line num="73" type="stmt" count="0"/>
-        <line num="75" type="stmt" count="0"/>
-        <line num="82" type="method" name="notifications" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="84" type="stmt" count="0"/>
-        <line num="93" type="method" name="sendPasswordResetNotification" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="95" type="stmt" count="0"/>
+        <line num="82" type="method" name="scopeHasComment" visibility="public" complexity="2" crap="6.00" count="0"/>
+        <line num="85" type="stmt" count="0"/>
+        <line num="86" type="stmt" count="0"/>
+        <line num="88" type="stmt" count="0"/>
+        <line num="95" type="method" name="notifications" visibility="public" complexity="1" crap="2.00" count="0"/>
         <line num="97" type="stmt" count="0"/>
-        <line num="98" type="stmt" count="0"/>
-        <line num="106" type="method" name="routeNotificationForMail" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="106" type="method" name="sendPasswordResetNotification" visibility="public" complexity="1" crap="2.00" count="0"/>
         <line num="108" type="stmt" count="0"/>
-        <metrics loc="110" ncloc="65" classes="1" methods="6" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="0" elements="15" coveredelements="0"/>
+        <line num="110" type="stmt" count="0"/>
+        <line num="111" type="stmt" count="0"/>
+        <line num="119" type="method" name="routeNotificationForMail" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="121" type="stmt" count="0"/>
+        <metrics loc="123" ncloc="73" classes="1" methods="7" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="1" elements="18" coveredelements="2"/>
       </file>
     </package>
     <package name="App\Models\Scopes">
@@ -907,8 +1033,8 @@
         <class name="App\Models\Scopes\SoftDeletingWithDeletesScope" namespace="App\Models\Scopes">
           <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
         </class>
-        <line num="11" type="method" name="apply" visibility="public" complexity="1" crap="1" count="23"/>
-        <line num="13" type="stmt" count="23"/>
+        <line num="11" type="method" name="apply" visibility="public" complexity="1" crap="1" count="27"/>
+        <line num="13" type="stmt" count="27"/>
         <metrics loc="14" ncloc="14" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
       </file>
     </package>
@@ -917,8 +1043,8 @@
         <class name="CanBeScoped" namespace="App\Models\Traits">
           <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
         </class>
-        <line num="16" type="method" name="scopeWithScopes" visibility="public" complexity="1" crap="1" count="3"/>
-        <line num="18" type="stmt" count="3"/>
+        <line num="16" type="method" name="scopeWithScopes" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="18" type="stmt" count="2"/>
         <metrics loc="20" ncloc="14" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
       </file>
       <file name="C:\laragon\www\blog\app\Models\Traits\HasChildren.php">
@@ -943,26 +1069,26 @@
         <class name="LatestOrder" namespace="App\Models\Traits">
           <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
         </class>
-        <line num="15" type="method" name="scopeLatestOrder" visibility="public" complexity="1" crap="1" count="3"/>
-        <line num="17" type="stmt" count="3"/>
+        <line num="15" type="method" name="scopeLatestOrder" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="17" type="stmt" count="2"/>
         <metrics loc="19" ncloc="13" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
       </file>
       <file name="C:\laragon\www\blog\app\Models\Traits\SoftDeletesWithDeleted.php">
         <class name="SoftDeletesWithDeleted" namespace="App\Models\Traits">
           <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
         </class>
-        <line num="12" type="method" name="bootSoftDeletes" visibility="public" complexity="1" crap="1" count="23"/>
-        <line num="14" type="stmt" count="23"/>
-        <line num="15" type="stmt" count="23"/>
+        <line num="12" type="method" name="bootSoftDeletes" visibility="public" complexity="1" crap="1" count="40"/>
+        <line num="14" type="stmt" count="40"/>
+        <line num="15" type="stmt" count="40"/>
         <metrics loc="16" ncloc="16" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
       </file>
       <file name="C:\laragon\www\blog\app\Models\Traits\isLive.php">
         <class name="IsLive" namespace="App\Models\Traits">
           <metrics complexity="2" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="2" elements="4" coveredelements="2"/>
         </class>
-        <line num="15" type="method" name="scopeIsLive" visibility="public" complexity="2" crap="2.15" count="3"/>
-        <line num="17" type="stmt" count="3"/>
-        <line num="18" type="stmt" count="3"/>
+        <line num="15" type="method" name="scopeIsLive" visibility="public" complexity="2" crap="2.15" count="2"/>
+        <line num="17" type="stmt" count="2"/>
+        <line num="18" type="stmt" count="2"/>
         <line num="21" type="stmt" count="0"/>
         <metrics loc="23" ncloc="17" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="2" elements="4" coveredelements="2"/>
       </file>
@@ -970,57 +1096,70 @@
     <package name="App\Model\Traits">
       <file name="C:\laragon\www\blog\app\Models\Traits\RolePermission.php">
         <class name="RolePermission" namespace="App\Model\Traits">
-          <metrics complexity="22" methods="13" coveredmethods="13" conditionals="0" coveredconditionals="0" statements="35" coveredstatements="35" elements="48" coveredelements="48"/>
+          <metrics complexity="28" methods="15" coveredmethods="13" conditionals="0" coveredconditionals="0" statements="46" coveredstatements="38" elements="61" coveredelements="51"/>
         </class>
-        <line num="16" type="method" name="givePermissionTo" visibility="public" complexity="3" crap="3" count="18"/>
-        <line num="19" type="stmt" count="18"/>
-        <line num="21" type="stmt" count="18"/>
-        <line num="22" type="stmt" count="3"/>
-        <line num="25" type="stmt" count="15"/>
-        <line num="27" type="stmt" count="15"/>
-        <line num="35" type="method" name="detachPermissionTo" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="37" type="stmt" count="1"/>
-        <line num="39" type="stmt" count="1"/>
-        <line num="41" type="stmt" count="1"/>
-        <line num="49" type="method" name="updatePermission" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="51" type="stmt" count="1"/>
-        <line num="53" type="stmt" count="1"/>
-        <line num="61" type="method" name="hasPermissionTo" visibility="public" complexity="2" crap="2" count="17"/>
-        <line num="63" type="stmt" count="17"/>
-        <line num="64" type="stmt" count="4"/>
-        <line num="67" type="stmt" count="13"/>
-        <line num="75" type="method" name="giveRoleTo" visibility="public" complexity="2" crap="2" count="5"/>
-        <line num="77" type="stmt" count="5"/>
-        <line num="79" type="stmt" count="5"/>
-        <line num="80" type="stmt" count="2"/>
-        <line num="83" type="stmt" count="3"/>
-        <line num="85" type="stmt" count="3"/>
-        <line num="93" type="method" name="updateRole" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="95" type="stmt" count="1"/>
-        <line num="97" type="stmt" count="1"/>
-        <line num="105" type="method" name="hasPermissionThroughRole" visibility="protected" complexity="4" crap="4" count="4"/>
-        <line num="107" type="stmt" count="4"/>
-        <line num="108" type="stmt" count="2"/>
-        <line num="111" type="stmt" count="2"/>
-        <line num="112" type="stmt" count="2"/>
-        <line num="113" type="stmt" count="2"/>
-        <line num="117" type="stmt" count="1"/>
-        <line num="125" type="method" name="hasPermission" visibility="protected" complexity="1" crap="1" count="13"/>
-        <line num="127" type="stmt" count="13"/>
-        <line num="135" type="method" name="getAllPermissions" visibility="protected" complexity="1" crap="1" count="18"/>
-        <line num="137" type="stmt" count="18"/>
-        <line num="145" type="method" name="getAllRoles" visibility="protected" complexity="1" crap="1" count="5"/>
-        <line num="147" type="stmt" count="5"/>
-        <line num="155" type="method" name="hasRole" visibility="public" complexity="3" crap="3" count="3"/>
-        <line num="157" type="stmt" count="3"/>
-        <line num="158" type="stmt" count="3"/>
-        <line num="159" type="stmt" count="3"/>
-        <line num="163" type="stmt" count="1"/>
-        <line num="170" type="method" name="roles" visibility="public" complexity="1" crap="1" count="5"/>
-        <line num="172" type="stmt" count="5"/>
-        <line num="179" type="method" name="permissions" visibility="public" complexity="1" crap="1" count="18"/>
-        <line num="181" type="stmt" count="18"/>
-        <metrics loc="183" ncloc="116" classes="1" methods="13" coveredmethods="13" conditionals="0" coveredconditionals="0" statements="35" coveredstatements="35" elements="48" coveredelements="48"/>
+        <line num="17" type="method" name="hasPermissionWithRole" visibility="public" complexity="3" crap="4.12" count="2"/>
+        <line num="19" type="stmt" count="2"/>
+        <line num="21" type="stmt" count="2"/>
+        <line num="22" type="stmt" count="0"/>
+        <line num="23" type="stmt" count="0"/>
+        <line num="24" type="stmt" count="0"/>
+        <line num="27" type="stmt" count="2"/>
+        <line num="35" type="method" name="givePermissionsToRole" visibility="public" complexity="3" crap="12.00" count="0"/>
+        <line num="37" type="stmt" count="0"/>
+        <line num="39" type="stmt" count="0"/>
+        <line num="40" type="stmt" count="0"/>
+        <line num="43" type="stmt" count="0"/>
+        <line num="45" type="stmt" count="0"/>
+        <line num="53" type="method" name="givePermissionTo" visibility="public" complexity="3" crap="3" count="18"/>
+        <line num="56" type="stmt" count="18"/>
+        <line num="58" type="stmt" count="18"/>
+        <line num="59" type="stmt" count="3"/>
+        <line num="62" type="stmt" count="15"/>
+        <line num="64" type="stmt" count="15"/>
+        <line num="72" type="method" name="detachPermissionTo" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="74" type="stmt" count="1"/>
+        <line num="76" type="stmt" count="1"/>
+        <line num="78" type="stmt" count="1"/>
+        <line num="86" type="method" name="updatePermission" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="88" type="stmt" count="1"/>
+        <line num="90" type="stmt" count="1"/>
+        <line num="98" type="method" name="hasPermissionTo" visibility="public" complexity="2" crap="2" count="17"/>
+        <line num="100" type="stmt" count="17"/>
+        <line num="101" type="stmt" count="4"/>
+        <line num="104" type="stmt" count="13"/>
+        <line num="112" type="method" name="giveRoleTo" visibility="public" complexity="2" crap="2" count="5"/>
+        <line num="114" type="stmt" count="5"/>
+        <line num="116" type="stmt" count="5"/>
+        <line num="117" type="stmt" count="2"/>
+        <line num="120" type="stmt" count="3"/>
+        <line num="122" type="stmt" count="3"/>
+        <line num="130" type="method" name="updateRole" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="132" type="stmt" count="1"/>
+        <line num="134" type="stmt" count="1"/>
+        <line num="142" type="method" name="hasPermissionThroughRole" visibility="protected" complexity="4" crap="4" count="4"/>
+        <line num="144" type="stmt" count="4"/>
+        <line num="145" type="stmt" count="2"/>
+        <line num="148" type="stmt" count="2"/>
+        <line num="149" type="stmt" count="2"/>
+        <line num="150" type="stmt" count="2"/>
+        <line num="154" type="stmt" count="1"/>
+        <line num="162" type="method" name="hasPermission" visibility="protected" complexity="1" crap="1" count="13"/>
+        <line num="164" type="stmt" count="13"/>
+        <line num="172" type="method" name="getAllPermissions" visibility="protected" complexity="1" crap="1" count="18"/>
+        <line num="174" type="stmt" count="18"/>
+        <line num="182" type="method" name="getAllRoles" visibility="protected" complexity="1" crap="1" count="5"/>
+        <line num="184" type="stmt" count="5"/>
+        <line num="192" type="method" name="hasRole" visibility="public" complexity="3" crap="3" count="3"/>
+        <line num="194" type="stmt" count="3"/>
+        <line num="195" type="stmt" count="3"/>
+        <line num="196" type="stmt" count="3"/>
+        <line num="200" type="stmt" count="1"/>
+        <line num="207" type="method" name="roles" visibility="public" complexity="1" crap="1" count="7"/>
+        <line num="209" type="stmt" count="7"/>
+        <line num="216" type="method" name="permissions" visibility="public" complexity="1" crap="1" count="18"/>
+        <line num="218" type="stmt" count="18"/>
+        <metrics loc="220" ncloc="141" classes="1" methods="15" coveredmethods="13" conditionals="0" coveredconditionals="0" statements="46" coveredstatements="38" elements="61" coveredelements="51"/>
       </file>
     </package>
     <package name="App\Notifications\API\Auth">
@@ -1069,77 +1208,77 @@
     <package name="App\Policies">
       <file name="C:\laragon\www\blog\app\Policies\CommentPolicy.php">
         <class name="App\Policies\CommentPolicy" namespace="App\Policies">
-          <metrics complexity="9" methods="7" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="5" elements="14" coveredelements="10"/>
+          <metrics complexity="14" methods="7" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="5" elements="14" coveredelements="10"/>
         </class>
         <line num="19" type="method" name="viewAny" visibility="public" complexity="1" crap="2.00" count="0"/>
         <line num="22" type="stmt" count="0"/>
         <line num="31" type="method" name="view" visibility="public" complexity="1" crap="2.00" count="0"/>
         <line num="34" type="stmt" count="0"/>
-        <line num="42" type="method" name="create" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="42" type="method" name="create" visibility="public" complexity="2" crap="2" count="2"/>
         <line num="44" type="stmt" count="2"/>
-        <line num="54" type="method" name="update" visibility="public" complexity="2" crap="2" count="1"/>
+        <line num="54" type="method" name="update" visibility="public" complexity="3" crap="3" count="1"/>
         <line num="56" type="stmt" count="1"/>
-        <line num="66" type="method" name="delete" visibility="public" complexity="2" crap="2" count="3"/>
+        <line num="66" type="method" name="delete" visibility="public" complexity="3" crap="3" count="3"/>
         <line num="68" type="stmt" count="3"/>
-        <line num="78" type="method" name="restore" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="78" type="method" name="restore" visibility="public" complexity="2" crap="2" count="1"/>
         <line num="80" type="stmt" count="1"/>
-        <line num="90" type="method" name="forceDelete" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="90" type="method" name="forceDelete" visibility="public" complexity="2" crap="2" count="1"/>
         <line num="92" type="stmt" count="1"/>
         <metrics loc="94" ncloc="43" classes="1" methods="7" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="5" elements="14" coveredelements="10"/>
       </file>
       <file name="C:\laragon\www\blog\app\Policies\PostPolicy.php">
         <class name="App\Policies\PostPolicy" namespace="App\Policies">
-          <metrics complexity="5" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="10" coveredelements="10"/>
+          <metrics complexity="13" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="10" coveredelements="10"/>
         </class>
-        <line num="19" type="method" name="create" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="19" type="method" name="create" visibility="public" complexity="2" crap="2" count="3"/>
         <line num="21" type="stmt" count="3"/>
-        <line num="31" type="method" name="update" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="31" type="method" name="update" visibility="public" complexity="3" crap="3" count="1"/>
         <line num="33" type="stmt" count="1"/>
-        <line num="43" type="method" name="delete" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="43" type="method" name="delete" visibility="public" complexity="3" crap="3" count="3"/>
         <line num="45" type="stmt" count="3"/>
-        <line num="55" type="method" name="restore" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="55" type="method" name="restore" visibility="public" complexity="3" crap="3" count="1"/>
         <line num="57" type="stmt" count="1"/>
-        <line num="67" type="method" name="forceDelete" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="67" type="method" name="forceDelete" visibility="public" complexity="2" crap="2" count="1"/>
         <line num="69" type="stmt" count="1"/>
         <metrics loc="71" ncloc="37" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="10" coveredelements="10"/>
       </file>
       <file name="C:\laragon\www\blog\app\Policies\TagPolicy.php">
         <class name="App\Policies\TagPolicy" namespace="App\Policies">
-          <metrics complexity="7" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="14" coveredelements="0"/>
+          <metrics complexity="12" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="14" coveredelements="0"/>
         </class>
         <line num="19" type="method" name="viewAny" visibility="public" complexity="1" crap="2.00" count="0"/>
         <line num="21" type="stmt" count="0"/>
         <line num="31" type="method" name="view" visibility="public" complexity="1" crap="2.00" count="0"/>
         <line num="33" type="stmt" count="0"/>
-        <line num="42" type="method" name="create" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="42" type="method" name="create" visibility="public" complexity="2" crap="6.00" count="0"/>
         <line num="44" type="stmt" count="0"/>
-        <line num="54" type="method" name="update" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="54" type="method" name="update" visibility="public" complexity="2" crap="6.00" count="0"/>
         <line num="56" type="stmt" count="0"/>
-        <line num="66" type="method" name="delete" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="66" type="method" name="delete" visibility="public" complexity="2" crap="6.00" count="0"/>
         <line num="68" type="stmt" count="0"/>
-        <line num="78" type="method" name="restore" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="78" type="method" name="restore" visibility="public" complexity="2" crap="6.00" count="0"/>
         <line num="80" type="stmt" count="0"/>
-        <line num="90" type="method" name="forceDelete" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="90" type="method" name="forceDelete" visibility="public" complexity="2" crap="6.00" count="0"/>
         <line num="92" type="stmt" count="0"/>
         <metrics loc="94" ncloc="47" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="14" coveredelements="0"/>
       </file>
       <file name="C:\laragon\www\blog\app\Policies\UserPolicy.php">
         <class name="App\Policies\UserPolicy" namespace="App\Policies">
-          <metrics complexity="7" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="14" coveredelements="0"/>
+          <metrics complexity="12" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="14" coveredelements="0"/>
         </class>
         <line num="18" type="method" name="viewAny" visibility="public" complexity="1" crap="2.00" count="0"/>
         <line num="20" type="stmt" count="0"/>
         <line num="29" type="method" name="view" visibility="public" complexity="1" crap="2.00" count="0"/>
         <line num="31" type="stmt" count="0"/>
-        <line num="40" type="method" name="create" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="40" type="method" name="create" visibility="public" complexity="2" crap="6.00" count="0"/>
         <line num="42" type="stmt" count="0"/>
-        <line num="51" type="method" name="update" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="51" type="method" name="update" visibility="public" complexity="2" crap="6.00" count="0"/>
         <line num="53" type="stmt" count="0"/>
-        <line num="63" type="method" name="delete" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="63" type="method" name="delete" visibility="public" complexity="2" crap="6.00" count="0"/>
         <line num="65" type="stmt" count="0"/>
-        <line num="74" type="method" name="restore" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="74" type="method" name="restore" visibility="public" complexity="2" crap="6.00" count="0"/>
         <line num="76" type="stmt" count="0"/>
-        <line num="85" type="method" name="forceDelete" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="85" type="method" name="forceDelete" visibility="public" complexity="2" crap="6.00" count="0"/>
         <line num="87" type="stmt" count="0"/>
         <metrics loc="89" ncloc="46" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="14" coveredelements="0"/>
       </file>
@@ -1149,20 +1288,20 @@
         <class name="App\Providers\AppServiceProvider" namespace="App\Providers">
           <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
         </class>
-        <line num="14" type="method" name="register" visibility="public" complexity="1" crap="1" count="48"/>
-        <line num="17" type="stmt" count="48"/>
-        <line num="24" type="method" name="boot" visibility="public" complexity="1" crap="1" count="48"/>
-        <line num="27" type="stmt" count="48"/>
+        <line num="14" type="method" name="register" visibility="public" complexity="1" crap="1" count="47"/>
+        <line num="17" type="stmt" count="47"/>
+        <line num="24" type="method" name="boot" visibility="public" complexity="1" crap="1" count="47"/>
+        <line num="27" type="stmt" count="47"/>
         <metrics loc="28" ncloc="14" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
       </file>
       <file name="C:\laragon\www\blog\app\Providers\AuthServiceProvider.php">
         <class name="App\Providers\AuthServiceProvider" namespace="App\Providers">
           <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
         </class>
-        <line num="36" type="method" name="boot" visibility="public" complexity="1" crap="1" count="48"/>
-        <line num="38" type="stmt" count="48"/>
-        <line num="40" type="stmt" count="48"/>
-        <line num="41" type="stmt" count="48"/>
+        <line num="36" type="method" name="boot" visibility="public" complexity="1" crap="1" count="47"/>
+        <line num="38" type="stmt" count="47"/>
+        <line num="40" type="stmt" count="47"/>
+        <line num="41" type="stmt" count="47"/>
         <metrics loc="42" ncloc="32" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
       </file>
       <file name="C:\laragon\www\blog\app\Providers\BroadcastServiceProvider.php">
@@ -1179,39 +1318,51 @@
         <class name="App\Providers\EventServiceProvider" namespace="App\Providers">
           <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
         </class>
-        <line num="37" type="method" name="boot" visibility="public" complexity="1" crap="1" count="48"/>
-        <line num="39" type="stmt" count="48"/>
-        <line num="42" type="stmt" count="48"/>
-        <line num="49" type="method" name="shouldDiscoverEvents" visibility="public" complexity="1" crap="1" count="48"/>
-        <line num="51" type="stmt" count="48"/>
+        <line num="37" type="method" name="boot" visibility="public" complexity="1" crap="1" count="47"/>
+        <line num="39" type="stmt" count="47"/>
+        <line num="42" type="stmt" count="47"/>
+        <line num="49" type="method" name="shouldDiscoverEvents" visibility="public" complexity="1" crap="1" count="47"/>
+        <line num="51" type="stmt" count="47"/>
         <metrics loc="53" ncloc="36" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
       </file>
       <file name="C:\laragon\www\blog\app\Providers\RouteServiceProvider.php">
         <class name="App\Providers\RouteServiceProvider" namespace="App\Providers">
           <metrics complexity="4" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="17" elements="21" coveredelements="21"/>
         </class>
-        <line num="27" type="method" name="boot" visibility="public" complexity="1" crap="1" count="48"/>
-        <line num="31" type="stmt" count="48"/>
-        <line num="33" type="stmt" count="48"/>
-        <line num="34" type="stmt" count="48"/>
-        <line num="35" type="stmt" count="48"/>
-        <line num="36" type="stmt" count="48"/>
-        <line num="43" type="method" name="map" visibility="public" complexity="1" crap="1" count="48"/>
-        <line num="45" type="stmt" count="48"/>
-        <line num="47" type="stmt" count="48"/>
-        <line num="50" type="stmt" count="48"/>
-        <line num="59" type="method" name="mapWebRoutes" visibility="protected" complexity="1" crap="1" count="48"/>
-        <line num="61" type="stmt" count="48"/>
-        <line num="62" type="stmt" count="48"/>
-        <line num="63" type="stmt" count="48"/>
-        <line num="64" type="stmt" count="48"/>
-        <line num="73" type="method" name="mapApiRoutes" visibility="protected" complexity="1" crap="1" count="48"/>
-        <line num="75" type="stmt" count="48"/>
-        <line num="76" type="stmt" count="48"/>
-        <line num="77" type="stmt" count="48"/>
-        <line num="78" type="stmt" count="48"/>
-        <line num="79" type="stmt" count="48"/>
+        <line num="27" type="method" name="boot" visibility="public" complexity="1" crap="1" count="47"/>
+        <line num="31" type="stmt" count="47"/>
+        <line num="33" type="stmt" count="47"/>
+        <line num="34" type="stmt" count="47"/>
+        <line num="35" type="stmt" count="47"/>
+        <line num="36" type="stmt" count="47"/>
+        <line num="43" type="method" name="map" visibility="public" complexity="1" crap="1" count="47"/>
+        <line num="45" type="stmt" count="47"/>
+        <line num="47" type="stmt" count="47"/>
+        <line num="50" type="stmt" count="47"/>
+        <line num="59" type="method" name="mapWebRoutes" visibility="protected" complexity="1" crap="1" count="47"/>
+        <line num="61" type="stmt" count="47"/>
+        <line num="62" type="stmt" count="47"/>
+        <line num="63" type="stmt" count="47"/>
+        <line num="64" type="stmt" count="47"/>
+        <line num="73" type="method" name="mapApiRoutes" visibility="protected" complexity="1" crap="1" count="47"/>
+        <line num="75" type="stmt" count="47"/>
+        <line num="76" type="stmt" count="47"/>
+        <line num="77" type="stmt" count="47"/>
+        <line num="78" type="stmt" count="47"/>
+        <line num="79" type="stmt" count="47"/>
         <metrics loc="80" ncloc="45" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="17" elements="21" coveredelements="21"/>
+      </file>
+      <file name="C:\laragon\www\blog\app\Providers\ViewServiceProvider.php">
+        <class name="App\Providers\ViewServiceProvider" namespace="App\Providers">
+          <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
+        </class>
+        <line num="17" type="method" name="register" visibility="public" complexity="1" crap="1" count="47"/>
+        <line num="20" type="stmt" count="47"/>
+        <line num="27" type="method" name="boot" visibility="public" complexity="1" crap="1" count="47"/>
+        <line num="30" type="stmt" count="47"/>
+        <line num="31" type="stmt" count="47"/>
+        <line num="32" type="stmt" count="47"/>
+        <metrics loc="33" ncloc="19" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
       </file>
     </package>
     <package name="App\Rules">
@@ -1234,17 +1385,17 @@
         <class name="App\Scoping\Scoper" namespace="App\Scoping">
           <metrics complexity="5" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="11" coveredelements="11"/>
         </class>
-        <line num="16" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="3"/>
-        <line num="18" type="stmt" count="3"/>
-        <line num="19" type="stmt" count="3"/>
-        <line num="21" type="method" name="apply" visibility="public" complexity="3" crap="3" count="3"/>
-        <line num="23" type="stmt" count="3"/>
-        <line num="24" type="stmt" count="2"/>
+        <line num="16" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="18" type="stmt" count="2"/>
+        <line num="19" type="stmt" count="2"/>
+        <line num="21" type="method" name="apply" visibility="public" complexity="3" crap="3" count="2"/>
+        <line num="23" type="stmt" count="2"/>
+        <line num="24" type="stmt" count="1"/>
         <line num="25" type="stmt" count="1"/>
-        <line num="27" type="stmt" count="2"/>
-        <line num="29" type="stmt" count="3"/>
-        <line num="31" type="method" name="limitScopes" visibility="protected" complexity="1" crap="1" count="3"/>
-        <line num="33" type="stmt" count="3"/>
+        <line num="27" type="stmt" count="1"/>
+        <line num="29" type="stmt" count="2"/>
+        <line num="31" type="method" name="limitScopes" visibility="protected" complexity="1" crap="1" count="2"/>
+        <line num="33" type="stmt" count="2"/>
         <metrics loc="35" ncloc="32" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="11" coveredelements="11"/>
       </file>
     </package>
@@ -1260,16 +1411,16 @@
       </file>
       <file name="C:\laragon\www\blog\app\Scoping\Scopes\TagScope.php">
         <class name="App\Scoping\Scopes\TagScope" namespace="App\Scoping\Scopes">
-          <metrics complexity="2" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
+          <metrics complexity="2" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="3" elements="5" coveredelements="3"/>
         </class>
-        <line num="13" type="method" name="apply" visibility="public" complexity="2" crap="2" count="2"/>
-        <line num="15" type="stmt" count="2"/>
-        <line num="16" type="stmt" count="1"/>
+        <line num="13" type="method" name="apply" visibility="public" complexity="2" crap="2.06" count="1"/>
+        <line num="15" type="stmt" count="1"/>
+        <line num="16" type="stmt" count="0"/>
         <line num="19" type="stmt" count="1"/>
         <line num="20" type="stmt" count="1"/>
-        <metrics loc="22" ncloc="19" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
+        <metrics loc="22" ncloc="19" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="3" elements="5" coveredelements="3"/>
       </file>
     </package>
-    <metrics files="84" loc="3849" ncloc="2482" classes="76" methods="196" coveredmethods="86" conditionals="0" coveredconditionals="0" statements="508" coveredstatements="278" elements="704" coveredelements="364"/>
+    <metrics files="90" loc="4315" ncloc="2772" classes="82" methods="223" coveredmethods="90" conditionals="0" coveredconditionals="0" statements="594" coveredstatements="294" elements="817" coveredelements="384"/>
   </project>
 </coverage>

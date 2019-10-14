@@ -3,7 +3,6 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Tag;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class TagPolicy
@@ -28,7 +27,7 @@ class TagPolicy
      * @param  \App\Tag  $tag
      * @return mixed
      */
-    public function view(User $user, Tag $tag)
+    public function view(User $user, $tag)
     {
         return true;
     }
@@ -41,7 +40,7 @@ class TagPolicy
      */
     public function create(User $user)
     {
-        return $user->hasPermissionTo('create tag');
+        return $user->hasPermissionTo('create tag') || $user->hasPermissionWithRole('create tag');
     }
 
     /**
@@ -51,9 +50,9 @@ class TagPolicy
      * @param  \App\Tag  $tag
      * @return mixed
      */
-    public function update(User $user, Tag $tag)
+    public function update(User $user, $tag)
     {
-        return $user->hasPermissionTo('update tag');
+        return $user->hasPermissionTo('update tag') || $user->hasPermissionWithRole('update tag');
     }
 
     /**
@@ -63,9 +62,9 @@ class TagPolicy
      * @param  \App\Tag  $tag
      * @return mixed
      */
-    public function delete(User $user, Tag $tag)
+    public function delete(User $user, $tag)
     {
-        return $user->hasPermissionTo('delete tag');
+        return $user->hasPermissionTo('delete tag') || $user->hasPermissionWithRole('delete tag');
     }
 
     /**
@@ -75,9 +74,9 @@ class TagPolicy
      * @param  \App\Tag  $tag
      * @return mixed
      */
-    public function restore(User $user, Tag $tag)
+    public function restore(User $user, $tag)
     {
-        return $user->hasPermissionTo('restore tag');
+        return $user->hasPermissionTo('restore tag') || $user->hasPermissionWithRole('restore tag');
     }
 
     /**
@@ -87,8 +86,8 @@ class TagPolicy
      * @param  \App\Tag  $tag
      * @return mixed
      */
-    public function forceDelete(User $user, Tag $tag)
+    public function forceDelete(User $user, $tag)
     {
-        return $user->hasPermissionTo('forceDelete tag');
+        return $user->hasPermissionTo('force delete tag') || $user->hasPermissionWithRole('force delete tag');
     }
 }
