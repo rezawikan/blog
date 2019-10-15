@@ -8,11 +8,13 @@ use App\Models\Post;
 use App\Models\User;
 use App\Models\Comment;
 use App\Models\Permission;
+use App\Models\PostCategory;
 use App\Policies\PostPolicy;
 use App\Policies\UserPolicy;
 use App\Policies\TagPolicy;
 use App\Policies\CommentPolicy;
 use App\Policies\PermissionPolicy;
+use App\Policies\PostCategoryPolicy;
 use App\Policies\RolePolicy;
 use Laravel\Passport\Passport;
 use Illuminate\Support\Facades\Gate;
@@ -27,6 +29,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         Post::class => PostPolicy::class,
+        PostCategory::class => PostCategoryPolicy::class,
         User::class => UserPolicy::class,
         Tag::class => TagPolicy::class,
         Comment::class => CommentPolicy::class,

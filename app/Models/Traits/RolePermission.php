@@ -18,10 +18,27 @@ trait RolePermission
     {
         $roles = $this->roles()->get();
 
+        if (is_array($permission)) {
+            return $this->hasMultiPermissionWithRole($permission, $roles);
+        }
+
         foreach ($roles as $key => $value) {
           $result = $value->permissions->pluck('name')->contains($permission);
           if ($result) {
               return true;
+          }
+        }
+        return false;
+    }
+
+    protected function hasMultiPermissionWithRole($permissions, $roles)
+    {
+        foreach ($roles as $key => $value) {
+          foreach ($permissions as $permission) {
+              $result = $value->permissions->pluck('name')->contains($permission);
+              if ($result) {
+                  return true;
+              }
           }
         }
         return false;
@@ -101,6 +118,10 @@ trait RolePermission
             return $this->hasPermissionThroughRole($permission);
         }
 
+        if (is_array($permission)) {
+            return $this->hasPermissionIn($permission);
+        }
+
         return $this->hasPermission($permission);
     }
 
@@ -162,6 +183,16 @@ trait RolePermission
     protected function hasPermission($permission)
     {
         return (bool) $this->permissions->where('name', $permission)->count();
+    }
+
+    /**
+     * Action to checking the permissions with the string/number value
+     * @param  string/number  $permission [description]
+     * @return boolean
+     */
+    protected function hasPermissionIn($permissions)
+    {
+        return (bool) $this->permissions->whereIn('name', $permissions)->count();
     }
 
     /**

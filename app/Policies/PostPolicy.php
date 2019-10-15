@@ -10,6 +10,17 @@ class PostPolicy
     use HandlesAuthorization;
 
     /**
+     * Determine whether the user can view the permission.
+     *
+     * @param  \App\Models\User  $user
+     * @return mixed
+     */
+    public function view(User $user)
+    {
+        return $user->hasPermissionTo('view post') || $user->hasPermissionWithRole('view post');
+    }
+
+    /**
      * Determine whether the user can create posts.
      *
      * @param  \App\Models\User  $user

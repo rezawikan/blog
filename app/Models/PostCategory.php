@@ -6,18 +6,31 @@ use App\Models\Post;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Traits\HasChildren;
 use App\Models\Traits\IsOrderable;
+use Laravel\Scout\Searchable;
+use App\Models\Traits\UniqueSlug;
+use App\Models\Traits\SoftDeletesWithDeleted;
 
 class PostCategory extends Model
 {
-      use HasChildren, IsOrderable;
+      use HasChildren, IsOrderable, Searchable, UniqueSlug, SoftDeletesWithDeleted;
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'slug',  'order', 'parent _id'
+        'name', 'slug',  'order', 'parent_id'
     ];
+
+    /**
+     * Get the index name for the model.
+     *
+     * @return string
+     */
+    public function searchableAs()
+    {
+        return 'post_categories';
+    }
 
     /**
      * Block comment
@@ -28,6 +41,17 @@ class PostCategory extends Model
     public function children()
     {
         return $this->hasMany(PostCategory::class, 'parent_id', 'id');
+    }
+
+    /**
+     * Block comment
+     *
+     * @param type
+     * @return void
+     */
+    public function parent()
+    {
+        return $this->belongsTo(PostCategory::class, 'parent_id');
     }
 
 

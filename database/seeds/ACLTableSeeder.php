@@ -16,14 +16,21 @@ class ACLTableSeeder extends Seeder
     public function run()
     {
 
-        $postPermission = ['create post', 'update post', 'delete post', 'force delete post', 'restore post'];
-        $commentPermission = ['create comment', 'update comment', 'delete comment', 'force delete comment', 'restore comment'];
-        $tagPermission = ['create tag', 'update tag', 'delete tag', 'force delete tag', 'restore tag'];
-        $userPermission = ['create user', 'update user', 'delete user', 'force delete user', 'restore user'];
-        $permissionList = ['create permission', 'update permission', 'delete permission'];
-        $roleList = ['create role', 'update role', 'delete role'];
+        $postPermission = ['view post', 'create post', 'update post', 'delete post', 'force delete post', 'restore post'];
+        $commentPermission = ['view comment', 'create comment', 'update comment', 'delete comment', 'force delete comment', 'restore comment'];
+        $tagPermission = ['view tag', 'create tag', 'update tag', 'delete tag', 'force delete tag', 'restore tag'];
+        $userPermission = ['view user', 'create user', 'update user', 'delete user', 'force delete user', 'restore user'];
+        $permissionList = ['view permission', 'create permission', 'update permission', 'delete permission'];
+        $roleList = ['view role', 'create role', 'update role', 'delete role'];
+        $postCategory = ['view post category', 'create post category', 'update post category', 'delete post category', 'force delete post category', 'restore post category'];
 
-        $allPermissions = collect($postPermission)->merge($commentPermission)->merge($tagPermission)->merge($userPermission)->merge($permissionList)->merge($roleList);
+        $allPermissions = collect($postPermission)
+        ->merge($commentPermission)
+        ->merge($tagPermission)
+        ->merge($userPermission)
+        ->merge($permissionList)
+        ->merge($roleList)
+        ->merge($postCategory);
 
         foreach ($allPermissions as $key => $value) {
           factory(Permission::class)->create(['name' => $value]);

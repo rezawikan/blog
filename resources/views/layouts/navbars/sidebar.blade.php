@@ -89,71 +89,108 @@
             </form>
             <!-- Navigation -->
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
-                        <i class="ni ni-tv-2 text-primary"></i> {{ __('Dashboard') }}
-                    </a>
-                </li>
-                <li class="nav-item">
+              <li class="nav-item">
+                  <a class="nav-link" href="{{ route('home') }}">
+                      <i class="ni ni-tv-2 text-primary"></i> {{ __('Dashboard') }}
+                  </a>
+              </li>
+                {{-- <li class="nav-item">
                     <a class="nav-link {{ (request()->is('user-management*')) ? 'active' : '' }}" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
                         <i class="fas fa-users"></i>
                         <span class="nav-link-text">{{ __('User Management') }}</span>
                     </a>
-
                     <div class="collapse {{ (request()->is('user-management*')) ? 'show' : '' }}" id="navbar-examples">
                         <ul class="nav nav-sm flex-column">
+                           @can('view', \App\Models\User::class)
                             <li class="nav-item">
                                 <a class="nav-link  {{ (request()->is('user-management/user')) ? 'active' : '' }}" href="{{ route('user.index') }}">
                                     {{ __('Users') }}
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link {{ (request()->is('user-management/role')) ? 'active' : '' }}" href="{{ route('role.index') }}">
-                                    {{ __('Roles') }}
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link {{ (request()->is('user-management/permission')) ? 'active' : '' }}" href="{{ route('permission.index') }}">
-                                    {{ __('Permissions') }}
-                                </a>
-                            </li>
+                            @endcan
+                            @can('view', \App\Models\Role::class)
+                              <li class="nav-item">
+                                  <a class="nav-link {{ (request()->is('user-management/role')) ? 'active' : '' }}" href="{{ route('role.index') }}">
+                                      {{ __('Roles') }}
+                                  </a>
+                              </li>
+                            @endcan
+                            @can('view', \App\Models\Permission::class)
+                              <li class="nav-item">
+                                  <a class="nav-link {{ (request()->is('user-management/permission')) ? 'active' : '' }}" href="{{ route('permission.index') }}">
+                                      {{ __('Permissions') }}
+                                  </a>
+                              </li>
+                            @endcan
                         </ul>
                     </div>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('profile.edit') }}">
-                        <i class="fas fa-user text-blue"></i> {{ __('User profile') }}
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="ni ni-planet text-blue"></i> {{ __('Icons') }}
-                    </a>
-                </li>
+                </li> --}}
+              <li class="nav-item">
+                  <a class="nav-link" href="{{ route('profile.edit') }}">
+                      <i class="fas fa-user text-blue"></i> {{ __('User profile') }}
+                  </a>
+              </li>
+              @can('view', \App\Models\PostCategory::class)
+              <li class="nav-item">
+                  <a class="nav-link" href="{{ route('post-category.index') }}">
+                      <i class="fas fa-align-left text-blue"></i> {{ __('Post Categories') }}
+                  </a>
+              </li>
+              @endcan
+              @can('view', \App\Models\Post::class)
+              <li class="nav-item">
+                  <a class="nav-link" href="{{ route('post.index') }}">
+                      <i class="fas fa-newspaper text-blue"></i> {{ __('Posts') }}
+                  </a>
+              </li>
+              @endcan
+              @can('view', \App\Models\Tag::class)
+              <li class="nav-item">
+                  <a class="nav-link" href="{{ route('tag.index') }}">
+                      <i class="fas fa-tags text-blue"></i> {{ __('Tags') }}
+                  </a>
+              </li>
+              @endcan
+              @can('view', \App\Models\Comment::class)
+              <li class="nav-item">
+                  <a class="nav-link" href="{{ route('comment.index') }}">
+                      <i class="fas fa-comments text-blue"></i> {{ __('Comments') }}
+                  </a>
+              </li>
+              @endcan
             </ul>
-            <!-- Divider -->
-            {{-- <hr class="my-3"> --}}
-            <!-- Heading -->
-            {{-- <h6 class="navbar-heading text-muted">Documentation</h6> --}}
+
+            @if (auth()->user()->hasPermissionWithRole(['view user', 'view role', 'view permission']))
+              <!-- Divider -->
+              <hr class="my-3">
+              <!-- Heading -->
+              <h6 class="navbar-heading text-muted">User Management</h6>
+            @endif
+
             <!-- Navigation -->
-            {{-- <ul class="navbar-nav mb-md-3">
-                <li class="nav-item">
-                    <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html">
-                        <i class="ni ni-spaceship"></i> Getting started
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/foundation/colors.html">
-                        <i class="ni ni-palette"></i> Foundation
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.html">
-                        <i class="ni ni-ui-04"></i> Components
-                    </a>
-                </li>
-            </ul> --}}
+            <ul class="navbar-nav mb-md-3">
+              @can('view', \App\Models\User::class)
+                 <li class="nav-item">
+                   <a class="nav-link  {{ (request()->is('user-management/user')) ? 'active' : '' }}" href="{{ route('user.index') }}">
+                       {{ __('Users') }}
+                   </a>
+                 </li>
+               @endcan
+               @can('view', \App\Models\Role::class)
+                 <li class="nav-item">
+                   <a class="nav-link {{ (request()->is('user-management/role')) ? 'active' : '' }}" href="{{ route('role.index') }}">
+                       {{ __('Roles') }}
+                   </a>
+                 </li>
+               @endcan
+               @can('view', \App\Models\Permission::class)
+                 <li class="nav-item">
+                   <a class="nav-link {{ (request()->is('user-management/permission')) ? 'active' : '' }}" href="{{ route('permission.index') }}">
+                       {{ __('Permissions') }}
+                   </a>
+                 </li>
+               @endcan
+            </ul>
         </div>
     </div>
 </nav>

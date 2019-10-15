@@ -24,12 +24,11 @@ class CommentPolicy
      * Determine whether the user can view the comment.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Comment  $comment
      * @return mixed
      */
-    public function view(User $user, Comment $comment)
+    public function view(User $user)
     {
-        //
+        return $user->hasPermissionTo('view comment') || $user->hasPermissionWithRole('view comment');
     }
 
     /**

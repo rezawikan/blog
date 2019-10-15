@@ -3,22 +3,12 @@
 namespace App\Policies;
 
 use App\Models\User;
+use App\Models\Permission;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class PermissionPolicy
 {
     use HandlesAuthorization;
-
-    /**
-     * Determine whether the user can view any permissions.
-     *
-     * @param  \App\Models\User  $user
-     * @return mixed
-     */
-    public function viewAny(User $user)
-    {
-        //
-    }
 
     /**
      * Determine whether the user can view the permission.
@@ -27,9 +17,9 @@ class PermissionPolicy
      * @param  \App\Permission  $permission
      * @return mixed
      */
-    public function view(User $user, Permission $permission)
+    public function view(User $user)
     {
-        //
+        return $user->hasPermissionTo('view permission') || $user->hasPermissionWithRole('view permission');
     }
 
     /**

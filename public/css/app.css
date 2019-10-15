@@ -7,3 +7,7 @@
   color: #f4645f !important;
 }
 
+.nav-link.active {
+  color: #f4645f !important;
+}
+

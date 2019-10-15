@@ -10,26 +10,14 @@ class TagPolicy
     use HandlesAuthorization;
 
     /**
-     * Determine whether the user can view any tags.
-     *
-     * @param  \App\Models\User  $user
-     * @return mixed
-     */
-    public function viewAny(User $user)
-    {
-        return true;
-    }
-
-    /**
      * Determine whether the user can view the tag.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Tag  $tag
      * @return mixed
      */
-    public function view(User $user, $tag)
+    public function view(User $user)
     {
-        return true;
+        return $user->hasPermissionTo('view tag') || $user->hasPermissionWithRole('view tag');
     }
 
     /**

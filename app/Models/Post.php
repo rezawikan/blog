@@ -10,12 +10,12 @@ use App\Models\Traits\LatestOrder;
 use App\Scoping\Scopes\TagScope;
 use App\Scoping\Scopes\CategoryScope;
 use Illuminate\Database\Eloquent\Model;
-// use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Traits\SoftDeletesWithDeleted;
+use App\Models\Traits\UniqueSlug;
 
 class Post extends Model
 {
-    use CanBeScoped, LatestOrder, IsLive, SoftDeletesWithDeleted;
+    use CanBeScoped, LatestOrder, IsLive, SoftDeletesWithDeleted, UniqueSlug;
     /**
      * The attributes that are mass assignable.
      *
@@ -38,35 +38,6 @@ class Post extends Model
       })->count();
 
       return $user > 0 ? true : false;
-    }
-
-    /**
-     * Set the post's slug.
-     *
-     * @param  string  $value
-     * @return void
-     */
-    public function setSlugAttribute($value)
-    {
-        if (static::whereSlug($slug = str_slug($value))->exists()) {
-          $slug = $this->incrementSlug($slug);
-        }
-
-        $this->attributes['slug'] = $slug;
-    }
-
-    /**
-     * [user description]
-     * @return [type] [description]
-     */
-    protected function incrementSlug($slug) {
-      $original = $slug;
-      $count = 2;
-      while (static::whereSlug($slug)->exists()) {
-          $slug = "{$original}-" . $count++;
-      }
-
-      return $slug;
     }
 
     /**

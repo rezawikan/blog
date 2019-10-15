@@ -14,6 +14,8 @@ class PermissionController extends Controller
      */
     public function index(Permission $permissions, Request $request)
     {
+        $this->authorize('view', Permission::class);
+
         return view('permissions.index', ['permissions' => $permissions->search($request->q)->paginate(15)]);
     }
 
@@ -24,6 +26,8 @@ class PermissionController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', Permission::class);
+
         return view('permissions.create');
     }
 
@@ -35,6 +39,7 @@ class PermissionController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create', Permission::class);
         $permission = Permission::create($request->only('name'));
 
         if ($request->has('roles')) {
@@ -63,6 +68,8 @@ class PermissionController extends Controller
      */
     public function edit(Permission $permission)
     {
+        $this->authorize('update', Permission::class);
+
         return view('permissions.edit', compact('permission'));
     }
 
@@ -75,6 +82,8 @@ class PermissionController extends Controller
      */
     public function update(Request $request, Permission $permission)
     {
+        $this->authorize('update', Permission::class);
+
         $permission->update($request->except('roles'));
 
         $permission->roles()->sync($request->roles);
@@ -90,6 +99,9 @@ class PermissionController extends Controller
      */
     public function destroy(Permission $permission)
     {
+
+        $this->authorize('delete', Permission::class);
+
         $permission->roles()->detach();
         $permission->delete();
 

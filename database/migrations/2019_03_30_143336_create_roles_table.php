@@ -17,6 +17,7 @@ class CreateRolesTable extends Migration
             $table->increments('id');
             $table->string('name'); // admin, user, drafter
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

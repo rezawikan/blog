@@ -20,8 +20,7 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\TrustProxies::class,
         \Barryvdh\Cors\HandleCors::class,
-        \App\Http\Middleware\ProfileJsonResponse::class,
-        \App\Http\Middleware\CheckEmptyParams::class
+        \App\Http\Middleware\ProfileJsonResponse::class
     ];
 
     /**
@@ -43,6 +42,7 @@ class Kernel extends HttpKernel
         'api' => [
             'throttle:60,1',
             'bindings',
+            \App\Http\Middleware\CheckEmptyParams::class
         ],
     ];
 

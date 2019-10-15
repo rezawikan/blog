@@ -20,6 +20,7 @@ class CreatePostCategoriesTable extends Migration
             $table->integer('order')->nullable();
             $table->unsignedInteger('parent_id')->index()->nullable();
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('parent_id')->references('id')->on('post_categories');
         });

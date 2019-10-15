@@ -47,25 +47,21 @@
                                         <td>{{ $permission->name }}</td>
                                         <td>{{ $permission->created_at->format('d/m/Y H:i') }}</td>
                                         <td class="text-right">
-                                          @can('update', $permission)
-                                            <div class="dropdown">
-                                                <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="fas fa-ellipsis-v"></i>
-                                                </a>
-                                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                  <form action="{{ route('permission.destroy', $permission) }}" method="post">
-                                                      @csrf
-                                                      @method('delete')
-                                                      <a class="dropdown-item" href="{{ route('permission.edit', $permission) }}">{{ __('Edit') }}</a>
-                                                      @can('delete', $permission)
-                                                      <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this permission?") }}') ? this.parentElement.submit() : ''">
-                                                          {{ __('Delete') }}
-                                                      </button>
-                                                      @endcan
-                                                  </form>
-                                                </div>
+                                          <div class="dropdown">
+                                            <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-ellipsis-v"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                              <form action="{{ route('permission.destroy', $permission) }}" method="post">
+                                                @csrf
+                                                @method('delete')
+                                                <a class="dropdown-item" href="{{ route('permission.edit', $permission) }}">{{ __('Edit') }}</a>
+                                                <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this permission?") }}') ? this.parentElement.submit() : ''">
+                                                    {{ __('Delete') }}
+                                                </button>
+                                              </form>
                                             </div>
-                                            @endcan
+                                          </div>
                                         </td>
                                     </tr>
                                 @endforeach
