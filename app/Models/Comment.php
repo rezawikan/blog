@@ -3,12 +3,14 @@
 namespace App\Models;
 
 use App\Models\User;
+use Laravel\Scout\Searchable;
+use App\Models\Traits\UniqueSlug;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Traits\SoftDeletesWithDeleted;
 
 class Comment extends Model
 {
-    use SoftDeletesWithDeleted;
+    use SoftDeletesWithDeleted, Searchable, UniqueSlug;
     /**
      * The attributes that are mass assignable.
      *
@@ -16,6 +18,15 @@ class Comment extends Model
      */
       protected $fillable = ['user_id', 'parent_id', 'body', 'approved'];
 
+      /**
+       * Get the index name for the model.
+       *
+       * @return string
+       */
+      public function searchableAs()
+      {
+          return 'comments';
+      }
 
         /**
        * Get the owning commentable model.
@@ -58,6 +69,15 @@ class Comment extends Model
       public function User()
       {
           return $this->belongsTo(User::class);
+      }
+
+      /**
+       * [roles description]
+       * @return Object permission [description]
+       */
+      public function parent()
+      {
+          return $this->belongsTo(Comment::class);
       }
 
       /**

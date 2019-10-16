@@ -38,7 +38,7 @@ class TagPolicy
      * @param  \App\Tag  $tag
      * @return mixed
      */
-    public function update(User $user, $tag)
+    public function update(User $user)
     {
         return $user->hasPermissionTo('update tag') || $user->hasPermissionWithRole('update tag');
     }
@@ -50,7 +50,7 @@ class TagPolicy
      * @param  \App\Tag  $tag
      * @return mixed
      */
-    public function delete(User $user, $tag)
+    public function delete(User $user)
     {
         return $user->hasPermissionTo('delete tag') || $user->hasPermissionWithRole('delete tag');
     }
@@ -62,7 +62,7 @@ class TagPolicy
      * @param  \App\Tag  $tag
      * @return mixed
      */
-    public function restore(User $user, $tag)
+    public function restore(User $user)
     {
         return $user->hasPermissionTo('restore tag') || $user->hasPermissionWithRole('restore tag');
     }
@@ -74,7 +74,7 @@ class TagPolicy
      * @param  \App\Tag  $tag
      * @return mixed
      */
-    public function forceDelete(User $user, $tag)
+    public function forceDelete(User $user)
     {
         return $user->hasPermissionTo('force delete tag') || $user->hasPermissionWithRole('force delete tag');
     }

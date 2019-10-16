@@ -92,5 +92,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('post-category/{post_category}/restore', 'PostCategoryController@restore')->name('post-category.restore');
 	Route::resource('post', 'PostController');
 	Route::resource('tag', 'TagController');
+  Route::get('tag/{tag}/restore', 'TagController@restore')->name('tag.restore');
 	Route::resource('comment', 'CommentController');
+	Route::get('comment/{comment}/restore', 'CommentController@restore')->name('comment.restore');
 });

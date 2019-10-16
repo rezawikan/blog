@@ -10,8 +10,8 @@ class SoftDeletingWithDeletesScope extends SoftDeletingScope
 {
     public function apply(Builder $builder, Model $model)
     {
-      if ($model->trashed()) {
-          $builder->whereNull($model->getQualifiedDeletedAtColumn());
-      }
+        if ($model->trashed()) {
+            $builder->whereNull($model->getQualifiedDeletedAtColumn());
+        }
     }
 }

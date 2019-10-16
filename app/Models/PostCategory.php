@@ -12,7 +12,8 @@ use App\Models\Traits\SoftDeletesWithDeleted;
 
 class PostCategory extends Model
 {
-      use HasChildren, IsOrderable, Searchable, UniqueSlug, SoftDeletesWithDeleted;
+  
+    use HasChildren, IsOrderable, Searchable, UniqueSlug, SoftDeletesWithDeleted;
     /**
      * The attributes that are mass assignable.
      *

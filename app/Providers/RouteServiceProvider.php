@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Tag;
 use App\Models\User;
 use App\Models\Post;
 use App\Models\Comment;
@@ -33,6 +34,7 @@ class RouteServiceProvider extends ServiceProvider
         Route::model('post', Post::class);
         Route::model('user', User::class);
         Route::model('comment', Comment::class);
+        Route::model('tag', Tag::class);
     }
 
     /**
