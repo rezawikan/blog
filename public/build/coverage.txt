@@ -1,12 +1,12 @@
 
 
 Code Coverage Report:      
-  2019-10-15 10:53:49      
+  2019-10-16 11:58:16      
                            
  Summary:                  
-  Classes: 33.33% (28/84)  
-  Methods: 37.71% (89/236) 
-  Lines:   48.05% (296/616)
+  Classes: 27.47% (25/91)  
+  Methods: 32.13% (89/277) 
+  Lines:   42.78% (299/699)
 
 \App\Console::App\Console\Kernel
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  4/  4)
@@ -53,9 +53,9 @@ Code Coverage Report:
 \App\Models::App\Models\Permission
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  2/  2)
 \App\Models::App\Models\Post
-  Methods:  62.50% ( 5/ 8)   Lines:  52.63% ( 10/ 19)
+  Methods:  83.33% ( 5/ 6)   Lines:  70.00% (  7/ 10)
 \App\Models::App\Models\PostCategory
-  Methods: 100.00% ( 3/ 3)   Lines: 100.00% (  3/  3)
+  Methods:  80.00% ( 4/ 5)   Lines:  80.00% (  4/  5)
 \App\Models::App\Models\Role
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  2/  2)
 \App\Models::App\Models\Tag
@@ -63,11 +63,11 @@ Code Coverage Report:
 \App\Models::App\Models\User
   Methods:  14.29% ( 1/ 7)   Lines:   9.09% (  1/ 11)
 \App\Models\Scopes::App\Models\Scopes\SoftDeletingWithDeletesScope
-  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
+  Methods:   0.00% ( 0/ 1)   Lines:  66.67% (  2/  3)
 \App\Models\Traits::CanBeScoped
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
 \App\Models\Traits::HasChildren
-  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  2/  2)
+  Methods:  50.00% ( 1/ 2)   Lines:  50.00% (  2/  4)
 \App\Models\Traits::IsLive
   Methods:   0.00% ( 0/ 1)   Lines:  66.67% (  2/  3)
 \App\Models\Traits::IsOrderable
@@ -76,6 +76,8 @@ Code Coverage Report:
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
 \App\Models\Traits::SoftDeletesWithDeleted
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  2/  2)
+\App\Models\Traits::UniqueSlug
+  Methods:   0.00% ( 0/ 2)   Lines:  33.33% (  3/  9)
 \App\Policies::App\Policies\CommentPolicy
   Methods:  71.43% ( 5/ 7)   Lines:  71.43% (  5/  7)
 \App\Policies::App\Policies\PostPolicy
@@ -89,7 +91,7 @@ Code Coverage Report:
 \App\Providers::App\Providers\RouteServiceProvider
   Methods: 100.00% ( 4/ 4)   Lines: 100.00% ( 17/ 17)
 \App\Providers::App\Providers\ViewServiceProvider
-  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  4/  4)
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  5/  5)
 \App\Scoping::App\Scoping\Scoper
   Methods: 100.00% ( 3/ 3)   Lines: 100.00% (  8/  8)
 \App\Scoping\Scopes::App\Scoping\Scopes\TagScope

@@ -16,7 +16,7 @@ class PostCategoryController extends Controller
     {
         $this->authorize('view', PostCategory::class);
 
-        return view('post-categories.index', ['postCategories' => $postCategories->search($request->q)->paginate(15)]);
+        return view('post-categories.index', ['postCategories' => $postCategories->search($request->q)->withTrashed()->paginate(15)]);
     }
 
     /**
@@ -82,7 +82,7 @@ class PostCategoryController extends Controller
     public function update(Request $request, PostCategory $postCategory)
     {
           $this->authorize('update', PostCategory::class);
-          // dd($postCategory);
+
           $postCategory->update($request->merge([
             'slug' => $request->name
             ])->all());
@@ -96,8 +96,41 @@ class PostCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(PostCategory $postCategory)
     {
-        //
+        if ($postCategory->trashed()) {
+            $this->authorize('forceDelete', PostCategory::class);
+            
+            if ($postCategory->children()->count() > 0) {
+                $postCategory->children()->update(['parent_id' => null]);
+            }
+
+            $postCategory->forceDelete();
+
+            return redirect()->route('post-category.index')->withStatus(__('Post Category successfully force deleted.'));
+        }
+
+        $this->authorize('delete', PostCategory::class);
+        $postCategory->delete();
+
+        return redirect()->route('post-category.index')->withStatus(__('Post Category successfully deleted.'));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function restore(Request $request, PostCategory $postCategory)
+    {
+        $this->authorize('restore', $postCategory);
+
+        if ($postCategory->trashed()) {
+
+            $postCategory->restore();
+
+            return redirect()->route('post-category.index')->withStatus(__('Post Category successfully restored.'));
+        }
     }
 }

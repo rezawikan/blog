@@ -62,7 +62,7 @@ class PostCategoryPolicy
      * @param  \App\PostCategory  $postCategory
      * @return mixed
      */
-    public function delete(User $user, PostCategory $postCategory)
+    public function delete(User $user)
     {
         return $user->hasPermissionTo('delete post category') || $user->hasPermissionWithRole('delete post category');
     }
@@ -74,7 +74,7 @@ class PostCategoryPolicy
      * @param  \App\PostCategory  $postCategory
      * @return mixed
      */
-    public function restore(User $user, PostCategory $postCategory)
+    public function restore(User $user)
     {
         return $user->hasPermissionTo('restore post category') || $user->hasPermissionWithRole('restore post category');
     }
@@ -86,7 +86,7 @@ class PostCategoryPolicy
      * @param  \App\PostCategory  $postCategory
      * @return mixed
      */
-    public function forceDelete(User $user, PostCategory $postCategory)
+    public function forceDelete(User $user)
     {
         return $user->hasPermissionTo('force delete post category') || $user->hasPermissionWithRole('force delete post category');
     }

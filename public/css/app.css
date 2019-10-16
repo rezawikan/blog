@@ -11,3 +11,13 @@
   color: #f4645f !important;
 }
 
+@media only screen and (max-width: 768px) {
+  .ais-InstantSearch {
+    margin: 1em 0;
+  }
+}
+
+tr.bg-danger td {
+  color: white !important;
+}
+

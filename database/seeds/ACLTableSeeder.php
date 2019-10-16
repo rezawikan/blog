@@ -20,8 +20,8 @@ class ACLTableSeeder extends Seeder
         $commentPermission = ['view comment', 'create comment', 'update comment', 'delete comment', 'force delete comment', 'restore comment'];
         $tagPermission = ['view tag', 'create tag', 'update tag', 'delete tag', 'force delete tag', 'restore tag'];
         $userPermission = ['view user', 'create user', 'update user', 'delete user', 'force delete user', 'restore user'];
-        $permissionList = ['view permission', 'create permission', 'update permission', 'delete permission'];
-        $roleList = ['view role', 'create role', 'update role', 'delete role'];
+        $permissionList = ['view permission', 'create permission', 'update permission', 'delete permission', 'force delete permission', 'restore permission'];
+        $roleList = ['view role', 'create role', 'update role', 'delete role', 'force delete role', 'restore role'];
         $postCategory = ['view post category', 'create post category', 'update post category', 'delete post category', 'force delete post category', 'restore post category'];
 
         $allPermissions = collect($postPermission)
@@ -36,6 +36,10 @@ class ACLTableSeeder extends Seeder
           factory(Permission::class)->create(['name' => $value]);
         }
 
+        $roleSuperAdmin = factory(Role::class)->create([
+          'name' => 'Super Admin'
+        ]);
+
         $roleAdmin = factory(Role::class)->create([
           'name' => 'Admin'
         ]);
@@ -44,8 +48,15 @@ class ACLTableSeeder extends Seeder
           'name' => 'Team'
         ]);
 
-        $roleDrafter = factory(Role::class)->create([
+        $roleUser = factory(Role::class)->create([
           'name' => 'User'
+        ]);
+
+        $superadmin = factory(User::class)->create([
+          'name' => 'Admin User',
+          'email' => 'superadmin@rezawikan.com',
+          'email_verified_at' => now(),
+          'password' => Hash::make('secret')
         ]);
 
         $admin = factory(User::class)->create([
@@ -62,27 +73,38 @@ class ACLTableSeeder extends Seeder
           'password' => Hash::make('secret')
         ]);
 
-        $drafter = factory(User::class)->create([
-          'name' => 'Drafter User',
-          'email' => 'drafter@rezawikan.com',
+        $user = factory(User::class)->create([
+          'name' => 'User',
+          'email' => 'user@rezawikan.com',
           'email_verified_at' => now(),
           'password' => Hash::make('secret')
         ]);
 
+        $superadmin->roles()->save($roleSuperAdmin);
+        $superadmin->givePermissionsToRole($roleSuperAdmin, $allPermissions);
+
         $admin->roles()->save($roleAdmin);
-        $admin->givePermissionsToRole($roleAdmin, $allPermissions);
+        $admin->givePermissionsToRole($roleAdmin, [
+          'view post', 'create post', 'update post', 'delete post',
+          'view comment', 'create comment', 'update comment', 'delete comment',
+          'view tag', 'create tag', 'update tag', 'delete tag',
+          'view user', 'create user', 'update user', 'delete user',
+          'view permission', 'create permission', 'update permission', 'delete permission',
+          'view role', 'create role', 'update role', 'delete role',
+          'view post category', 'create post category', 'update post category', 'delete post category'
+        ]);
 
         $team->roles()->save($roleTeam);
         $team->givePermissionsToRole($roleTeam, [
-          'create post', 'update post', 'delete post', 'restore post',
-          'create comment', 'update comment', 'delete comment', 'restore comment',
-          'create tag', 'update tag', 'delete tag', 'restore tag',
-          'create user', 'update user', 'delete user', 'restore user'
+          'create post', 'update post',
+          'create comment', 'update comment',
+          'create tag', 'update tag',
+          'create user', 'update user'
         ]);
 
-        $drafter->roles()->save($roleDrafter);
-        $drafter->givePermissionsToRole($roleDrafter, [
-          'create comment', 'update comment'
-        ]);
+        $user->roles()->save($roleUser);
+        // $user->givePermissionsToRole($roleUser, [
+        //   'create comment', 'update comment'
+        // ]);
     }
 }

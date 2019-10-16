@@ -33,6 +33,6 @@ class CategoryParentComposer
      */
     public function compose(View $view)
     {
-        $view->with('parents', $this->categories->parents()->orderBy('name','desc')->get());
+        $view->with('parents', $this->categories->parents()->whereNull('deleted_at')->orderBy('name','desc')->get());
     }
 }

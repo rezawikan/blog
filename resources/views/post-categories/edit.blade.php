@@ -37,11 +37,11 @@
                                 <div class="form-group">
                                   <label class="form-control-label" for="input-name">{{ __('Parent') }}</label>
                                   <select class="form-control" name="parent_id">
+                                    <option value="">Default select</option>
                                     @foreach ($parents as $key => $parent)
-                                      <option value="">Default select</option>
                                       @if ($postCategory->parent_id == $parent->id)
                                         <option value="{{ $parent->id }}" selected>{{ $parent->name }}</option>
-                                      @else
+                                      @elseif($postCategory->id != $parent->id)
                                         <option value="{{ $parent->id }}">{{ $parent->name }}</option>
                                       @endif
                                     @endforeach

@@ -17,6 +17,7 @@ class CreatePermissionsTable extends Migration
             $table->increments('id');
             $table->string('name'); // edit posts, edit images
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

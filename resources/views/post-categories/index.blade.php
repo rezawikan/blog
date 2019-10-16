@@ -9,13 +9,13 @@
                 <div class="card shadow">
                     <div class="card-header border-0">
                         <div class="row align-items-center">
-                            <div class="col-3">
+                            <div class="col-md-3">
                                 <h3 class="mb-0">{{ __('Post Categories') }}</h3>
                             </div>
-                            <div class="col-6">
+                            <div class="col-md-6">
                               <post-category-search-component />
                             </div>
-                            <div class="col-3 text-right">
+                            <div class="col-md-3 text-right">
                                 <a href="{{ route('post-category.create') }}" class="btn btn-sm btn-primary">{{ __('Add Post Category') }}</a>
                             </div>
                         </div>
@@ -44,7 +44,7 @@
                             </thead>
                             <tbody>
                                 @foreach ($postCategories as $category)
-                                    <tr>
+                                    <tr class="{{ $category->trashed() ? 'bg-danger' : ''}}">
                                         <td>{{ $category->name }}</td>
                                         <td>{{ $category->hasParent() ? $category->parent->name : 'NULL'  }}</td>
                                         <td>{{ $category->created_at->format('d/m/Y H:i') }}</td>
@@ -57,11 +57,17 @@
                                                 <form action="{{ route('post-category.destroy', $category) }}" method="post">
                                                   @csrf
                                                   @method('delete')
-
-                                                  <a class="dropdown-item" href="{{ route('post-category.edit', $category) }}">{{ __('Edit') }}</a>
-                                                  <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this post category?") }}') ? this.parentElement.submit() : ''">
-                                                      {{ __('Delete') }}
-                                                  </button>
+                                                  @if ($category->trashed())
+                                                    <a class="dropdown-item" href="{{ route('post-category.restore', $category) }}">{{ __('Restore') }}</a>
+                                                    <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to force delete this post category?") }}') ? this.parentElement.submit() : ''">
+                                                        {{ __('Force Delete') }}
+                                                    </button>
+                                                  @else
+                                                    <a class="dropdown-item" href="{{ route('post-category.edit', $category) }}">{{ __('Edit') }}</a>
+                                                    <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this post category?") }}') ? this.parentElement.submit() : ''">
+                                                        {{ __('Delete') }}
+                                                    </button>
+                                                  @endif
                                                 </form>
                                               </div>
                                           </div>

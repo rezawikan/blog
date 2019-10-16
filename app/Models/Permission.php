@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Role;
 use Laravel\Scout\Searchable;
+use App\Models\Traits\SoftDeletesWithDeleted;
 
 class Permission extends Model
 {
