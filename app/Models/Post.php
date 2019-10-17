@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Tag;
 use App\Models\Comment;
+use Laravel\Scout\Searchable;
 use App\Models\Traits\IsLive;
 use App\Models\Traits\CanBeScoped;
 use App\Models\Traits\LatestOrder;
@@ -15,7 +16,7 @@ use App\Models\Traits\UniqueSlug;
 
 class Post extends Model
 {
-    use CanBeScoped, LatestOrder, IsLive, SoftDeletesWithDeleted, UniqueSlug;
+    use CanBeScoped, LatestOrder, IsLive, SoftDeletesWithDeleted, UniqueSlug, Searchable;
     /**
      * The attributes that are mass assignable.
      *
@@ -24,6 +25,16 @@ class Post extends Model
     protected $fillable = [
         'user_id', 'post_category_id', 'title', 'body', 'slug', 'image', 'summary', 'live'
     ];
+
+    /**
+     * Get the index name for the model.
+     *
+     * @return string
+     */
+    public function searchableAs()
+    {
+        return 'posts';
+    }
 
     /**
      * Scope a query to only include approved comment.

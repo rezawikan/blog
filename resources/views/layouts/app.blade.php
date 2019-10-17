@@ -19,6 +19,9 @@
         <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet">
         <link type="text/css" href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
+        <!-- Include stylesheet -->
+        <script src="https://cdn.tiny.cloud/1/1pdyu2wik35xic9o68i98sbdwbo3mnwq59khs6w0s24s1t02/tinymce/5/tinymce.min.js"></script>
+
     </head>
     <body class="{{ $class ?? '' }}" >
         @auth()

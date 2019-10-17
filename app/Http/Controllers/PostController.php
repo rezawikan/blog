@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -11,9 +12,11 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request, Post $posts)
     {
-        //
+        $this->authorize('view', Post::class);
+
+        return view('posts.index', ['posts' => $posts->search($request->q)->withTrashed()->paginate(15)]);
     }
 
     /**
@@ -23,7 +26,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $this->authorize('create', Post::class);
+
+        return view('posts.create');
     }
 
     /**
@@ -34,7 +39,15 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->authorize('create', Post::class);
+
+        Post::create($request->merge([
+          'slug' => $request->name,
+          'user_id' => auth()->user()->id,
+          'image' => 'jpas'
+        ])->all());
+
+        return redirect()->route('post.index')->withStatus(__('Post successfully created.'));
     }
 
     /**
@@ -54,9 +67,11 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+        $this->authorize('update', $post);
+
+        return view('posts.edit', compact('post'));
     }
 
     /**
@@ -66,9 +81,17 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $post)
     {
-        //
+        $this->authorize('update', $post);
+
+        $post->update($request->merge([
+          'slug' => $request->name,
+          'user_id' => auth()->user()->id,
+          'image' => 'jpas'
+        ])->all());
+
+        return redirect()->route('post.index')->withStatus(__('Post successfully updated.'));
     }
 
     /**
@@ -77,8 +100,35 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        //
+        if ($post->trashed()) {
+            $this->authorize('forceDelete', $post);
+            $post->forceDelete();
+
+            return redirect()->route('post.index')->withStatus(__('Post successfully force deleted.'));
+        }
+
+        $this->authorize('delete', $post);
+        $post->delete();
+
+        return redirect()->route('post.index')->withStatus(__('Post successfully deleted.'));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function restore(Request $request, Post $post)
+    {
+        $this->authorize('restore', $post);
+
+        if ($post->trashed()) {
+            $post->restore();
+
+            return redirect()->route('post.index')->withStatus(__('Post successfully restored.'));
+        }
     }
 }

@@ -133,7 +133,6 @@ class CommentController extends Controller
         $this->authorize('restore', $comment);
 
         if ($comment->trashed()) {
-
             $comment->restore();
 
             return redirect()->route('comment.index')->withStatus(__('Comment successfully restored.'));

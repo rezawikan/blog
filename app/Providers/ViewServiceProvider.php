@@ -6,6 +6,7 @@ use App\Http\View\Composers\RoleComposer;
 use App\Http\View\Composers\PostComposer;
 use App\Http\View\Composers\CommentComposer;
 use App\Http\View\Composers\PermissionComposer;
+use App\Http\View\Composers\CategoryComposer;
 use App\Http\View\Composers\CategoryParentComposer;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -35,5 +36,7 @@ class ViewServiceProvider extends ServiceProvider
         View::composer(['post-categories.create', 'post-categories.edit'], CategoryParentComposer::class);
         View::composer(['comments.create', 'comments.edit'], PostComposer::class);
         View::composer(['comments.create', 'comments.edit'], CommentComposer::class);
+        View::composer(['posts.create', 'posts.edit'], CategoryComposer::class);
+
     }
 }
