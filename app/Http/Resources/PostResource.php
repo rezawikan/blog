@@ -25,7 +25,12 @@ class PostResource extends JsonResource
             'user' => new PrivateUserResource($this->whenLoaded('user')),
             'created_at' => $this->created_at,
             'tags' => new TagResource($this->whenLoaded('tags')),
-            'comments' => new CommentResource($this->whenLoaded('comments'))
+            'comments' => new CommentResource(
+              $this->whenLoaded('comments')
+              ->where('parent_id', null)
+              ->where('approved', true)
+              ->where('deleted_at', '==', null)
+              )
         ];
     }
 }
