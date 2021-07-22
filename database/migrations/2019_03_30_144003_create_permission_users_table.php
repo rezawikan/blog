@@ -14,16 +14,13 @@ class CreatePermissionUsersTable extends Migration
     public function up()
     {
         Schema::create('permission_users', function (Blueprint $table) {
-            $table->unsignedInteger('user_id');
-            $table->unsignedInteger('permission_id');
-
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('permission_id')->references('id')->on('permissions');
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('permission_id')->constrained('permissions');
 
             $table->primary(['user_id','permission_id']);
         });
     }
-
+    
     /**
      * Reverse the migrations.
      *

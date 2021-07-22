@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Role;
+use App\Models\Role;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class RolePolicy
@@ -13,8 +13,7 @@ class RolePolicy
     /**
      * Determine whether the user can view the role.
      *
-     * @param  \App\Models\User  $user
-     * @param  \App\Role  $role
+     * @param  \App\Models\Role  $role
      * @return mixed
      */
     public function view(User $user)
@@ -37,10 +36,9 @@ class RolePolicy
      * Determine whether the user can update the role.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Role  $role
      * @return mixed
      */
-    public function update(User $user, $role)
+    public function update(User $user)
     {
         return $user->hasPermissionTo('update role') || $user->hasPermissionWithRole('update role');
     }
@@ -49,10 +47,9 @@ class RolePolicy
      * Determine whether the user can delete the role.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Role  $role
      * @return mixed
      */
-    public function delete(User $user, $role)
+    public function delete(User $user)
     {
         return $user->hasPermissionTo('delete role') || $user->hasPermissionWithRole('delete role');
     }
@@ -61,10 +58,9 @@ class RolePolicy
      * Determine whether the user can restore the role.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Role  $role
      * @return mixed
      */
-    public function restore(User $user, $role)
+    public function restore(User $user)
     {
         //
     }
@@ -73,10 +69,9 @@ class RolePolicy
      * Determine whether the user can permanently delete the role.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Role  $role
      * @return mixed
      */
-    public function forceDelete(User $user, $role)
+    public function forceDelete(User $user)
     {
         //
     }

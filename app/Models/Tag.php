@@ -7,10 +7,11 @@ use Laravel\Scout\Searchable;
 use App\Models\Traits\UniqueSlug;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Traits\SoftDeletesWithDeleted;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Tag extends Model
 {
-    use SoftDeletesWithDeleted, UniqueSlug, Searchable;
+    use HasFactory, SoftDeletesWithDeleted, UniqueSlug, Searchable;
 
     /**
      * The attributes that are mass assignable.

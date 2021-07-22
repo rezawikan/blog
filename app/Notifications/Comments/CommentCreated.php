@@ -6,7 +6,7 @@ use App\Models\Comment;
 use Illuminate\Bus\Queueable;
 // use Illuminate\Notifications\Notification;
 // use Illuminate\Notifications\Channels\DatabaseChannel;
-use App\App\Notifications\Channels\DatabaseChannel;
+use App\CustomNotifications\Channels\DatabaseChannel;
 use App\App\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -34,12 +34,10 @@ class CommentCreated extends Notification
      */
     public function via($notifiable)
     {
-        // dd($this->models());
         // return ['database'];
         return [
           DatabaseChannel::class
         ];
-
     }
 
     /**

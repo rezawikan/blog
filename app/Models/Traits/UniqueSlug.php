@@ -2,6 +2,8 @@
 
 namespace App\Models\Traits;
 
+use Illuminate\Support\Str;
+
 trait UniqueSlug
 {
     /**
@@ -12,8 +14,8 @@ trait UniqueSlug
      */
     public function setSlugAttribute($value)
     {
-        if (static::whereSlug($slug = str_slug($value))->exists()) {
-          $slug = $this->incrementSlug($slug);
+        if (static::whereSlug($slug = Str::slug($value))->exists()) {
+            $slug = $this->incrementSlug($slug);
         }
         
         $this->attributes['slug'] = $slug;
@@ -23,13 +25,14 @@ trait UniqueSlug
      * [user description]
      * @return [type] [description]
      */
-    protected function incrementSlug($slug) {
-      $original = $slug;
-      $count = 2;
-      while (static::whereSlug($slug)->exists()) {
-          $slug = "{$original}-" . $count++;
-      }
+    protected function incrementSlug($slug)
+    {
+        $original = $slug;
+        $count = 2;
+        while (static::whereSlug($slug)->exists()) {
+            $slug = "{$original}-" . $count++;
+        }
 
-      return $slug;
+        return $slug;
     }
 }

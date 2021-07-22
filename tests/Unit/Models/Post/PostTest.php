@@ -19,7 +19,7 @@ class PostTest extends TestCase
      */
     public function test_a_post_has_one_category()
     {
-        $post = factory(Post::class)->create();
+        $post = Post::factory()->create();
 
         $this->assertInstanceOf(PostCategory::class, $post->post_category);
     }
@@ -31,8 +31,8 @@ class PostTest extends TestCase
      */
     public function test_a_post_can_update_a_category()
     {
-        $category = factory(PostCategory::class)->create();
-        $post     = factory(Post::class)->create();
+        $category = PostCategory::factory()->create();
+        $post     = Post::factory()->create();
 
         $post->update(['post_category_id' => $category->id]);
 
@@ -46,12 +46,12 @@ class PostTest extends TestCase
      */
     public function test_a_post_can_add_some_tags()
     {
-        $tag1     = factory(Tag::class)->create();
-        $tag2     = factory(Tag::class)->create();
-        $post     = factory(Post::class)->create();
+        $tag1     = Tag::factory()->create();
+        $tag2     = Tag::factory()->create();
+        $post     = Post::factory()->create();
         $post->tags()->saveMany([$tag1, $tag2]);
 
-        $this->assertCount(2,$post->tags);
+        $this->assertCount(2, $post->tags);
     }
 
     /**
@@ -61,8 +61,7 @@ class PostTest extends TestCase
      */
     public function test_a_post_has_one_user()
     {
-        $post = factory(Post::class)->create();
-        // dd($post->user);
+        $post = Post::factory()->create();
         $this->assertInstanceOf(User::class, $post->user);
     }
 }

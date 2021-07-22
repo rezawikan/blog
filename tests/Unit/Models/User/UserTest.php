@@ -18,8 +18,8 @@ class UserTest extends TestCase
      */
     public function test_give_permission_to_user()
     {
-        $user        = factory(User::class)->create();
-        $permissions = factory(Permission::class)->create();
+        $user = User::factory()->create();
+        $permissions = Permission::factory()->create();
         //
         $user->givePermissionTo([$permissions->name]);
         //
@@ -33,8 +33,8 @@ class UserTest extends TestCase
      */
     public function test_give_wrong_permission_to_user()
     {
-        $user        = factory(User::class)->create();
-        $permissions = factory(Permission::class)->create();
+        $user = User::factory()->create();
+        $permissions = Permission::factory()->create();
 
         $user->givePermissionTo(['none']);
         //
@@ -49,8 +49,8 @@ class UserTest extends TestCase
      */
     public function test_detach_permission_to_user()
     {
-        $user        = factory(User::class)->create();
-        $permissions = factory(Permission::class)->create();
+        $user = User::factory()->create();
+        $permissions = Permission::factory()->create();
         //
         $user->givePermissionTo([$permissions->name]);
 
@@ -66,8 +66,8 @@ class UserTest extends TestCase
      */
     public function test_user_has_permission()
     {
-        $user        = factory(User::class)->create();
-        $permissions = factory(Permission::class, 10)->create();
+        $user = User::factory()->create();
+        $permissions = Permission::factory()->count(10)->create();
         $user->givePermissionTo($permissions->pluck('name'));
 
         $permission = $permissions->fresh()->first();
@@ -84,18 +84,16 @@ class UserTest extends TestCase
      */
     public function test_user_has_permission_through_role()
     {
-        $user        = factory(User::class)->create();
-        $permission  = factory(Permission::class)->create();
-        $role        = factory(Role::class)->create();
+        $user = User::factory()->create();
+        $permission = Permission::factory()->create();
+        $role        = Role::factory()->create();
 
-        // not set
-        // $role->permissions->save($permission);
-
+        $role->permissions()->attach([$permission->id]);
         $user->giveRoleTo($role);
 
-        $false = $user->hasPermissionTo($permission);
+        $true = $user->hasPermissionTo($permission);
 
-        $this->assertFalse($false);
+        $this->assertTrue($true);
     }
 
     /**
@@ -105,11 +103,11 @@ class UserTest extends TestCase
      */
     public function test_user_has_permission_with_wrong_roles()
     {
-        $user        = factory(User::class)->create();
-        $permission1 = factory(Permission::class)->create(['name' => 'create post']);
-        $permission2 = factory(Permission::class)->create(['name' => 'view post']);
-        $role1        = factory(Role::class)->create();
-        $role2        = factory(Role::class)->create();
+        $user        = User::factory()->create();
+        $permission1 = Permission::factory()->create(['name' => 'create post']);
+        $permission2 = Permission::factory()->create(['name' => 'view post']);
+        $role1        = Role::factory()->create();
+        $role2        = Role::factory()->create();
 
         $role1->permissions()->save($permission1);
         $role2->permissions()->save($permission2);
@@ -128,9 +126,9 @@ class UserTest extends TestCase
      */
     public function test_user_has_permission_with_permission_object_through_role()
     {
-        $user        = factory(User::class)->create();
-        $permissions = factory(Permission::class)->create(['name' => 'create post']);
-        $roles       = factory(Role::class)->create(['name' => 'administrator']);
+        $user        = User::factory()->create();
+        $permissions = Permission::factory()->create(['name' => 'create post']);
+        $roles       = Role::factory()->create(['name' => 'administrator']);
 
         $roles->permissions()->save($permissions);
 
@@ -150,8 +148,8 @@ class UserTest extends TestCase
      */
     public function test_user_can_update_the_permission()
     {
-        $user        = factory(User::class)->create();
-        $permissions = factory(Permission::class, 10)->create();
+        $user = User::factory()->create();
+        $permissions = Permission::factory()->count(10)->create();
 
         $first  = $permissions->pluck('name')->get(2);
         $second = $permissions->pluck('name')->get(3);
@@ -170,8 +168,8 @@ class UserTest extends TestCase
      */
     public function test_user_has_role()
     {
-        $user  = factory(User::class)->create();
-        $roles = factory(Role::class, 10)->create();
+        $user  = User::factory()->create();
+        $roles = Role::factory()->count(10)->create();
 
         $role = $roles->pluck('name')->get(3);
         $user->giveRoleTo($role);
@@ -188,8 +186,8 @@ class UserTest extends TestCase
      */
     public function test_user_has_wrong_role()
     {
-        $user  = factory(User::class)->create();
-        $roles = factory(Role::class, 10)->create();
+        $user  = User::factory()->create();
+        $roles = Role::factory()->count(10)->create();
 
         $role = $roles->pluck('name')->get(3);
         $user->giveRoleTo(['none']);
@@ -206,8 +204,8 @@ class UserTest extends TestCase
      */
     public function test_user_can_update_role()
     {
-        $user  = factory(User::class)->create();
-        $roles = factory(Role::class, 2)->create();
+        $user  = User::factory()->create();
+        $roles = Role::factory()->count(2)->create();
 
         $role1 = $roles->pluck('name')->get(0);
         $role2 = $roles->pluck('name')->get(1);

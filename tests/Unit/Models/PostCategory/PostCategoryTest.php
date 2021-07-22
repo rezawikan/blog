@@ -17,12 +17,12 @@ class PostCategoryTest extends TestCase
      */
     public function test_it_has_many_children()
     {
-        $category = factory(PostCategory::class)->create();
+        $category = PostCategory::factory()->create();
 
         $category->children()->save(
-        factory(PostCategory::class)->create(),
-        factory(PostCategory::class)->create()
-      );
+            PostCategory::factory()->create(),
+            PostCategory::factory()->create()
+        );
 
         $this->assertInstanceOf(PostCategory::class, $category->children->first());
     }
@@ -34,10 +34,10 @@ class PostCategoryTest extends TestCase
      */
     public function test_children_only_has_one_parent()
     {
-        $category = factory(PostCategory::class)->create();
+        $category = PostCategory::factory()->create();
 
         $category->children()->save(
-          $child = factory(PostCategory::class)->create()
+            $child = PostCategory::factory()->create()
         );
 
         $this->assertEquals(1, $child->parents()->count());
@@ -50,11 +50,11 @@ class PostCategoryTest extends TestCase
      */
     public function test_it_is_orderable_by_a_numbered_order()
     {
-        $category = factory(PostCategory::class)->create([
+        $category = PostCategory::factory()->create([
         'order' => 2
       ]);
 
-        $otherCategory = factory(PostCategory::class)->create([
+        $otherCategory = PostCategory::factory()->create([
         'order' => 1
       ]);
 
@@ -68,14 +68,14 @@ class PostCategoryTest extends TestCase
      */
     public function test_it_has_many_children_recursive()
     {
-        $category = factory(PostCategory::class)->create();
+        $category = PostCategory::factory()->create();
 
         $category->children()->save(
-          $child = factory(PostCategory::class)->create()
+            $child = PostCategory::factory()->create()
         );
 
         $child->children()->save(
-          $child1 = factory(PostCategory::class)->create()
+            $child1 = PostCategory::factory()->create()
         );
 
         $this->assertInstanceOf(PostCategory::class, $category->childrenRecursive()->first());
@@ -88,11 +88,11 @@ class PostCategoryTest extends TestCase
      */
     public function test_a_post_category_has_many_post()
     {
-        $category = factory(PostCategory::class)->create();
-        factory(Post::class)->create([
+        $category = PostCategory::factory()->create();
+        Post::factory()->create([
           'post_category_id' => $category->id
         ]);
-        factory(Post::class)->create([
+        Post::factory()->create([
           'post_category_id' => $category->id
         ]);
 

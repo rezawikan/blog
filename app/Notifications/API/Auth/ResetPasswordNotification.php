@@ -2,7 +2,6 @@
 
 namespace App\Notifications\API\Auth;
 
-
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;

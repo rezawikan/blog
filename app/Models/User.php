@@ -3,8 +3,8 @@
 namespace App\Models;
 
 use App\Models\Post;
-use Laravel\Passport\HasApiTokens;
-use App\Model\Traits\RolePermission;
+use Laravel\Sanctum\HasApiTokens;
+use App\Models\Traits\RolePermission;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Notifications\API\Auth\ResetPasswordNotification;
@@ -12,10 +12,11 @@ use App\App\Notifications\Models\DatabaseNotification;
 use App\Models\Traits\SoftDeletesWithDeleted;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Scout\Searchable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class User extends Authenticatable
 {
-    use Notifiable, HasApiTokens, RolePermission, SoftDeletesWithDeleted, Searchable;
+    use HasFactory, Notifiable, HasApiTokens, RolePermission, SoftDeletesWithDeleted, Searchable;
 
     /**
      * The attributes that are mass assignable.
@@ -81,11 +82,11 @@ class User extends Authenticatable
      */
     public function scopeHasComment($builder, $id)
     {
-      $comment = $this->whereHas('comments', function ($builder) use ($id) {
-        $builder->where('id', $id);
-      })->count();
+        $comment = $this->whereHas('comments', function ($builder) use ($id) {
+            $builder->where('id', $id);
+        })->count();
 
-      return $comment > 0 ? true : false;
+        return $comment > 0 ? true : false;
     }
 
     /**
@@ -94,7 +95,7 @@ class User extends Authenticatable
      */
     public function notifications()
     {
-        return $this->morphMany(DatabaseNotification::class, 'notifiable')->orderBy('created_at','desc');
+        return $this->morphMany(DatabaseNotification::class, 'notifiable')->orderBy('created_at', 'desc');
     }
 
     /**
@@ -116,8 +117,8 @@ class User extends Authenticatable
     * @param  \Illuminate\Notifications\Notification  $notification
     * @return string
     */
-   public function routeNotificationForMail($notification)
-   {
-       return $this->email;
-   }
+    public function routeNotificationForMail($notification)
+    {
+        return $this->email;
+    }
 }

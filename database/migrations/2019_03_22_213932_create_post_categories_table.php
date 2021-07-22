@@ -14,15 +14,13 @@ class CreatePostCategoriesTable extends Migration
     public function up()
     {
         Schema::create('post_categories', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('name');
             $table->string('slug')->unique();
             $table->integer('order')->nullable();
-            $table->unsignedInteger('parent_id')->index()->nullable();
+            $table->foreignId('parent_id')->nullable()->constrained('post_categories');
             $table->timestamps();
             $table->softDeletes();
-
-            $table->foreign('parent_id')->references('id')->on('post_categories');
         });
     }
 

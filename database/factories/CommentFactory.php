@@ -1,20 +1,37 @@
 <?php
 
-/* @var $factory \Illuminate\Database\Eloquent\Factory */
+namespace Database\Factories;
 
 use App\Models\Post;
 use App\Models\Comment;
 use App\Models\User;
-use Faker\Generator as Faker;
+use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(Comment::class, function (Faker $faker) {
-    $post = factory(Post::class)->create();
-    $class = new \ReflectionClass($post);
-    return [
-        'user_id'  => factory(User::class)->create()->id,
-        'body'     => $faker->sentence(10),
-        'approved' => true,
-        'commentable_id' => $post->id,
-        'commentable_type' => $class->getName()
-    ];
-});
+class CommentFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Comment::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        $post = Post::factory()->create();
+        $class = new \ReflectionClass($post);
+        return [
+            'user_id'  => User::factory()->create()->id,
+            'body'     => $this->faker->sentence(10),
+            'approved' => true,
+            'commentable_id' => $post->id,
+            'commentable_type' => $class->getName()
+        ];
+    }
+}

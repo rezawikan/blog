@@ -9,11 +9,11 @@ use App\Models\Traits\IsOrderable;
 use Laravel\Scout\Searchable;
 use App\Models\Traits\UniqueSlug;
 use App\Models\Traits\SoftDeletesWithDeleted;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class PostCategory extends Model
 {
-  
-    use HasChildren, IsOrderable, Searchable, UniqueSlug, SoftDeletesWithDeleted;
+    use HasFactory, HasChildren, IsOrderable, Searchable, UniqueSlug, SoftDeletesWithDeleted;
     /**
      * The attributes that are mass assignable.
      *

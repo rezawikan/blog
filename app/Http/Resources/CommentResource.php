@@ -25,10 +25,10 @@ class CommentResource extends JsonResource
           'approved' => (bool)$this->approved,
           'user' => new PrivateUserResource($this->whenLoaded('user')),
           'children' => new CommentResource(
-            $this->whenLoaded('children')
-            ->where('approved', true)
-            ->where('deleted_at', '==', null)
-            )
+              $this->whenLoaded('children')
+            // ->where('approved', true)
+            // ->where('deleted_at', '==', null)
+          )
         ];
     }
 }

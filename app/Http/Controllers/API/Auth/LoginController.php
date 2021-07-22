@@ -45,7 +45,7 @@ class LoginController extends Controller
         return (new PrivateUserResource($request->user()))
                 ->additional([
                   'meta' => [
-                    'token' => auth()->user()->createToken('Pesrsonal')->accessToken
+                    'token' => auth()->user()->createToken('Pesrsonal')->plainTextToken
                   ]
                 ]);
     }

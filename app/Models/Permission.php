@@ -6,16 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Role;
 use Laravel\Scout\Searchable;
 use App\Models\Traits\SoftDeletesWithDeleted;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Permission extends Model
 {
-    use Searchable;
+    use HasFactory, Searchable;
 
-  /**
-   * The attributes that are mass assignable.
-   *
-   * @var array
-   */
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = ['name'];
 
     /**

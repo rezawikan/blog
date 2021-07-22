@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Model\Traits;
+namespace App\Models\Traits;
 
 use App\Models\Role;
 use App\Models\Permission;
@@ -23,10 +23,10 @@ trait RolePermission
         }
 
         foreach ($roles as $key => $value) {
-          $result = $value->permissions->pluck('name')->contains($permission);
-          if ($result) {
-              return true;
-          }
+            $result = $value->permissions->pluck('name')->contains($permission);
+            if ($result) {
+                return true;
+            }
         }
         return false;
     }
@@ -34,12 +34,12 @@ trait RolePermission
     protected function hasMultiPermissionWithRole($permissions, $roles)
     {
         foreach ($roles as $key => $value) {
-          foreach ($permissions as $permission) {
-              $result = $value->permissions->pluck('name')->contains($permission);
-              if ($result) {
-                  return true;
-              }
-          }
+            foreach ($permissions as $permission) {
+                $result = $value->permissions->pluck('name')->contains($permission);
+                if ($result) {
+                    return true;
+                }
+            }
         }
         return false;
     }
@@ -51,7 +51,7 @@ trait RolePermission
      */
     public function givePermissionsToRole($role, ...$permissions)
     {
-        $permissions = $this->getAllPermissions(array_flatten($permissions));
+        $permissions = $this->getAllPermissions(collect($permissions)->flatten());
         // is empty on object permission
         if ($permissions instanceof Collection && $permissions->isEmpty()) {
             return $this;
@@ -69,8 +69,7 @@ trait RolePermission
      */
     public function givePermissionTo(...$permissions)
     {
-
-        $permissions = $this->getAllPermissions(array_flatten($permissions));
+        $permissions = $this->getAllPermissions(collect($permissions)->flatten());
         // is empty on object permission
         if ($permissions instanceof Collection && $permissions->isEmpty()) {
             return $this;
@@ -88,7 +87,7 @@ trait RolePermission
      */
     public function detachPermissionTo(...$permissions)
     {
-        $permissions = $this->getAllPermissions(array_flatten($permissions));
+        $permissions = $this->getAllPermissions(collect($permissions)->flatten());
 
         $this->permissions()->detach($permissions);
 
@@ -132,7 +131,7 @@ trait RolePermission
      */
     public function giveRoleTo(...$roles)
     {
-        $roles = $this->getAllRoles(array_flatten($roles));
+        $roles = $this->getAllRoles(collect($roles)->flatten());
         // is empty on object roles
         if ($roles->isEmpty()) {
             return $this;
@@ -197,10 +196,10 @@ trait RolePermission
 
     /**
      * Get all permissions with the match name
-     * @param  array  $permissions [description]
+     * @param  Collection  $permissions [description]
      * @return /App/Models/Permission
      */
-    protected function getAllPermissions(array $permissions)
+    protected function getAllPermissions(Collection $permissions)
     {
         return Permission::whereIn('name', $permissions)->get();
     }
@@ -210,7 +209,7 @@ trait RolePermission
      * @param  array  $permissions [description]
      * @return /App/Models/Permission
      */
-    protected function getAllRoles(array $roles)
+    protected function getAllRoles(Collection $roles)
     {
         return Role::whereIn('name', $roles)->get();
     }

@@ -17,9 +17,9 @@ class TagTest extends TestCase
      */
     public function test_a_tag_can_attach_some_posts()
     {
-        $post1  = factory(Post::class)->create();
-        $post2  = factory(Post::class)->create();
-        $tag1   = factory(Tag::class)->create();
+        $post1  = Post::factory()->create();
+        $post2  = Post::factory()->create();
+        $tag1   = Tag::factory()->create();
 
         $tag1->posts()->saveMany([$post1, $post2]);
 

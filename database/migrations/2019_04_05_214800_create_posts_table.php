@@ -14,9 +14,9 @@ class CreatePostsTable extends Migration
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('user_id');
-            $table->unsignedInteger('post_category_id');
+            $table->id();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('post_category_id')->constrained('post_categories')->onDelete('cascade');
             $table->string('title');
             $table->string('slug')->unique();
             $table->string('image');
@@ -25,9 +25,6 @@ class CreatePostsTable extends Migration
             $table->boolean('live')->default(false);
             $table->timestamps();
             $table->softDeletes();
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('post_category_id')->references('id')->on('post_categories')->onDelete('cascade');
         });
     }
 
